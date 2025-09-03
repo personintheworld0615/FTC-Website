@@ -89,14 +89,14 @@ export default function TeamPage() {
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge variant="outline" className="text-primary border-primary">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <Badge variant="outline" className="text-primary border-primary animate-slide-up">
               Meet Our Team
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up delay-100">
               The Minds Behind Rust in Piece
             </h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
               Our team of 18 dedicated students from Princeton STEM Academy brings together diverse skills,
               perspectives, and a shared passion for robotics and innovation.
             </p>
@@ -108,19 +108,19 @@ export default function TeamPage() {
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
+            <div className="text-center animate-slide-up delay-100">
               <div className="text-3xl font-bold text-primary">18</div>
               <div className="text-sm text-muted-foreground">Total Members</div>
             </div>
-            <div className="text-center">
+            <div className="text-center animate-slide-up delay-200">
               <div className="text-3xl font-bold text-primary">4</div>
               <div className="text-sm text-muted-foreground">Grade Levels</div>
             </div>
-            <div className="text-center">
+            <div className="text-center animate-slide-up delay-300">
               <div className="text-3xl font-bold text-primary">6</div>
               <div className="text-sm text-muted-foreground">Specialization Areas</div>
             </div>
-            <div className="text-center">
+            <div className="text-center animate-slide-up delay-500">
               <div className="text-3xl font-bold text-primary">100%</div>
               <div className="text-sm text-muted-foreground">Dedication</div>
             </div>
@@ -131,7 +131,7 @@ export default function TeamPage() {
       {/* Team Members Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
+          <div className="space-y-12 animate-fade-in">
             <div className="text-center space-y-4">
               <div className="flex items-center justify-center space-x-2">
                 <Users className="w-6 h-6 text-primary" />
@@ -144,7 +144,11 @@ export default function TeamPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {teamMembers.map((member, index) => (
-                <Card key={index} className="group hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <CardHeader className="text-center">
                     <div className="mx-auto mb-4">
                       <img
@@ -176,7 +180,11 @@ export default function TeamPage() {
 
               {/* Placeholder cards for remaining members */}
               {Array.from({ length: 9 }, (_, index) => (
-                <Card key={`placeholder-${index}`} className="group hover:shadow-lg transition-shadow">
+                <Card
+                  key={`placeholder-${index}`}
+                  className="group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
+                  style={{ animationDelay: `${(index + 9) * 100}ms` }}
+                >
                   <CardHeader className="text-center">
                     <div className="mx-auto mb-4">
                       <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center mx-auto">
@@ -212,13 +220,15 @@ export default function TeamPage() {
       {/* Join Our Team */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">Interested in Joining Us?</h2>
-            <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance animate-slide-up delay-100">
+              Interested in Joining Us?
+            </h2>
+            <p className="text-lg text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
               We're always looking for passionate students who want to learn, grow, and make an impact through robotics.
               No prior experience necessary - just enthusiasm and dedication!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-300">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
                 <a href="/contact">Apply to Join</a>
               </Button>

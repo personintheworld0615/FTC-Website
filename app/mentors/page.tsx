@@ -42,12 +42,14 @@ export default function MentorsPage() {
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge variant="outline" className="text-primary border-primary">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <Badge variant="outline" className="text-primary border-primary animate-slide-up">
               Our Mentors
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">Guiding Our Journey</h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up delay-100">
+              Guiding Our Journey
+            </h1>
+            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
               Meet the experienced professionals who provide guidance, expertise, and inspiration to help our team reach
               new heights in robotics and engineering excellence.
             </p>
@@ -59,7 +61,7 @@ export default function MentorsPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8 animate-slide-left">
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
                   <GraduationCap className="w-6 h-6 text-primary" />
@@ -94,7 +96,7 @@ export default function MentorsPage() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative animate-slide-right">
               <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
                 <img
                   src="/placeholder.svg?height=400&width=400&text=Mentorship+in+Action"
@@ -111,7 +113,7 @@ export default function MentorsPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in">
               <div className="flex items-center justify-center space-x-2">
                 <Award className="w-6 h-6 text-primary" />
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Meet Our Mentors</h2>
@@ -123,7 +125,11 @@ export default function MentorsPage() {
 
             <div className="grid lg:grid-cols-2 gap-8">
               {mentors.map((mentor, index) => (
-                <Card key={index} className="group hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
                   <CardHeader className="text-center space-y-4">
                     <div className="mx-auto">
                       <img
@@ -185,7 +191,7 @@ export default function MentorsPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">
                 The Impact of Great Mentorship
               </h2>
@@ -193,7 +199,7 @@ export default function MentorsPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              <Card>
+              <Card className="animate-slide-up delay-100 hover:scale-105 transition-all duration-300">
                 <CardHeader className="text-center">
                   <GraduationCap className="w-8 h-8 text-primary mx-auto mb-2" />
                   <CardTitle>Skill Development</CardTitle>
@@ -206,7 +212,7 @@ export default function MentorsPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="animate-slide-up delay-200 hover:scale-105 transition-all duration-300">
                 <CardHeader className="text-center">
                   <Users className="w-8 h-8 text-primary mx-auto mb-2" />
                   <CardTitle>Career Guidance</CardTitle>
@@ -219,7 +225,7 @@ export default function MentorsPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="animate-slide-up delay-300 hover:scale-105 transition-all duration-300">
                 <CardHeader className="text-center">
                   <Lightbulb className="w-8 h-8 text-primary mx-auto mb-2" />
                   <CardTitle>Innovation Culture</CardTitle>
@@ -239,7 +245,7 @@ export default function MentorsPage() {
       {/* Call to Action */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6">
+          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
               Interested in Mentoring?
             </h2>

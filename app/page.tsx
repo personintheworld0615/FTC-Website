@@ -38,17 +38,23 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   className="bg-gradient-orange hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  asChild
                 >
-                  <Rocket className="w-4 h-4 mr-2" />
-                  Join Our Team
+                  <a href="/contact">
+                    <Rocket className="w-4 h-4 mr-2" />
+                    Join Our Team
+                  </a>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-transparent"
+                  asChild
                 >
-                  <Cpu className="w-4 h-4 mr-2" />
-                  View Our Robot
+                  <a href="/mentors">
+                    <Cpu className="w-4 h-4 mr-2" />
+                    View Our Mentors
+                  </a>
                 </Button>
               </div>
 
@@ -221,17 +227,27 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative">
-              <Button variant="secondary" size="lg" className="hover:scale-105 transition-all duration-300 shadow-lg">
-                <Heart className="w-4 h-4 mr-2" />
-                Contact Us
+              <Button
+                variant="secondary"
+                size="lg"
+                className="hover:scale-105 transition-all duration-300 shadow-lg"
+                asChild
+              >
+                <a href="/contact">
+                  <Heart className="w-4 h-4 mr-2" />
+                  Contact Us
+                </a>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all duration-300"
+                asChild
               >
-                <Zap className="w-4 h-4 mr-2" />
-                Learn More
+                <a href="/about">
+                  <Zap className="w-4 h-4 mr-2" />
+                  Learn More
+                </a>
               </Button>
             </div>
           </div>

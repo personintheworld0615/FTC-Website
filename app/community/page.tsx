@@ -1,9 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Heart, Users, GraduationCap, Lightbulb, Award, Calendar, MapPin, Target } from "lucide-react"
+import { Heart, Users, GraduationCap, Target } from "lucide-react"
 
 export default function CommunityPage() {
   const impactStats = [
@@ -56,32 +56,6 @@ export default function CommunityPage() {
       ],
       image: "/placeholder.svg?height=300&width=400&text=STEM+Camp",
     },
-    {
-      title: "School Demonstrations",
-      icon: Lightbulb,
-      description:
-        "We visit local schools to demonstrate our robot and share the excitement of competitive robotics with students of all ages.",
-      details: [
-        "Interactive robot demonstrations",
-        "Q&A sessions about robotics and engineering",
-        "Encouraging STEM participation",
-        "Building community connections",
-      ],
-      image: "/placeholder.svg?height=300&width=400&text=School+Demo",
-    },
-    {
-      title: "Community Workshops",
-      icon: Award,
-      description:
-        "We host workshops and events to share robotics knowledge with the broader community and promote STEM education.",
-      details: [
-        "Public robotics workshops",
-        "Parent and family engagement events",
-        "Collaboration with local organizations",
-        "Promoting STEM literacy in our community",
-      ],
-      image: "/placeholder.svg?height=300&width=400&text=Community+Workshop",
-    },
   ]
 
   const testimonials = [
@@ -112,14 +86,14 @@ export default function CommunityPage() {
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge variant="outline" className="text-primary border-primary">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <Badge variant="outline" className="text-primary border-primary animate-slide-up">
               Community Impact
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up delay-100">
               Building Tomorrow's Innovators
             </h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
               Beyond competition, we're committed to inspiring the next generation through mentorship, education, and
               community outreach that makes STEM accessible to all students.
             </p>
@@ -131,7 +105,7 @@ export default function CommunityPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in">
               <div className="flex items-center justify-center space-x-2">
                 <Target className="w-6 h-6 text-primary" />
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Our Impact by the Numbers</h2>
@@ -141,7 +115,11 @@ export default function CommunityPage() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {impactStats.map((stat, index) => (
-                <div key={index} className="text-center space-y-2">
+                <div
+                  key={index}
+                  className="text-center space-y-2 animate-slide-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <div className="text-4xl lg:text-5xl font-bold text-primary">{stat.number}</div>
                   <div className="text-lg font-semibold text-foreground">{stat.label}</div>
                   <div className="text-sm text-muted-foreground">{stat.description}</div>
@@ -156,7 +134,7 @@ export default function CommunityPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in">
               <div className="flex items-center justify-center space-x-2">
                 <Heart className="w-6 h-6 text-primary" />
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Our Community Programs</h2>
@@ -174,7 +152,8 @@ export default function CommunityPage() {
                 return (
                   <div
                     key={index}
-                    className={`grid lg:grid-cols-2 gap-12 items-center ${isEven ? "" : "lg:grid-flow-col-dense"}`}
+                    className={`grid lg:grid-cols-2 gap-12 items-center animate-slide-up ${isEven ? "" : "lg:grid-flow-col-dense"}`}
+                    style={{ animationDelay: `${index * 200}ms` }}
                   >
                     <div className={`space-y-6 ${isEven ? "" : "lg:col-start-2"}`}>
                       <div className="space-y-4">
@@ -221,7 +200,7 @@ export default function CommunityPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Community Voices</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Hear from those who have experienced our programs firsthand
@@ -230,7 +209,11 @@ export default function CommunityPage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
                   <CardContent className="p-6 space-y-4">
                     <div className="text-primary text-4xl font-serif">"</div>
                     <blockquote className="text-muted-foreground italic leading-relaxed">
@@ -248,88 +231,10 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* Upcoming Events */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
-            <div className="text-center space-y-4">
-              <div className="flex items-center justify-center space-x-2">
-                <Calendar className="w-6 h-6 text-primary" />
-                <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Upcoming Community Events</h2>
-              </div>
-              <p className="text-lg text-muted-foreground">
-                Join us at these upcoming opportunities to engage with STEM
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <Badge variant="outline">Summer 2024</Badge>
-                  </div>
-                  <CardTitle>Annual STEM Camp</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <CardDescription>
-                    Week-long robotics and engineering camp for 3rd-8th grade students. Registration opens in Spring!
-                  </CardDescription>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span>Princeton STEM Academy</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <Badge variant="outline">Monthly</Badge>
-                  </div>
-                  <CardTitle>FLL Mentoring Sessions</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <CardDescription>
-                    Regular mentoring sessions with our FLL teams during competition season. Building the next
-                    generation of roboticists!
-                  </CardDescription>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span>Various Locations</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <Badge variant="outline">On Request</Badge>
-                  </div>
-                  <CardTitle>School Demonstrations</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <CardDescription>
-                    Interactive robot demonstrations and STEM presentations for schools and community groups. Contact us
-                    to schedule!
-                  </CardDescription>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span>Your Location</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6">
+          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
               Get Involved in Our Community
             </h2>
