@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Users, Trophy, Heart, Zap, Rocket, Cpu } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { InteractiveCounter } from "@/components/interactive-counter"
 
 export default function HomePage() {
   return (
@@ -37,40 +38,40 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-orange hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="bg-gradient-orange hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
                   asChild
                 >
                   <a href="/contact">
-                    <Rocket className="w-4 h-4 mr-2" />
+                    <Rocket className="w-4 h-4 mr-2 group-hover:animate-bounce" />
                     Join Our Team
                   </a>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-transparent"
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-transparent group"
                   asChild
                 >
                   <a href="/mentors">
-                    <Cpu className="w-4 h-4 mr-2" />
+                    <Cpu className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
                     View Our Mentors
                   </a>
                 </Button>
               </div>
 
               <div className="grid grid-cols-3 gap-4 text-sm">
-                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-primary/5 border border-primary/20">
-                  <Users className="w-6 h-6 text-primary" />
-                  <span className="font-semibold text-primary">18</span>
+                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-all duration-300 group">
+                  <Users className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                  <InteractiveCounter end={18} />
                   <span className="text-muted-foreground text-center">Team Members</span>
                 </div>
-                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/5 border border-accent/20">
-                  <Trophy className="w-6 h-6 text-accent" />
+                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/5 border border-accent/20 hover:bg-accent/10 transition-all duration-300 group">
+                  <Trophy className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
                   <span className="font-semibold text-accent">Multiple</span>
                   <span className="text-muted-foreground text-center">Awards</span>
                 </div>
-                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-secondary/5 border border-secondary/20">
-                  <Heart className="w-6 h-6 text-secondary" />
+                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-secondary/5 border border-secondary/20 hover:bg-secondary/10 transition-all duration-300 group">
+                  <Heart className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform" />
                   <span className="font-semibold text-secondary">∞</span>
                   <span className="text-muted-foreground text-center">Impact</span>
                 </div>
@@ -80,11 +81,11 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative animate-float">
                 <div className="absolute inset-0 bg-gradient-orange rounded-3xl blur-xl opacity-30"></div>
-                <div className="relative aspect-square bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 rounded-3xl p-4 border border-primary/20">
+                <div className="relative aspect-square bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 rounded-3xl p-4 border border-primary/20 hover:border-primary/40 transition-all duration-500 group">
                   <img
                     src="/ftc-robotics-team-working-on-robot-in-workshop.jpg"
                     alt="Rust in Piece team working on their robot"
-                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -99,20 +100,26 @@ export default function HomePage() {
       <section className="py-16 bg-gradient-warm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-all duration-300">
-              <div className="text-4xl font-bold text-primary mb-2">18</div>
+            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-4xl font-bold text-primary mb-2">
+                <InteractiveCounter end={18} />
+              </div>
               <div className="text-sm font-medium text-muted-foreground">Team Members</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-accent/20 hover:scale-105 transition-all duration-300">
-              <div className="text-4xl font-bold text-accent mb-2">2</div>
+            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-accent/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-4xl font-bold text-accent mb-2">
+                <InteractiveCounter end={2} />
+              </div>
               <div className="text-sm font-medium text-muted-foreground">FLL Teams Mentored</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-secondary/20 hover:scale-105 transition-all duration-300">
-              <div className="text-4xl font-bold text-secondary mb-2">1</div>
+            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-secondary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-4xl font-bold text-secondary mb-2">
+                <InteractiveCounter end={1} />
+              </div>
               <div className="text-sm font-medium text-muted-foreground">Annual STEM Camp</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-all duration-300">
-              <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+            <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 group-hover:animate-pulse">
                 ∞
               </div>
               <div className="text-sm font-medium text-muted-foreground">Innovation</div>
@@ -153,11 +160,11 @@ export default function HomePage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-white to-primary/5">
+              <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-white to-primary/5 group">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Trophy className="w-6 h-6 text-primary" />
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <Trophy className="w-6 h-6 text-primary group-hover:animate-bounce" />
                     </div>
                     <span>Competition Excellence</span>
                   </CardTitle>
@@ -170,11 +177,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-white to-accent/5">
+              <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-white to-accent/5 group">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-3">
-                    <div className="p-2 bg-accent/10 rounded-lg">
-                      <Users className="w-6 h-6 text-accent" />
+                    <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                      <Users className="w-6 h-6 text-accent group-hover:animate-pulse" />
                     </div>
                     <span>Mentorship Program</span>
                   </CardTitle>
@@ -187,11 +194,11 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-white to-secondary/5">
+              <Card className="border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-white to-secondary/5 group">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-3">
-                    <div className="p-2 bg-secondary/10 rounded-lg">
-                      <Heart className="w-6 h-6 text-secondary" />
+                    <div className="p-2 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors">
+                      <Heart className="w-6 h-6 text-secondary group-hover:animate-pulse" />
                     </div>
                     <span>STEM Camp</span>
                   </CardTitle>
