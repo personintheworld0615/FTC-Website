@@ -14,13 +14,17 @@ export default function AboutPage() {
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge variant="outline" className="text-primary border-primary">
-              About Our Team
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">Our Story</h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-              From our origins as Riptide to becoming Rust in Piece, we've evolved into a passionate team of 18 students
-              dedicated to robotics excellence and community impact.
+            <div className="animate-fade-in">
+              <Badge variant="outline" className="text-primary border-primary">
+                About Our Team
+              </Badge>
+            </div>
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up animation-delay-200">
+              Our Story
+            </h1>
+            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up animation-delay-400">
+              We are Rust in Piece, a passionate team of 18 students dedicated to robotics excellence, innovation, and
+              making a meaningful impact in our community through STEM education.
             </p>
           </div>
         </div>
@@ -30,10 +34,10 @@ export default function AboutPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8 animate-slide-in-left">
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
-                  <Target className="w-6 h-6 text-primary" />
+                  <Target className="w-6 h-6 text-primary animate-bounce-gentle" />
                   <h2 className="text-3xl font-bold text-foreground">Our Mission</h2>
                 </div>
                 <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
@@ -45,7 +49,7 @@ export default function AboutPage() {
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
-                  <Lightbulb className="w-6 h-6 text-primary" />
+                  <Lightbulb className="w-6 h-6 text-primary animate-pulse-gentle" />
                   <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
                 </div>
                 <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
@@ -56,8 +60,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
+            <div className="relative animate-slide-in-right">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300">
                 <img
                   src="/placeholder.svg?height=400&width=400&text=Team+Mission"
                   alt="Team working together on robotics project"
@@ -73,7 +77,7 @@ export default function AboutPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 animate-fade-in">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Our Core Values</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 The principles that guide everything we do, from robot design to community engagement
@@ -81,7 +85,7 @@ export default function AboutPage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
+              <Card className="animate-slide-up animation-delay-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Users className="w-5 h-5 text-primary" />
@@ -96,7 +100,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="animate-slide-up animation-delay-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Lightbulb className="w-5 h-5 text-primary" />
@@ -111,7 +115,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="animate-slide-up animation-delay-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Heart className="w-5 h-5 text-primary" />
@@ -126,7 +130,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="animate-slide-up animation-delay-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Award className="w-5 h-5 text-primary" />
@@ -141,7 +145,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="animate-slide-up animation-delay-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Target className="w-5 h-5 text-primary" />
@@ -156,7 +160,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="animate-slide-up animation-delay-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Users className="w-5 h-5 text-primary" />
@@ -178,20 +182,25 @@ export default function AboutPage() {
       {/* Call to Action */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6">
+          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-scale-in hover:shadow-2xl transition-shadow duration-300">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">Want to Learn More?</h2>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
               Discover our team members, meet our mentors, and see how we're making an impact in our community through
               STEM education and robotics.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" asChild>
+              <Button
+                variant="secondary"
+                size="lg"
+                asChild
+                className="hover:scale-105 transition-transform duration-200"
+              >
                 <a href="/team">Meet Our Team</a>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all duration-200"
                 asChild
               >
                 <a href="/contact">Get In Touch</a>
