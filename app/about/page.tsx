@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { History, Target, Users, Heart, Award, Lightbulb } from "lucide-react"
+import { Target, Users, Heart, Award, Lightbulb } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -64,56 +64,6 @@ export default function AboutPage() {
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team History */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <div className="flex items-center justify-center space-x-2">
-                <History className="w-6 h-6 text-primary" />
-                <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Our Journey</h2>
-              </div>
-              <p className="text-lg text-muted-foreground">From humble beginnings to competitive excellence</p>
-            </div>
-
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Badge variant="secondary">Past</Badge>
-                    <span>Team Riptide Era</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
-                    Our team began its journey competing as "Riptide," where we learned the fundamentals of robotics
-                    competition and developed our core values of teamwork, innovation, and community service. This
-                    foundation shaped our approach to both technical excellence and collaborative problem-solving.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Badge variant="default">Present</Badge>
-                    <span>Rust in Piece - Team 19772</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
-                    Today, as Rust in Piece, we've grown into a team of 18 dedicated students from Princeton STEM
-                    Academy. We've expanded our impact beyond competition to include mentoring 2 FLL teams and hosting
-                    annual STEM camps for younger students, embodying our commitment to community education and
-                    outreach.
-                  </CardDescription>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
