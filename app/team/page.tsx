@@ -31,14 +31,7 @@ export default function TeamPage() {
       bio: "Oversees all programming activities and robot control systems.",
       image: "/placeholder.svg?height=300&width=300&text=Programming+Head",
     },
-    {
-      name: "Chinmay C",
-      role: "Head of Mechanical Engineering",
-      grade: "10th Grade",
-      specialties: ["Mechanical Design", "Assembly", "Testing"],
-      bio: "Leads mechanical design and construction of robot systems.",
-      image: "/placeholder.svg?height=300&width=300&text=Mechanical+Head",
-    },
+    
     {
       name: "Ishana M",
       role: "Head of Community Outreach",
@@ -149,6 +142,14 @@ export default function TeamPage() {
       specialties: ["Event Support", "Learning Outreach"],
       bio: "Supporting events and learning outreach strategies.",
       image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+2",
+    },
+    {
+      name: "Chinmay C",
+      role: "mech trainee",
+      grade: "10th Grade",
+      specialties: ["Mechanical Design", "Assembly", "Testing"],
+      bio: "has fun with robots.",
+      image: "/placeholder.svg?height=300&width=300&text=Mechanical+Head",
     },
   ]
 
