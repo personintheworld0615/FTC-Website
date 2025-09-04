@@ -24,9 +24,7 @@ export function Navigation() {
               <span className="text-primary-foreground font-bold text-sm">RP</span>
             </div>
             <span className="font-bold text-xl text-foreground">Rust in Piece</span>
-            <Badge variant="secondary" className="ml-2">
-              #19772
-            </Badge>
+            <Badge className="ml-2 bg-primary text-primary-foreground border-primary">#19772</Badge>
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,7 +51,7 @@ export function Navigation() {
                     <span className="text-primary-foreground font-bold text-sm">RP</span>
                   </div>
                   <span className="font-bold text-lg text-foreground">Rust in Piece</span>
-                  <Badge variant="secondary">#19772</Badge>
+                  <Badge className="bg-primary text-primary-foreground border-primary">#19772</Badge>
                 </div>
                 {navLinks.map((link) => (
                   <Link

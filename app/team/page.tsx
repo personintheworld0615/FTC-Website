@@ -21,7 +21,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Cad", "Fabrication", "Leadership"],
       bio: "Leads mechanical design and construction of robot systems.",
-      image: "/placeholder.svg?height=300&width=300&text=Mechanical+Head",
+      image: "/IMG_2165.jpg?height=300&width=300&text=Mechanical+Head",
     },
       {
       name: "Krish S",

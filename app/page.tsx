@@ -57,7 +57,7 @@ export default function HomePage() {
               <div className="space-y-6">
                 <Badge
                   variant="outline"
-                  className="text-primary border-primary bg-primary/10 animate-pulse-glow cursor-pointer select-none"
+                  className="badge-high-contrast animate-pulse-glow cursor-pointer select-none"
                   onClick={handleLogoClick}
                 >
                   <Zap className="w-3 h-3 mr-1" />
@@ -79,7 +79,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-orange hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                  className="bg-gradient-orange text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
                   asChild
                 >
                   <a href="/contact">
@@ -101,19 +101,21 @@ export default function HomePage() {
               </div>
 
               <div className="grid grid-cols-3 gap-4 text-sm">
-                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-all duration-300 group">
+                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-primary/20 border border-primary/30 hover:bg-primary/30 transition-all duration-300 group">
                   <Users className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                  <InteractiveCounter end={18} />
+                  <div className="text-foreground font-semibold">
+                    <InteractiveCounter end={18} />
+                  </div>
                   <span className="text-muted-foreground text-center">Team Members</span>
                 </div>
-                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/5 border border-accent/20 hover:bg-accent/10 transition-all duration-300 group">
+                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/20 border border-accent/30 hover:bg-accent/30 transition-all duration-300 group">
                   <Trophy className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
-                  <span className="font-semibold text-accent">Multiple</span>
+                  <span className="font-semibold text-foreground">Multiple</span>
                   <span className="text-muted-foreground text-center">Awards</span>
                 </div>
-                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-secondary/5 border border-secondary/20 hover:bg-secondary/10 transition-all duration-300 group">
+                <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-secondary/20 border border-secondary/30 hover:bg-secondary/30 transition-all duration-300 group">
                   <Heart className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform" />
-                  <span className="font-semibold text-secondary">∞</span>
+                  <span className="font-semibold text-foreground group-hover:animate-pulse">∞</span>
                   <span className="text-muted-foreground text-center">Impact</span>
                 </div>
               </div>
@@ -124,8 +126,8 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-orange rounded-3xl blur-xl opacity-30"></div>
                 <div className="relative aspect-square bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 rounded-3xl p-4 border border-primary/20 hover:border-primary/40 transition-all duration-500 group">
                   <img
-                    src="/ftc-robotics-team-working-on-robot-in-workshop.jpg"
-                    alt="Rust in Piece team working on their robot"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM-RrV89AkuX9aILJrUDRxTIVdjuHcBxw.png"
+                    alt="Rust in Piece FTC Team 19772 members in orange team shirts at Princeton STEM Academy"
                     className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
