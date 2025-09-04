@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -5,11 +7,43 @@ import { Users, Trophy, Heart, Zap, Rocket, Cpu } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { InteractiveCounter } from "@/components/interactive-counter"
+import { useState, useEffect } from "react"
 
 export default function HomePage() {
+  const [clickCount, setClickCount] = useState(0)
+  const [showEasterEgg, setShowEasterEgg] = useState(false)
+
+  const handleLogoClick = () => {
+    setClickCount((prev) => prev + 1)
+    if (clickCount === 6) {
+      // Triggers on 7th click
+      setShowEasterEgg(true)
+      setTimeout(() => setShowEasterEgg(false), 3000) // Hide after 3 seconds
+      setClickCount(0) // Reset counter
+    }
+  }
+
+  // Reset click count after 5 seconds of inactivity
+  useEffect(() => {
+    if (clickCount > 0) {
+      const timer = setTimeout(() => setClickCount(0), 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [clickCount])
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
+      {showEasterEgg && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="bg-gradient-orange p-8 rounded-3xl shadow-2xl animate-in zoom-in duration-500 text-center">
+            <div className="text-6xl mb-4">🥞</div>
+            <h2 className="text-3xl font-bold text-white mb-2">Secret Discovered!</h2>
+            <p className="text-xl text-white/90">Akshit is a dosa eater! 🤫</p>
+          </div>
+        </div>
+      )}
 
       <section id="home" className="relative py-20 lg:py-32 overflow-hidden">
         {/* Background decoration */}
@@ -21,11 +55,18 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <Badge variant="outline" className="text-primary border-primary bg-primary/10 animate-pulse-glow">
+                <Badge
+                  variant="outline"
+                  className="text-primary border-primary bg-primary/10 animate-pulse-glow cursor-pointer select-none"
+                  onClick={handleLogoClick}
+                >
                   <Zap className="w-3 h-3 mr-1" />
                   FTC Team 19772
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent text-balance">
+                <h1
+                  className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent text-balance cursor-pointer select-none"
+                  onClick={handleLogoClick}
+                >
                   Rust in Piece
                 </h1>
                 <p className="text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed">

@@ -19,7 +19,7 @@ export default function TeamPage() {
       name: "Chinmay C",
       role: "Head of Mechanical Engineering",
       grade: "10th Grade",
-      specialties: ["Mechanical Design", "Assembly", "Testing"],
+      specialties: ["Cad", "Fabrication", "Leadership"],
       bio: "Leads mechanical design and construction of robot systems.",
       image: "/placeholder.svg?height=300&width=300&text=Mechanical+Head",
     },
