@@ -16,14 +16,14 @@ export default function TeamPage() {
       image: "/placeholder.svg?height=300&width=300&text=Team+Captain",
     },
     {
-      name: "Srihaan B",
-      role: "Computer Aided Design Specialist",
+      name: "Chinmay C",
+      role: "Head of Mechanical Engineering",
       grade: "10th Grade",
-      specialties: ["CAD", "3D Modeling", "Design"],
-      bio: "Creates detailed 3D models and technical drawings for robot components.",
-      image: "/placeholder.svg?height=300&width=300&text=CAD+Specialist",
+      specialties: ["Mechanical Design", "Assembly", "Testing"],
+      bio: "Leads mechanical design and construction of robot systems.",
+      image: "/placeholder.svg?height=300&width=300&text=Mechanical+Head",
     },
-    {
+      {
       name: "Krish S",
       role: "Head of Programming Operations",
       grade: "11th Grade",
@@ -31,7 +31,16 @@ export default function TeamPage() {
       bio: "Oversees all programming activities and robot control systems.",
       image: "/placeholder.svg?height=300&width=300&text=Programming+Head",
     },
-    
+    {
+      name: "Srihaan B",
+      role: "Computer Aided Design Specialist",
+      grade: "10th Grade",
+      specialties: ["CAD", "3D Modeling", "Design"],
+      bio: "Creates detailed 3D models and technical drawings for robot components.",
+      image: "/placeholder.svg?height=300&width=300&text=CAD+Specialist",
+    },
+  
+  
     {
       name: "Ishana M",
       role: "Head of Community Outreach",
@@ -142,14 +151,6 @@ export default function TeamPage() {
       specialties: ["Event Support", "Learning Outreach"],
       bio: "Supporting events and learning outreach strategies.",
       image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+2",
-    },
-    {
-      name: "Chinmay C",
-      role: "mech trainee",
-      grade: "10th Grade",
-      specialties: ["Mechanical Design", "Assembly", "Testing"],
-      bio: "has fun with robots.",
-      image: "/placeholder.svg?height=300&width=300&text=Mechanical+Head",
     },
   ]
 
