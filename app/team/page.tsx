@@ -18,7 +18,7 @@ export default function TeamPage() {
     {
       name: "Chinmay C",
       role: "Head of Mechanical Engineering",
-      grade: "10th Grade",
+      grade: "9th Grade",
       specialties: ["Cad", "Fabrication", "Leadership"],
       bio: "Leads mechanical design and construction of robot systems.",
       image: "/placeholder.svg?height=300&width=300&text=Mechanical+Head",
@@ -26,7 +26,7 @@ export default function TeamPage() {
       {
       name: "Krish S",
       role: "Head of Programming Operations",
-      grade: "11th Grade",
+      grade: "10th Grade",
       specialties: ["Java", "Autonomous", "TeleOp"],
       bio: "Oversees all programming activities and robot control systems.",
       image: "/placeholder.svg?height=300&width=300&text=Programming+Head",
@@ -55,7 +55,7 @@ export default function TeamPage() {
     {
       name: "Aarav G",
       role: "Programming Associate",
-      grade: "10th Grade",
+      grade: "9th Grade",
       specialties: ["Java", "Sensors", "Vision"],
       bio: "Develops robot programming and sensor integration.",
       image: "/placeholder.svg?height=300&width=300&text=Prog+Associate+1",
@@ -79,7 +79,7 @@ export default function TeamPage() {
     {
       name: "Atharv K",
       role: "Mechanical Associate",
-      grade: "10th Grade",
+      grade: "9th Grade",
       specialties: ["Fabrication", "Assembly", "Tools"],
       bio: "Assists with robot construction and mechanical systems.",
       image: "/placeholder.svg?height=300&width=300&text=Mech+Associate+1",
@@ -107,7 +107,7 @@ export default function TeamPage() {
     {
       name: "Felix Z",
       role: "Programming Trainee",
-      grade: "9th Grade",
+      grade: "8th Grade",
       specialties: ["Learning Java", "Basic Programming"],
       bio: "New to programming, eager to learn robot control systems.",
       image: "/placeholder.svg?height=300&width=300&text=Prog+Trainee+1",
@@ -115,7 +115,7 @@ export default function TeamPage() {
     {
       name: "Sid M",
       role: "Programming Trainee",
-      grade: "8th Grade",
+      grade: "10th Grade",
       specialties: ["Learning Java", "Problem Solving"],
       bio: "Developing programming skills and logical thinking.",
       image: "/placeholder.svg?height=300&width=300&text=Prog+Trainee+2",
@@ -124,7 +124,7 @@ export default function TeamPage() {
       name: "Ankita S",
       role: "Programming Trainee",
       grade: "9th Grade",
-      specialties: ["Learning CAD", "Basic Tools"],
+      specialties: ["Learning vision", "Learning auton"],
       bio: "Learning mechanical design principles and tool usage.",
       image: "/placeholder.svg?height=300&width=300&text=Mech+Trainee+1",
     },
@@ -139,10 +139,18 @@ export default function TeamPage() {
     {
       name: "Aditya D",
       role: "Mechanical Trainee",
-      grade: "9th Grade",
+      grade: "19th Grade",
       specialties: ["Communication", "Learning Business"],
       bio: "Developing communication and business skills.",
       image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+1",
+    },
+    {
+      name: "Samarth p",
+      role: "Mech Trainee",
+      grade: "9th Grade",
+      specialties: ["stuff", "mech"],
+      bio: "stuff.",
+      image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+2",
     },
     {
       name: "Ayush B",
