@@ -38,8 +38,8 @@ export default function HomePage() {
       {showEasterEgg && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="bg-gradient-orange p-8 rounded-3xl shadow-2xl animate-in zoom-in duration-500 text-center">
-            <div className="text-6xl mb-4">🥞</div>
-            <h2 className="text-3xl font-bold text-white mb-2">Secret Discovered!</h2>
+            <div className="text-6xl mb-4">🫔</div>
+            <h2 className="text-3xl font-bold text-white mb-2">Akshit discovery!</h2>
             <p className="text-xl text-white/90">Akshit is a dosa eater! 🤫</p>
           </div>
         </div>
