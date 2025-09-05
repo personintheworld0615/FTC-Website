@@ -21,7 +21,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Cad", "Fabrication", "Leadership"],
       bio: "Leads mechanical design and construction of robot systems.",
-      image: "/IMG_2165.jpg?height=300&width=300&text=Mechanical+Head",
+      image: "/chin.jpg?height=300&width=300&text=Mechanical+Head",
     },
       {
       name: "Krish S",
@@ -142,7 +142,7 @@ export default function TeamPage() {
       grade: "19th Grade",
       specialties: ["Communication", "Learning Business"],
       bio: "Developing communication and business skills.",
-      image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+1",
+      image: "/IMG_2381.jpg?height=300&width=300&text=Outreach+Trainee+1",
     },
     {
       name: "Samarth p",

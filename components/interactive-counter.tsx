@@ -7,9 +7,16 @@ interface InteractiveCounterProps {
   duration?: number
   suffix?: string
   prefix?: string
+  className?: string
 }
 
-export function InteractiveCounter({ end, duration = 2000, suffix = "", prefix = "" }: InteractiveCounterProps) {
+export function InteractiveCounter({
+  end,
+  duration = 2000,
+  suffix = "",
+  prefix = "",
+  className = "font-bold text-foreground",
+}: InteractiveCounterProps) {
   const [count, setCount] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -50,7 +57,7 @@ export function InteractiveCounter({ end, duration = 2000, suffix = "", prefix =
   }, [isVisible, end, duration])
 
   return (
-    <span id={`counter-${end}`} className="font-bold text-primary">
+    <span id={`counter-${end}`} className={className}>
       {prefix}
       {count}
       {suffix}

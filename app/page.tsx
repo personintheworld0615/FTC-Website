@@ -79,7 +79,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-orange text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
                   asChild
                 >
                   <a href="/contact">
@@ -103,9 +103,7 @@ export default function HomePage() {
               <div className="grid grid-cols-3 gap-4 text-sm">
                 <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-primary/20 border border-primary/30 hover:bg-primary/30 transition-all duration-300 group">
                   <Users className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                  <div className="text-foreground font-semibold">
-                    <InteractiveCounter end={18} />
-                  </div>
+                  <InteractiveCounter end={18} className="font-bold text-foreground" />
                   <span className="text-muted-foreground text-center">Team Members</span>
                 </div>
                 <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/20 border border-accent/30 hover:bg-accent/30 transition-all duration-300 group">
@@ -145,19 +143,19 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
               <div className="text-4xl font-bold text-primary mb-2">
-                <InteractiveCounter end={18} />
+                <InteractiveCounter end={18} className="font-bold text-primary" />
               </div>
               <div className="text-sm font-medium text-muted-foreground">Team Members</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-accent/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
               <div className="text-4xl font-bold text-accent mb-2">
-                <InteractiveCounter end={2} />
+                <InteractiveCounter end={2} className="font-bold text-accent" />
               </div>
               <div className="text-sm font-medium text-muted-foreground">FLL Teams Mentored</div>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-secondary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
               <div className="text-4xl font-bold text-secondary mb-2">
-                <InteractiveCounter end={1} />
+                <InteractiveCounter end={1} className="font-bold text-secondary" />
               </div>
               <div className="text-sm font-medium text-muted-foreground">Annual STEM Camp</div>
             </div>
