@@ -19,9 +19,6 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Quick Links</h3>
             <div className="space-y-2 text-sm">
-              <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors">
-                About Us
-              </Link>
               <Link href="/team" className="block text-muted-foreground hover:text-primary transition-colors">
                 Team Members
               </Link>
@@ -53,7 +50,7 @@ export function Footer() {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com/rustme"
+                href="https://www.instagram.com/rust_in_piece_robotics/"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram className="w-5 h-5" />

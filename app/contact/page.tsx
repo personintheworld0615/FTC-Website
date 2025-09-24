@@ -22,8 +22,8 @@ export default function ContactPage() {
       icon: Instagram,
       title: "Follow Us",
       description: "Stay updated on our journey",
-      contact: "@rustme",
-      link: "https://instagram.com/rustme",
+      contact: "@rust_in_piece_robotics",
+      link: "https://www.instagram.com/rust_in_piece_robotics/",
     },
     {
       icon: MapPin,
@@ -275,7 +275,7 @@ export default function ContactPage() {
                 className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                 asChild
               >
-                <a href="https://instagram.com/rustme">Follow on Instagram</a>
+                <a href="https://www.instagram.com/rust_in_piece_robotics/">Follow on Instagram</a>
               </Button>
             </div>
           </div>

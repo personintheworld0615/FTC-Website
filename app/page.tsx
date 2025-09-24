@@ -124,7 +124,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-orange rounded-3xl blur-xl opacity-30"></div>
                 <div className="relative aspect-square bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 rounded-3xl p-4 border border-primary/20 hover:border-primary/40 transition-all duration-500 group">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM-RrV89AkuX9aILJrUDRxTIVdjuHcBxw.png"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png"
                     alt="Rust in Piece FTC Team 19772 members in orange team shirts at Princeton STEM Academy"
                     className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
                   />
@@ -284,17 +284,6 @@ export default function HomePage() {
                 <a href="/contact">
                   <Heart className="w-4 h-4 mr-2" />
                   Contact Us
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <a href="/about">
-                  <Zap className="w-4 h-4 mr-2" />
-                  Learn More
                 </a>
               </Button>
             </div>
