@@ -3,74 +3,74 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Crown, Star, Heart, Building, Handshake, Trophy } from "lucide-react"
+import { Crown, Star, Heart, Building, Handshake, Trophy, Check } from "lucide-react"
 import { InteractiveCounter } from "@/components/interactive-counter"
 
 export default function SponsorsPage() {
+  const benefitsList = [
+    {
+      name: "Logo on team merch + frequent updates of team achievement",
+      checkmarks: { rusted: 1, sterling: 2, platinum: 3, titleSponsor: 4 },
+    },
+    {
+      name: "Company website linked to socials/website + team updates",
+      checkmarks: { rusted: 0, sterling: 1, platinum: 2, titleSponsor: 4 },
+    },
+    {
+      name: "Company name on posters, robot, banner",
+      checkmarks: { rusted: 0, sterling: 0, platinum: 2, titleSponsor: 4 },
+    },
+    {
+      name: "Company's contribution highlighted during outreach presentations",
+      checkmarks: { rusted: 0, sterling: 0, platinum: 3, titleSponsor: 4 },
+    },
+    {
+      name: "Company name on back of shirts (largest) & exclusive company banner at comps",
+      checkmarks: { rusted: 0, sterling: 0, platinum: 0, titleSponsor: 4 },
+    },
+  ]
+
   const sponsorshipTiers = [
-  {
-    name: "Platinum Partner",
-    icon: Crown,
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-50",
-    borderColor: "border-yellow-200",
-    amount: "$2,500+",
-    benefits: [
-      "Logo prominently displayed on robot, team banner, and competition shirts",
-      "Full-page feature on homepage with company profile",
-      "Monthly social media promotion across all team channels",
-      "Logo included in press releases and local media coverage",
-      "Featured in team newsletter sent to sponsors, parents, and school community",
-      "Opportunity to co-host STEM events with the team for maximum exposure",
-    ],
-  },
-  {
-    name: "Gold Supporter",
-    icon: Star,
-    color: "text-orange-600",
-    bgColor: "bg-orange-50",
-    borderColor: "border-orange-200",
-    amount: "$1,250+",
-    benefits: [
-      "Logo displayed on robot and team shirts",
-      "Recognition on sponsors page of website",
-      "Quarterly social media promotion",
-      "Mention in team newsletter",
-      "Acknowledgment at competitions",
-    ],
-  },
-  {
-    name: "Silver Contributor",
-    icon: Heart,
-    color: "text-gray-600",
-    bgColor: "bg-gray-50",
-    borderColor: "border-gray-200",
-    amount: "$500+",
-    benefits: [
-      "Logo on team website and printed materials",
-      "Mention in social media posts",
-      "Acknowledgment at competitions",
-    ],
-  },
-  {
-    name: "Bronze Supporter",
-    icon: Building,
-    color: "text-amber-700",
-    bgColor: "bg-amber-50",
-    borderColor: "border-amber-200",
-    amount: "$0+",
-    benefits: [
-      "Name listed on team website",
-      "Mention in social media posts",
-      "Acknowledgment at public demonstrations",
-    ],
-  },
-];
-
-
+    {
+      name: "Title Sponsor",
+      key: "titleSponsor" as const,
+      icon: Crown,
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary",
+      amount: "$2500+",
+    },
+    {
+      name: "Platinum",
+      key: "platinum" as const,
+      icon: Star,
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/60",
+      amount: "$1200-2500",
+    },
+    {
+      name: "Sterling",
+      key: "sterling" as const,
+      icon: Heart,
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/40",
+      amount: "$500-1200",
+    },
+    {
+      name: "Rusted",
+      key: "rusted" as const,
+      icon: Building,
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/20",
+      amount: "$250-500",
+    },
+  ]
 
   const currentSponsors = [
-    {
+    /*{
       name: "TechCorp Industries",
       tier: "Platinum Partner",
       logo: "/ftc-robotics-team-working-on-robot-in-workshop.jpg?height=300&width=400&text=TechCorp",
@@ -82,13 +82,7 @@ export default function SponsorsPage() {
       logo: "/ftc-robotics-team-working-on-robot-in-workshop.jpg?height=120&width=110&text=TechCorp",
       description: "Leading technology solutions provider",
     },
-  
-    // {
-    //   name: "New Sponsor Name",
-    //   tier: "Platinum Partner", // or "Gold Supporter", "Silver Contributor", "Bronze Friend"
-    //   logo: "/path/to/sponsor/logo.png", // Upload logo to public folder first
-    //   description: "Brief description of the sponsor",
-    // },
+    */
   ]
 
   return (
@@ -168,7 +162,7 @@ export default function SponsorsPage() {
             <div className="relative animate-slide-up delay-300">
               <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-500 group">
                 <img
-                  src="/placeholder.svg?height=400&width=400&text=Sponsor+Partnership"
+                  src="/robotics-team-with-sponsor-representatives-shaking.jpg"
                   alt="Team with sponsor representatives"
                   className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
                 />
@@ -178,57 +172,141 @@ export default function SponsorsPage() {
         </div>
       </section>
 
-      {/* Sponsorship Tiers */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center space-y-4 animate-fade-in">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Sponsorship Opportunities</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Rust In Piece Benefits Chart</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Choose the partnership level that works best for your organization
+                Explore our sponsorship tiers and the exclusive benefits each level provides
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Desktop Table View */}
+            <div className="hidden lg:block overflow-x-auto animate-slide-up">
+              <div className="min-w-full border-4 border-primary rounded-xl overflow-hidden shadow-2xl">
+                {/* Header Row */}
+                <div className="grid grid-cols-5 bg-gradient-orange">
+                  <div className="p-6 border-r-2 border-primary/30 flex items-center justify-center">
+                    <h3 className="text-xl font-bold text-primary-foreground">PLAN LEVEL</h3>
+                  </div>
+                  {sponsorshipTiers.map((tier, index) => (
+                    <div
+                      key={index}
+                      className={`p-6 ${index < sponsorshipTiers.length - 1 ? "border-r-2 border-primary/30" : ""} flex flex-col items-center justify-center space-y-2`}
+                    >
+                      <h3 className="text-xl font-bold text-primary-foreground uppercase">{tier.name}</h3>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Price Row */}
+                <div className="grid grid-cols-5 bg-muted/30">
+                  <div className="p-6 border-r-2 border-border flex items-center justify-center bg-muted">
+                    <h4 className="text-lg font-bold text-foreground">PRICE</h4>
+                  </div>
+                  {sponsorshipTiers.map((tier, index) => (
+                    <div
+                      key={index}
+                      className={`p-6 ${index < sponsorshipTiers.length - 1 ? "border-r-2 border-border" : ""} flex items-center justify-center bg-card`}
+                    >
+                      <Badge variant="outline" className="text-lg px-4 py-2 border-primary text-primary font-bold">
+                        {tier.amount}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Benefits Rows */}
+                {benefitsList.map((benefit, benefitIndex) => (
+                  <div
+                    key={benefitIndex}
+                    className={`grid grid-cols-5 ${benefitIndex % 2 === 0 ? "bg-muted/20" : "bg-card"}`}
+                  >
+                    <div className="p-6 border-r-2 border-border flex items-center bg-muted/50">
+                      <p className="text-sm font-medium text-foreground leading-relaxed">{benefit.name}</p>
+                    </div>
+                    {sponsorshipTiers.map((tier, tierIndex) => {
+                      const checkmarkCount = benefit.checkmarks[tier.key]
+
+                      return (
+                        <div
+                          key={tierIndex}
+                          className={`p-6 ${tierIndex < sponsorshipTiers.length - 1 ? "border-r-2 border-border" : ""} flex items-center justify-center`}
+                        >
+                          {checkmarkCount > 0 && (
+                            <div className="flex gap-1">
+                              {Array.from({ length: checkmarkCount }).map((_, i) => (
+                                <Check
+                                  key={i}
+                                  className="w-6 h-6 text-primary animate-scale-in"
+                                  style={{ animationDelay: `${i * 100}ms` }}
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                ))}
+              </div>
+
+              {/* Legend */}
+              <div className="mt-6 text-center">
+                <p className="text-lg text-muted-foreground">
+                  <Check className="w-5 h-5 inline text-primary" /> = included benefit • More checkmarks = greater
+                  frequency/prominence
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile Card View */}
+            <div className="lg:hidden grid gap-6">
               {sponsorshipTiers.map((tier, index) => {
                 const IconComponent = tier.icon
                 return (
                   <Card
                     key={index}
-                    className={`${tier.borderColor} border-2 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-slide-up group`}
+                    className={`${tier.borderColor} border-2 hover:shadow-xl transition-all duration-300 animate-slide-up`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <CardHeader className="text-center space-y-4">
-                      <div
-                        className={`w-16 h-16 ${tier.bgColor} rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        <IconComponent className={`w-8 h-8 ${tier.color} group-hover:animate-bounce`} />
+                    <CardHeader className="text-center space-y-4 bg-gradient-orange rounded-t-lg">
+                      <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto">
+                        <IconComponent className="w-8 h-8 text-primary-foreground" />
                       </div>
                       <div className="space-y-2">
-                        <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                        <Badge
-                          variant="outline"
-                          className="text-lg px-3 py-1 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                        >
+                        <CardTitle className="text-2xl text-primary-foreground uppercase">{tier.name}</CardTitle>
+                        <Badge variant="secondary" className="text-lg px-4 py-2 font-bold">
                           {tier.amount}
                         </Badge>
                       </div>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground">Benefits Include:</h4>
-                        <ul className="space-y-2">
-                          {tier.benefits.map((benefit, idx) => (
+                    <CardContent className="space-y-4 pt-6">
+                      <h4 className="font-semibold text-foreground">Benefits Include:</h4>
+                      <ul className="space-y-3">
+                        {benefitsList.map((benefit, benefitIdx) => {
+                          const checkmarkCount = benefit.checkmarks[tier.key]
+
+                          return (
                             <li
-                              key={idx}
-                              className="flex items-start space-x-2 text-sm hover:text-primary transition-colors"
+                              key={benefitIdx}
+                              className={`flex items-start space-x-3 ${checkmarkCount === 0 ? "opacity-30" : ""}`}
                             >
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                              <span className="text-muted-foreground">{benefit}</span>
+                              <div className="flex gap-1 mt-0.5">
+                                {checkmarkCount > 0 ? (
+                                  Array.from({ length: checkmarkCount }).map((_, i) => (
+                                    <Check key={i} className="w-5 h-5 text-primary flex-shrink-0" />
+                                  ))
+                                ) : (
+                                  <div className="w-5 h-5 flex-shrink-0" />
+                                )}
+                              </div>
+                              <span className="text-sm text-muted-foreground leading-relaxed">{benefit.name}</span>
                             </li>
-                          ))}
-                        </ul>
-                      </div>
+                          )
+                        })}
+                      </ul>
                     </CardContent>
                   </Card>
                 )
@@ -330,7 +408,7 @@ export default function SponsorsPage() {
                 className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all duration-300"
                 asChild
               >
-                <a href="mailto:rust123">Contact Us</a>
+                <a href="mailto:rustinpieceftc@gmail.com">Contact Us</a>
               </Button>
             </div>
           </div>

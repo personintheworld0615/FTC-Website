@@ -32,7 +32,7 @@ export default function ContactPage() {
       title: "Email Us",
       description: "Send us a message anytime",
       contact: "rustinpieceftc@gmail.com",
-      link: "mailto:rustinpieceftc@gmail.com",
+  link: "https://mail.google.com/mail/?view=cm&fs=1&to=rustinpieceftc@gmail.com",
     },
     {
       icon: Instagram,
@@ -53,8 +53,8 @@ export default function ContactPage() {
   const reasons = [
     {
       icon: Users,
-      title: "Join Our Team",
-      description: "Interested in becoming a team member? We welcome passionate students who want to learn and grow.",
+      title: "Mentoring us",
+      description: "Intrested in mentoring us. Shoot us an email and we can discuss opportunities",
     },
     {
       icon: Heart,
@@ -116,10 +116,7 @@ export default function ContactPage() {
               Get In Touch
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">Contact Us</h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-              Ready to join our team, become a sponsor, or learn more about our programs? We'd love to hear from you and
-              explore how we can work together.
-            </p>
+            
           </div>
         </div>
       </section>
@@ -358,33 +355,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
-              Don't wait - reach out today and become part of our journey to inspire the next generation of STEM leaders
-              and innovators.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" asChild>
-                <a href="mailto:rustinpieceftc@gmail.com">Email Us Now</a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                asChild
-              >
-                <a href="https://www.instagram.com/rust_in_piece_robotics/">Follow on Instagram</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
     </div>
