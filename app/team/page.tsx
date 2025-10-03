@@ -127,8 +127,8 @@ export default function TeamPage() {
     {
       name: "Aditya D",
       role: "Mechanical Trainee",
-      grade: "19th Grade",
-      specialties: ["Math", "Learning Business"],
+      grade: "10th Grade",
+      specialties: ["Physics", "Learning Business"],
       bio: "Developing communication and business skills.",
       image: "/IMG_2381.jpg?height=300&width=300&text=Outreach+Trainee+1",
     },
@@ -136,8 +136,8 @@ export default function TeamPage() {
       name: "Samarth p",
       role: "Mech Trainee",
       grade: "9th Grade",
-      specialties: ["stuff", "mech"],
-      bio: "stuff.",
+      specialties: ["Assembly", "Mech"],
+      bio: "Mastering cad and Building the robot.",
       image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+2",
     },
     {
