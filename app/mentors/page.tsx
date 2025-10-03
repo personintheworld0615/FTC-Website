@@ -9,10 +9,10 @@ export default function MentorsPage() {
   const mentors = [
     {
       name: "Dr. Rogers",
-      title: "Lead Mentor",
-      background: "Engineering Professor",
-      expertise: ["Robotics Engineering", "Systems Design", "Project Management"],
-      experience: "15+ years in robotics and engineering education",
+      title: "Head of our Academy",
+      background: "Homeschool Teacher",
+      expertise: ["Leadership", "Robotics", "Organization"],
+      experience: "Experienced with teaching, Experience in FRC and FTC",
       bio: "Dr. Rogers brings extensive experience in robotics engineering and has been instrumental in guiding our team's technical development and strategic thinking.",
       image: "/placeholder.svg?height=300&width=300&text=Dr.+Rogers",
       contact: {
@@ -22,7 +22,7 @@ export default function MentorsPage() {
     },
     {
       name: "Mr. Levi",
-      title: "Technical Mentor",
+      title: "Programming Mentor",
       background: "Industry Professional",
       expertise: ["Programming", "Electronics", "Competition Strategy"],
       experience: "10+ years in software development and robotics",
@@ -263,7 +263,7 @@ export default function MentorsPage() {
                 className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                 asChild
               >
-                <a href="/about">Learn About Our Team</a>
+                <a href="/team">Learn About Our Team</a>
               </Button>
             </div>
           </div>

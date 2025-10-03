@@ -1,3 +1,7 @@
+"use client"
+
+import type React from "react"
+
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,15 +12,27 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, Instagram, MapPin, Clock, Users, Heart, Trophy } from "lucide-react"
+import { useState } from "react"
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    inquiry: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
+
   const contactMethods = [
     {
       icon: Mail,
       title: "Email Us",
       description: "Send us a message anytime",
-      contact: "rust123",
-      link: "mailto:rust123",
+      contact: "rustinpieceftc@gmail.com",
+      link: "mailto:rustinpieceftc@gmail.com",
     },
     {
       icon: Instagram,
@@ -51,6 +67,42 @@ export default function ContactPage() {
       description: "Partner with us for demonstrations, workshops, or community events.",
     },
   ]
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus({ type: "success", message: data.message })
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          inquiry: "",
+          message: "",
+        })
+      } else {
+        setSubmitStatus({ type: "error", message: data.message })
+      }
+    } catch (error) {
+      setSubmitStatus({ type: "error", message: "Failed to send message. Please try again." })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -151,31 +203,60 @@ export default function ContactPage() {
                 <CardDescription>We'll respond within 24-48 hours</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="Enter your first name" />
+                      <Input
+                        id="firstName"
+                        placeholder="Enter your first name"
+                        value={formData.firstName}
+                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Enter your last name" />
+                      <Input
+                        id="lastName"
+                        placeholder="Enter your last name"
+                        value={formData.lastName}
+                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                        required
+                      />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="Enter your email address" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email address"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone (Optional)</Label>
-                    <Input id="phone" type="tel" placeholder="Enter your phone number" />
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="Enter your phone number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="inquiry">Inquiry Type</Label>
-                    <Select>
+                    <Select
+                      value={formData.inquiry}
+                      onValueChange={(value) => setFormData({ ...formData, inquiry: value })}
+                      required
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select inquiry type" />
                       </SelectTrigger>
@@ -192,11 +273,34 @@ export default function ContactPage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Tell us more about your inquiry..." className="min-h-[120px]" />
+                    <Textarea
+                      id="message"
+                      placeholder="Tell us more about your inquiry..."
+                      className="min-h-[120px]"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                    />
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Send Message
+                  {submitStatus && (
+                    <div
+                      className={`p-4 rounded-lg ${
+                        submitStatus.type === "success"
+                          ? "bg-green-50 text-green-800 border border-green-200"
+                          : "bg-red-50 text-red-800 border border-red-200"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
@@ -267,7 +371,7 @@ export default function ContactPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>
-                <a href="mailto:rust123">Email Us Now</a>
+                <a href="mailto:rustinpieceftc@gmail.com">Email Us Now</a>
               </Button>
               <Button
                 variant="outline"

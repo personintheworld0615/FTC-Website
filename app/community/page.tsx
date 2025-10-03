@@ -60,22 +60,21 @@ export default function CommunityPage() {
 
   const testimonials = [
     {
-      quote:
-        "The mentorship from Rust in Piece has been incredible. Our FLL team learned so much about teamwork and problem-solving.",
-      author: "Sarah Chen",
-      role: "FLL Team Coach",
+     quote: "My son had a fantastic time at the camp—it really sparked his love for robotics.",
+    author: "Anonymous",
+    role: "Parent of a child who attended the summer camp"
     },
     {
       quote:
-        "My daughter came home from the STEM camp so excited about robotics. She's now considering engineering as a career path!",
-      author: "Michael Rodriguez",
-      role: "Parent",
+        "Seeing young children so passionate in STEM really warms my heart",
+      author: "Anonymous",
+      role: "STEM proffesional",
     },
     {
       quote:
-        "The team's demonstration at our school inspired many of our students to join our robotics club. Their passion is contagious!",
-      author: "Dr. Emily Johnson",
-      role: "Middle School Principal",
+        "Your work is truly amazing its wonderful its so cool how your team managed to do this",
+      author: "George",
+      role: "GMC specialist",
     },
   ]
 

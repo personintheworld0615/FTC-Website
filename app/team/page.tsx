@@ -2,7 +2,6 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { Crown, Star, Zap } from "lucide-react"
 
 export default function TeamPage() {
@@ -23,7 +22,7 @@ export default function TeamPage() {
       bio: "Leads mechanical design and construction of robot systems.",
       image: "/chin.jpg?height=300&width=300&text=Mechanical+Head",
     },
-      {
+    {
       name: "Krish S",
       role: "Programming Captain",
       grade: "10th Grade",
@@ -66,7 +65,7 @@ export default function TeamPage() {
       bio: "Assists with robot construction and mechanical systems.",
       image: "/placeholder.svg?height=300&width=300&text=Mech+Associate+1",
     },
-     {
+    {
       name: "Veer S",
       role: "Mechanical Associate",
       grade: "11th Grade",
@@ -90,8 +89,6 @@ export default function TeamPage() {
       bio: "Manages social media presence and event coordination.",
       image: "/ishana.jpg?height=300&width=300&text=Outreach+Associate+1",
     },
-    
-    
   ]
 
   const trainees = [
@@ -255,29 +252,6 @@ export default function TeamPage() {
           <TeamSection title="Associates" members={associates} icon={Star} badgeVariant="secondary" delay={200} />
 
           <TeamSection title="Trainees" members={trainees} icon={Zap} badgeVariant="outline" delay={400} />
-        </div>
-      </section>
-
-      {/* Join Our Team */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance animate-slide-up delay-100">
-              Interested in Joining Us?
-            </h2>
-            <p className="text-lg text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
-              We're always looking for passionate students who want to learn, grow, and make an impact through robotics.
-              No prior experience necessary - just enthusiasm and dedication!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-300">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                <a href="/contact">Apply to Join</a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="/about">Learn More About Us</a>
-              </Button>
-            </div>
-          </div>
         </div>
       </section>
 
