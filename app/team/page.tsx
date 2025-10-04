@@ -20,7 +20,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Cad", "Leadership"],
       bio: "Leads mechanical design and construction of robot systems.",
-      image: "/chin.jpg?height=300&width=300&text=Mechanical+Head",
+      image: "/chinny.jpeg?height=300&width=300&text=Mechanical+Head",
     },
     {
       name: "Krish S",
@@ -47,7 +47,7 @@ export default function TeamPage() {
       grade: "12th Grade",
       specialties: ["Sensors", "Vision"],
       bio: "Develops robot programming and sensor integration.",
-      image: "/placeholder.svg?height=300&width=300&text=Prog+Associate+1",
+      image: "/dosa.jpeg?height=300&width=300&text=Prog+Associate+1",
     },
     {
       name: "Vihaan M",
@@ -55,7 +55,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Java", "Testing"],
       bio: "Works on robot control algorithms and testing protocols.",
-      image: "/placeholder.svg?height=300&width=300&text=Prog+Associate+2",
+      image: "/3slices.jpg?height=300&width=300&text=Prog+Associate+2",
     },
     {
       name: "Atharv K",
@@ -63,7 +63,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Assembly", "CNC"],
       bio: "Assists with robot construction and mechanical systems.",
-      image: "/placeholder.svg?height=300&width=300&text=Mech+Associate+1",
+      image: "/atharv.jpeg?height=300&width=300&text=Mech+Associate+1",
     },
     {
       name: "Veer S",
@@ -106,7 +106,7 @@ export default function TeamPage() {
       grade: "10th Grade",
       specialties: ["Learning Java", "Problem Solving"],
       bio: "Developing programming skills and logical thinking.",
-      image: "/placeholder.svg?height=300&width=300&text=Prog+Trainee+2",
+      image: "/sid.jpeg?height=300&width=300&text=Prog+Trainee+2",
     },
     {
       name: "Ankita S",
@@ -138,15 +138,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Assembly", "Mech"],
       bio: "Mastering cad and Building the robot.",
-      image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+2",
-    },
-    {
-      name: "Ayush B",
-      role: "Outreach Trainee",
-      grade: "8th Grade",
-      specialties: ["Event Support", "Learning stuff"],
-      bio: "Supporting events and learning outreach strategies.",
-      image: "/placeholder.svg?height=300&width=300&text=Outreach+Trainee+2",
+      image: "/rookie.jpeg?height=300&width=300&text=Outreach+Trainee+2",
     },
   ]
 
@@ -213,7 +205,7 @@ export default function TeamPage() {
               The Minds Behind Rust in Piece
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
-              Our team of 18 dedicated students from Princeton STEM Academy brings together diverse skills,
+              Our team of 17 dedicated students from Princeton STEM Academy brings together diverse skills,
               perspectives, and a shared passion for robotics and innovation.
             </p>
           </div>
@@ -225,7 +217,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center animate-slide-up delay-100">
-              <div className="text-3xl font-bold text-primary">18</div>
+              <div className="text-3xl font-bold text-primary">17</div>
               <div className="text-sm text-muted-foreground">Total Members</div>
             </div>
             <div className="text-center animate-slide-up delay-200">

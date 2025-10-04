@@ -107,15 +107,6 @@ export default function SponsorsPage() {
               We're grateful for the generous support of our sponsors who make our robotics journey possible and help us
               inspire the next generation of STEM leaders.
             </p>
-            <div className="animate-slide-up delay-300">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg"
-                asChild
-              >
-                <a href="/contact">Learn More</a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>

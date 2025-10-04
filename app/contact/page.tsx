@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, Instagram, MapPin, Clock, Users, Heart, Trophy } from "lucide-react"
 import { useState } from "react"
+import { sendContactEmail } from "@/app/actions/send-email"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -74,18 +75,15 @@ export default function ContactPage() {
     setSubmitStatus(null)
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const result = await sendContactEmail({
+        name: `${formData.firstName} ${formData.lastName}`,
+        email: formData.email,
+        subject: formData.inquiry || "General Inquiry",
+        message: `Phone: ${formData.phone || "Not provided"}\n\n${formData.message}`,
       })
 
-      const data = await response.json()
-
-      if (response.ok) {
-        setSubmitStatus({ type: "success", message: data.message })
+      if (result.success) {
+        setSubmitStatus({ type: "success", message: "Message sent successfully! We'll get back to you soon." })
         setFormData({
           firstName: "",
           lastName: "",
@@ -95,10 +93,10 @@ export default function ContactPage() {
           message: "",
         })
       } else {
-        setSubmitStatus({ type: "error", message: data.message })
+        setSubmitStatus({ type: "error", message: result.error || "Failed to send message. Please try again." })
       }
     } catch (error) {
-      setSubmitStatus({ type: "error", message: "Failed to send message. Please try again." })
+      setSubmitStatus({ type: "error", message: "An unexpected error occurred. Please try again." })
     } finally {
       setIsSubmitting(false)
     }
@@ -116,15 +114,6 @@ export default function ContactPage() {
               Get In Touch
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">Contact Us</h1>
-            <div>
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg"
-                asChild
-              >
-                <a href="/sponsors">Learn More</a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -218,6 +207,7 @@ export default function ContactPage() {
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="space-y-2">
@@ -228,6 +218,7 @@ export default function ContactPage() {
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -241,6 +232,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -252,6 +244,7 @@ export default function ContactPage() {
                       placeholder="Enter your phone number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -261,6 +254,7 @@ export default function ContactPage() {
                       value={formData.inquiry}
                       onValueChange={(value) => setFormData({ ...formData, inquiry: value })}
                       required
+                      disabled={isSubmitting}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Select inquiry type" />
@@ -285,29 +279,25 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
+                      disabled={isSubmitting}
                     />
-                    <Button
+                  </div>
+
+                  {submitStatus && (
+                    <div
+                      className={`p-4 rounded-lg ${submitStatus.type === "success" ? "bg-green-50 text-green-800 border border-green-200" : "bg-red-50 text-red-800 border border-red-200"}`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
+                  <Button
                     type="submit"
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
-                  </div>
-
-                  {submitStatus && (
-                    <div
-                      className={`p-4 rounded-lg ${
-                        submitStatus.type === "success"
-                          ? "bg-green-50 text-green-800 border border-green-200"
-                          : "bg-red-50 text-red-800 border border-red-200"
-                      }`}
-                    >
-                      {submitStatus.message}
-                    </div>
-                  )}
-
-                  
                 </form>
               </CardContent>
             </Card>
@@ -345,7 +335,7 @@ export default function ContactPage() {
                   <Users className="w-8 h-8 text-primary mx-auto" />
                   <div className="space-y-1">
                     <h3 className="font-semibold text-foreground">Team Size</h3>
-                    <p className="text-sm text-muted-foreground">18 Members</p>
+                    <p className="text-sm text-muted-foreground">17 Members</p>
                   </div>
                 </CardContent>
               </Card>
