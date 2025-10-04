@@ -32,7 +32,7 @@ export default function ContactPage() {
       title: "Email Us",
       description: "Send us a message anytime",
       contact: "rustinpieceftc@gmail.com",
-  link: "https://mail.google.com/mail/?view=cm&fs=1&to=rustinpieceftc@gmail.com",
+      link: "https://mail.google.com/mail/?view=cm&fs=1&to=rustinpieceftc@gmail.com",
     },
     {
       icon: Instagram,
@@ -116,7 +116,15 @@ export default function ContactPage() {
               Get In Touch
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">Contact Us</h1>
-            
+            <div>
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg"
+                asChild
+              >
+                <a href="/sponsors">Learn More</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -278,6 +286,13 @@ export default function ContactPage() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
                     />
+                    <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
                   </div>
 
                   {submitStatus && (
@@ -292,13 +307,7 @@ export default function ContactPage() {
                     </div>
                   )}
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
+                  
                 </form>
               </CardContent>
             </Card>
@@ -354,8 +363,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      
 
       <Footer />
     </div>

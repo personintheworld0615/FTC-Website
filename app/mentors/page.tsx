@@ -10,7 +10,7 @@ export default function MentorsPage() {
     {
       name: "Dr. Rogers",
       title: "Head of our Academy",
-      background: "Homeschool Teacher",
+      background: "Head :eader",
       expertise: ["Leadership", "Robotics", "Organization"],
       experience: "Experienced with teaching, Experience in FRC and FTC",
       bio: "Dr. Rogers brings extensive experience in robotics engineering and has been instrumental in guiding our team's technical development and strategic thinking.",
@@ -21,7 +21,7 @@ export default function MentorsPage() {
       },
     },
     {
-      name: "Mr. Levi",
+      name: "Mr. Levy",
       title: "Programming Mentor",
       background: "Industry Professional",
       expertise: ["Programming", "Electronics", "Competition Strategy"],

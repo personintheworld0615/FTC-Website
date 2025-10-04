@@ -100,6 +100,16 @@ export default function HomePage() {
                         View Our Mentors
                       </a>
                     </Button>
+                    <Button
+                      size="lg"
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                      asChild
+                    >
+                      <a href="/sponsors">
+                        <Heart className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+                        Learn More
+                      </a>
+                    </Button>
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 text-sm">
