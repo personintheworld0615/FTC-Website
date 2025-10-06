@@ -13,16 +13,28 @@ export async function sendContactEmail(formData: {
   try {
     const { data, error } = await resend.emails.send({
       from: "Rust in Piece Contact Form <onboarding@resend.dev>",
-      to: "rustinpieceftc@gmail.com",
+      to: "aaravg.0615@gmail.com", // Using verified email for testing mode
       replyTo: formData.email,
-      subject: `Contact Form: ${formData.subject}`,
+      subject: `[Rust in Piece Contact] ${formData.subject}`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Subject:</strong> ${formData.subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${formData.message.replace(/\n/g, "<br>")}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #FF8C00; border-bottom: 2px solid #FF8C00; padding-bottom: 10px;">
+            New Contact Form Submission
+          </h2>
+          <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 10px 0;"><strong>From:</strong> ${formData.name}</p>
+            <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
+            <p style="margin: 10px 0;"><strong>Subject:</strong> ${formData.subject}</p>
+          </div>
+          <div style="margin: 20px 0;">
+            <h3 style="color: #333;">Message:</h3>
+            <p style="line-height: 1.6; color: #555;">${formData.message.replace(/\n/g, "<br>")}</p>
+          </div>
+          <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+          <p style="font-size: 12px; color: #888;">
+            This email was sent from the Rust in Piece FTC Team website contact form.
+          </p>
+        </div>
       `,
     })
 

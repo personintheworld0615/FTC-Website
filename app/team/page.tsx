@@ -12,7 +12,7 @@ export default function TeamPage() {
       grade: "11th Grade",
       specialties: ["Leadership", "Build"],
       bio: "Leads the team and oversees all engineering operations.",
-      image: "/placeholder.svg?height=300&width=300&text=Team+Captain",
+      image: "/kudeti?height=300&width=300&text=Team+Captain",
     },
     {
       name: "Chinmay C",
@@ -36,7 +36,7 @@ export default function TeamPage() {
       grade: "11th Grade",
       specialties: ["Vision", "Teleop"],
       bio: "Manages community engagement and outreach programs.",
-      image: "/placeholder.svg?height=300&width=300&text=Outreach+Head",
+      image: "/GOAT?height=300&width=300&text=Outreach+Head",
     },
   ]
 
@@ -58,7 +58,7 @@ export default function TeamPage() {
       image: "/3slices.jpg?height=300&width=300&text=Prog+Associate+2",
     },
     {
-      name: "Atharv K",
+      name: "Atharv S",
       role: "Mechanical Associate",
       grade: "9th Grade",
       specialties: ["Assembly", "CNC"],
@@ -139,6 +139,14 @@ export default function TeamPage() {
       specialties: ["Assembly", "Mech"],
       bio: "Mastering cad and Building the robot.",
       image: "/rookie.jpeg?height=300&width=300&text=Outreach+Trainee+2",
+    },
+    {
+      name: "Ayush B",
+      role: "Outreach Trainee",
+      grade: "8th Grade",
+      specialties: ["Fundrasing", "Spreadability"],
+      bio: "Learning how to spread FIRST and fundraise money.",
+      image: "/Ahush?height=300&width=300&text=Outreach+Trainee+2",
     },
   ]
 

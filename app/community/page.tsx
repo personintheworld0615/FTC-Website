@@ -54,25 +54,23 @@ export default function CommunityPage() {
         "Team-building activities and challenges",
         "Inspiring interest in STEM careers",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=STEM+Camp",
+      image: "/summer-camp-robotics.jpg",
     },
   ]
 
   const testimonials = [
     {
-     quote: "My son had a fantastic time at the camp—it really sparked his love for robotics.",
-    author: "Anonymous",
-    role: "Parent of a child who attended the summer camp"
-    },
-    {
-      quote:
-        "Seeing young children so passionate in STEM really warms my heart",
+      quote: "My son had a fantastic time at the camp—it really sparked his love for robotics.",
       author: "Anonymous",
-      role: "STEM proffesional",
+      role: "Parent of a child who attended the summer camp",
     },
     {
-      quote:
-        "Your work is truly amazing its wonderful its so cool how your team managed to do this",
+      quote: "Seeing young children so passionate in STEM really warms my heart",
+      author: "Anonymous",
+      role: "STEM professional",
+    },
+    {
+      quote: "Your work is truly amazing its wonderful its so cool how your team managed to do this",
       author: "George",
       role: "GMC specialist",
     },
@@ -179,7 +177,7 @@ export default function CommunityPage() {
                     </div>
 
                     <div className={`relative ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}`}>
-                      <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
+                      <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
                         <img
                           src={program.image || "/placeholder.svg"}
                           alt={program.title}

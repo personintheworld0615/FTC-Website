@@ -131,11 +131,10 @@ export default function SponsorsPage() {
                 <div className="flex items-start space-x-3 group hover:bg-primary/5 p-3 rounded-lg transition-all duration-300">
                   <Trophy className="w-5 h-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <div>
-                    <h3 className="font-semibold text-foreground">Community Impact</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Support our mentorship of <InteractiveCounter end={2} /> FLL teams and annual STEM camp for
-                      3rd-8th graders.
-                    </p>
+                   <h3 className="font-semibold text-foreground">Support Our Robot Build</h3>
+<p className="text-sm text-muted-foreground">
+  Help fund the development of our robot and make our vision a reality.
+</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3 group hover:bg-primary/5 p-3 rounded-lg transition-all duration-300">

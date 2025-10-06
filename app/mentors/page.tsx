@@ -3,22 +3,18 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { GraduationCap, Users, Lightbulb, Award, Mail, Linkedin } from "lucide-react"
+import { GraduationCap, Users, Lightbulb, Award } from "lucide-react"
 
 export default function MentorsPage() {
   const mentors = [
     {
       name: "Dr. Rogers",
       title: "Head of our Academy",
-      background: "Head :eader",
+      background: "Princeton Stem Academy CEO",
       expertise: ["Leadership", "Robotics", "Organization"],
       experience: "Experienced with teaching, Experience in FRC and FTC",
       bio: "Dr. Rogers brings extensive experience in robotics engineering and has been instrumental in guiding our team's technical development and strategic thinking.",
       image: "/placeholder.svg?height=300&width=300&text=Dr.+Rogers",
-      contact: {
-        email: "dr.rogers@example.com",
-        linkedin: "#",
-      },
     },
     {
       name: "Mr. Levy",
@@ -28,10 +24,6 @@ export default function MentorsPage() {
       experience: "10+ years in software development and robotics",
       bio: "Mr. Levi provides hands-on technical guidance and helps our team navigate the complexities of competitive robotics programming and electronics.",
       image: "/placeholder.svg?height=300&width=300&text=Mr.+Levi",
-      contact: {
-        email: "mr.levi@example.com",
-        linkedin: "#",
-      },
     },
   ]
 
@@ -163,21 +155,6 @@ export default function MentorsPage() {
                     <div className="space-y-3">
                       <h4 className="font-semibold text-foreground">Experience</h4>
                       <p className="text-sm text-muted-foreground">{mentor.experience}</p>
-                    </div>
-
-                    <div className="flex space-x-3 pt-4 border-t border-border">
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={`mailto:${mentor.contact.email}`} className="flex items-center space-x-2">
-                          <Mail className="w-4 h-4" />
-                          <span>Contact</span>
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={mentor.contact.linkedin} className="flex items-center space-x-2">
-                          <Linkedin className="w-4 h-4" />
-                          <span>LinkedIn</span>
-                        </a>
-                      </Button>
                     </div>
                   </CardContent>
                 </Card>
