@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://rustinpiece.com/sitemap.xml
+Sitemap: https://rustinpiece.org/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
