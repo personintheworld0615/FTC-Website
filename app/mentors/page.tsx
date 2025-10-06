@@ -14,7 +14,7 @@ export default function MentorsPage() {
       expertise: ["Leadership", "Robotics", "Organization"],
       experience: "Experienced with teaching, Experience in FRC and FTC",
       bio: "Dr. Rogers brings extensive experience in robotics engineering and has been instrumental in guiding our team's technical development and strategic thinking.",
-      image: "/placeholder.svg?height=300&width=300&text=Dr.+Rogers",
+      image: "/dr-rogers.jpg",
     },
     {
       name: "Mr. Levy",
@@ -23,7 +23,7 @@ export default function MentorsPage() {
       expertise: ["Programming", "Electronics", "Competition Strategy"],
       experience: "10+ years in software development and robotics",
       bio: "Mr. Levi provides hands-on technical guidance and helps our team navigate the complexities of competitive robotics programming and electronics.",
-      image: "/placeholder.svg?height=300&width=300&text=Mr.+Levi",
+      image: "/mr-levy.jpg",
     },
   ]
 
@@ -89,10 +89,10 @@ export default function MentorsPage() {
             </div>
 
             <div className="relative animate-slide-right">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
                 <img
-                  src="/placeholder.svg?height=400&width=400&text=Mentorship+in+Action"
-                  alt="Mentors working with team members"
+                  src="/mentorship-philosophy.jpg"
+                  alt="Mentor teaching team members in workshop setting"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>

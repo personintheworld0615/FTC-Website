@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Crown, Star, Heart, Building, Handshake, Trophy, Check } from "lucide-react"
-import { InteractiveCounter } from "@/components/interactive-counter"
 
 export default function SponsorsPage() {
   const benefitsList = [
@@ -131,10 +130,10 @@ export default function SponsorsPage() {
                 <div className="flex items-start space-x-3 group hover:bg-primary/5 p-3 rounded-lg transition-all duration-300">
                   <Trophy className="w-5 h-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <div>
-                   <h3 className="font-semibold text-foreground">Support Our Robot Build</h3>
-<p className="text-sm text-muted-foreground">
-  Help fund the development of our robot and make our vision a reality.
-</p>
+                    <h3 className="font-semibold text-foreground">Support Our Robot Build</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Help fund the development of our robot and make our vision a reality.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3 group hover:bg-primary/5 p-3 rounded-lg transition-all duration-300">
@@ -159,10 +158,10 @@ export default function SponsorsPage() {
             </div>
 
             <div className="relative animate-slide-up delay-300">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center hover:scale-105 transition-transform duration-500 group">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-500 group">
                 <img
-                  src="/robotics-team-with-sponsor-representatives-shaking.jpg"
-                  alt="Team with sponsor representatives"
+                  src="/sponsor-partnership.jpg"
+                  alt="Team members with sponsor representatives in workshop"
                   className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

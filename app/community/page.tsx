@@ -41,7 +41,7 @@ export default function CommunityPage() {
         "Competition strategy and teamwork development",
         "Inspiring the next generation of robotics enthusiasts",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=FLL+Mentorship",
+      image: "/fll-team-sunfish.jpg",
     },
     {
       title: "Annual STEM Camp",
@@ -55,6 +55,19 @@ export default function CommunityPage() {
         "Inspiring interest in STEM careers",
       ],
       image: "/summer-camp-robotics.jpg",
+    },
+    {
+      title: "Constant Outreaches",
+      icon: Target,
+      description:
+        "We actively participate in community events and demonstrations to spread awareness about FIRST and inspire students to explore STEM through robotics.",
+      details: [
+        "Regular participation in community parades and events",
+        "Public demonstrations of our robot and technology",
+        "Promoting FIRST values of Gracious Professionalism",
+        "Engaging with the community to inspire future roboticists",
+      ],
+      image: "/community-outreach-parade.jpg",
     },
   ]
 

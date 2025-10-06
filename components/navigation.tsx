@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+import { Menu, Heart } from "lucide-react"
 import Link from "next/link"
 
 export function Navigation() {
@@ -27,12 +27,25 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-foreground hover:text-primary transition-colors">
                 {link.label}
               </Link>
             ))}
+            <div className="flex items-center space-x-2">
+              
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+                <a
+                  href="https://hcb.hackclub.com/donations/start/rust-in-piece"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Heart className="w-4 h-4 mr-1" />
+                  Support Us
+                </a>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
@@ -61,6 +74,19 @@ export function Navigation() {
                     {link.label}
                   </Link>
                 ))}
+                <div className="pt-4 border-t border-border">
+                  <div className="text-sm text-muted-foreground mb-2">Donate to</div>
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+                    <a
+                      href="https://hcb.hackclub.com/donations/start/rust-in-piece"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Heart className="w-4 h-4 mr-2" />
+                      Support Us
+                    </a>
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>

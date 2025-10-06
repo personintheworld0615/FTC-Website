@@ -8,35 +8,51 @@ export default function TeamPage() {
   const leadership = [
     {
       name: "Rohin K",
-      role: "Team Captain/Mech captain",
+      role: "Captain",
       grade: "11th Grade",
-      specialties: ["Leadership", "Build"],
-      bio: "Leads the team and oversees all engineering operations.",
-      image: "/kudeti?height=300&width=300&text=Team+Captain",
+      specialties: ["Leadership", "Strategy", "Team Management"],
+      bio: "Leads the team with vision and oversees all operations.",
+      image: "/kudeti?height=300&width=300&text=Captain",
     },
     {
       name: "Chinmay C",
-      role: "Mech lead",
+      role: "Co-Captain",
       grade: "9th Grade",
-      specialties: ["Cad", "Leadership"],
-      bio: "Leads mechanical design and construction of robot systems.",
-      image: "/chinny.jpeg?height=300&width=300&text=Mechanical+Head",
+      specialties: ["Leadership", "CAD", "Design"],
+      bio: "Supports team leadership and drives innovation.",
+      image: "/chinny.jpeg?height=300&width=300&text=Co-Captain",
     },
     {
       name: "Krish S",
-      role: "Programming Captain",
+      role: "Programming Lead",
       grade: "10th Grade",
-      specialties: ["Java", "Auton"],
-      bio: "Oversees all programming activities and robot control systems.",
-      image: "/krish.jpg?height=300&width=300&text=Programming+Head",
+      specialties: ["Java", "Autonomous", "Control Systems"],
+      bio: "Leads all programming activities and robot control systems.",
+      image: "/krish.jpg?height=300&width=300&text=Programming+Lead",
     },
     {
       name: "Aarav G",
-      role: "Programming lead",
+      role: "Business Lead",
       grade: "11th Grade",
-      specialties: ["Vision", "Teleop"],
-      bio: "Manages community engagement and outreach programs.",
-      image: "/GOAT?height=300&width=300&text=Outreach+Head",
+      specialties: ["Outreach", "Sponsorships", "Marketing"],
+      bio: "Manages business operations, sponsorships, and community engagement.",
+      image: "/GOAT?height=300&width=300&text=Business+Lead",
+    },
+    {
+      name: "Srihaan B",
+      role: "Mechanical Lead",
+      grade: "10th Grade",
+      specialties: ["CAD", "Assembly", "Engineering"],
+      bio: "Leads mechanical design and construction of robot systems.",
+      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
+    },
+    {
+      name: "Ishana M",
+      role: "Outreach Captain",
+      grade: "11th Grade",
+      specialties: ["Community Engagement", "Social Media", "Events"],
+      bio: "Leads all outreach initiatives and community engagement efforts.",
+      image: "/ishana.jpg?height=300&width=300&text=Ishana+M",
     },
   ]
 
@@ -69,7 +85,7 @@ export default function TeamPage() {
       name: "Veer S",
       role: "Mechanical Associate",
       grade: "11th Grade",
-      specialties: ["Assembly", "Cad"],
+      specialties: ["Assembly", "CAD"],
       bio: "Supports mechanical design and material selection.",
       image: "/veer.jpg?height=300&width=300&text=Mech+Associate+2",
     },
@@ -80,14 +96,6 @@ export default function TeamPage() {
       specialties: ["Social Media", "Events"],
       bio: "Manages social media presence and event coordination.",
       image: "/varsha.jpg?height=300&width=300&text=Outreach+Associate+1",
-    },
-    {
-      name: "Ishana M",
-      role: "Outreach Associate",
-      grade: "11th Grade",
-      specialties: ["Social Media", "Events"],
-      bio: "Manages social media presence and event coordination.",
-      image: "/ishana.jpg?height=300&width=300&text=Outreach+Associate+1",
     },
   ]
 
@@ -120,7 +128,7 @@ export default function TeamPage() {
       name: "Aditya N",
       role: "Mechanical Trainee",
       grade: "8th Grade",
-      specialties: ["Cad", "Assembly"],
+      specialties: ["CAD", "Assembly"],
       bio: "Gaining hands-on experience with robot assembly.",
       image: "/tuffnavale.jpg?height=300&width=300&text=Mech+Trainee+2",
     },
@@ -137,14 +145,14 @@ export default function TeamPage() {
       role: "Mech Trainee",
       grade: "9th Grade",
       specialties: ["Assembly", "Mech"],
-      bio: "Mastering cad and Building the robot.",
+      bio: "Mastering CAD and Building the robot.",
       image: "/rookie.jpeg?height=300&width=300&text=Outreach+Trainee+2",
     },
     {
       name: "Ayush B",
       role: "Outreach Trainee",
       grade: "8th Grade",
-      specialties: ["Fundrasing", "Spreadability"],
+      specialties: ["Fundraising", "Spreadability"],
       bio: "Learning how to spread FIRST and fundraise money.",
       image: "/Ahush?height=300&width=300&text=Outreach+Trainee+2",
     },
@@ -213,7 +221,7 @@ export default function TeamPage() {
               The Minds Behind Rust in Piece
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
-              Our team of 17 dedicated students from Princeton STEM Academy brings together diverse skills,
+              Our team of 18 dedicated students from Princeton STEM Academy brings together diverse skills,
               perspectives, and a shared passion for robotics and innovation.
             </p>
           </div>
@@ -225,11 +233,11 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center animate-slide-up delay-100">
-              <div className="text-3xl font-bold text-primary">17</div>
+              <div className="text-3xl font-bold text-primary">18</div>
               <div className="text-sm text-muted-foreground">Total Members</div>
             </div>
             <div className="text-center animate-slide-up delay-200">
-              <div className="text-3xl font-bold text-primary">5</div>
+              <div className="text-3xl font-bold text-primary">6</div>
               <div className="text-sm text-muted-foreground">Leadership Roles</div>
             </div>
             <div className="text-center animate-slide-up delay-300">

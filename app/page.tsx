@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Trophy, Heart, Zap, Rocket, Cpu } from "lucide-react"
+import { Users, Trophy, Heart, Zap, Cpu } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { InteractiveCounter } from "@/components/interactive-counter"
@@ -80,16 +80,6 @@ export default function HomePage() {
 
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
-                      size="lg"
-                      className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
-                      asChild
-                    >
-                      <a href="/contact" aria-label="Join Rust in Piece FTC Team 19772">
-                        <Rocket className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-                        Join Our Team
-                      </a>
-                    </Button>
-                    <Button
                       variant="outline"
                       size="lg"
                       className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-transparent group"
@@ -118,7 +108,7 @@ export default function HomePage() {
                         className="w-6 h-6 text-primary group-hover:scale-110 transition-transform"
                         aria-hidden="true"
                       />
-                      <InteractiveCounter end={18} className="font-bold text-foreground" />
+                      <span className="font-bold text-foreground">18</span>
                       <span className="text-muted-foreground text-center">Team Members</span>
                     </div>
                     <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/20 border border-accent/30 hover:bg-accent/30 transition-all duration-300 group">
@@ -174,20 +164,18 @@ export default function HomePage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    <InteractiveCounter end={18} className="font-bold text-primary" />
-                  </div>
+                  <div className="text-4xl font-bold text-primary mb-2">18</div>
                   <div className="text-sm font-medium text-muted-foreground">Team Members</div>
                 </div>
                 <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-accent/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
                   <div className="text-4xl font-bold text-accent mb-2">
-                    <InteractiveCounter end={2} className="font-bold text-accent" />
+                    2
                   </div>
                   <div className="text-sm font-medium text-muted-foreground">FLL Teams Mentored</div>
                 </div>
                 <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-secondary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
                   <div className="text-4xl font-bold text-secondary mb-2">
-                    <InteractiveCounter end={1} className="font-bold text-secondary" />
+                    1
                   </div>
                   <div className="text-sm font-medium text-muted-foreground">Annual STEM Camp</div>
                 </div>
@@ -304,8 +292,8 @@ export default function HomePage() {
                   </h2>
                   <div className="w-24 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
                   <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto text-pretty leading-relaxed">
-                    Whether you're interested in joining our team, becoming a sponsor, or learning more about our
-                    community programs, we'd love to hear from you and explore the possibilities together.
+                    Whether you're interested in becoming a sponsor or learning more about our community programs, we'd
+                    love to hear from you and explore the possibilities together.
                   </p>
                 </div>
 

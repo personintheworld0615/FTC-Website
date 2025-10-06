@@ -8,13 +8,13 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Rust in Piece - FTC Team 19772 | Princeton STEM Academy Robotics",
   description:
-    "Princeton STEM Academy FTC robotics team passionate about STEM education, engineering, and innovation. Mentoring FLL teams and inspiring the next generation of engineers.",
+    "Princeton STEM Academy FTC robotics team passionate about STEM education, engineering, and innovation. Mentoring FLL teams and inspiring the next generation of engineers through competitive robotics and community outreach.",
   keywords:
-    "FTC robotics, FIRST Tech Challenge, Princeton STEM Academy, Team 19772, robotics competition, STEM education, engineering, mentorship, FLL mentoring, robotics team New Jersey, competitive robotics, robot design, programming, mechanical engineering, CAD design, community outreach, STEM camp, youth robotics",
+    "FTC robotics, FIRST Tech Challenge, Princeton STEM Academy, Team 19772, Rust in Piece, robotics competition, STEM education, engineering, mentorship, FLL mentoring, robotics team New Jersey, competitive robotics, robot design, programming, mechanical engineering, CAD design, community outreach, STEM camp, youth robotics, Princeton robotics, New Jersey FTC, high school robotics, middle school robotics, robotics mentorship, FIRST robotics, autonomous programming, teleoperated robot, robot building, engineering education, technology education, science education, mathematics education",
   authors: [{ name: "Rust in Piece FTC Team 19772" }],
   creator: "Rust in Piece FTC Team 19772",
   publisher: "Princeton STEM Academy",
-  robots: "index, follow",
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Rust in Piece - FTC Team 19772",
     title: "Rust in Piece - FTC Team 19772 | Princeton STEM Academy Robotics",
     description:
-      "Princeton STEM Academy FTC robotics team passionate about STEM education, engineering, and innovation. Mentoring FLL teams, hosting STEM camps, and competing in FIRST Tech Challenge.",
+      "Princeton STEM Academy FTC robotics team with 18 dedicated members passionate about STEM education, engineering, and innovation. Mentoring 2 FLL teams, hosting annual STEM camps, and competing in FIRST Tech Challenge.",
     images: [
       {
         url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
@@ -36,10 +36,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rust in Piece - FTC Team 19772 | Princeton STEM Academy Robotics",
     description:
-      "Princeton STEM Academy FTC robotics team passionate about STEM education, engineering, and innovation. Mentoring FLL teams and competing in FIRST Tech Challenge.",
+      "Princeton STEM Academy FTC robotics team with 18 members passionate about STEM education, engineering, and innovation. Mentoring FLL teams and competing in FIRST Tech Challenge.",
     images: [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
     ],
+    creator: "@rust_in_piece_robotics",
   },
   verification: {
     google: "your-google-verification-code",
@@ -48,6 +49,8 @@ export const metadata: Metadata = {
     canonical: "https://rustinpiece.com",
   },
   generator: "v0.app",
+  category: "Education",
+  classification: "Robotics Team",
 }
 
 export default function RootLayout({
@@ -58,6 +61,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -65,15 +70,17 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "SportsTeam",
               name: "Rust in Piece FTC Team 19772",
-              alternateName: ["Team 19772", "Rust in Piece Robotics"],
+              alternateName: ["Team 19772", "Rust in Piece Robotics", "Rust in Piece"],
               url: "https://rustinpiece.com",
               logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
               image:
                 "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
               description:
-                "Princeton STEM Academy FTC robotics team passionate about STEM education, engineering, and innovation. Mentoring FLL teams and inspiring the next generation of engineers.",
+                "Princeton STEM Academy FTC robotics team with 18 dedicated members passionate about STEM education, engineering, and innovation. Mentoring 2 FLL teams and inspiring the next generation of engineers through competitive robotics and community outreach programs.",
               foundingDate: "2023",
               sport: "Robotics",
+              numberOfMembers: 18,
+              email: "rustinpieceftc@gmail.com",
               memberOf: [
                 {
                   "@type": "Organization",
@@ -91,7 +98,10 @@ export default function RootLayout({
                 addressRegion: "NJ",
                 addressCountry: "US",
               },
-              sameAs: ["https://www.instagram.com/rust_in_piece_robotics/"],
+              sameAs: [
+                "https://www.instagram.com/rust_in_piece_robotics/",
+                "https://hcb.hackclub.com/donations/start/rust-in-piece",
+              ],
               knowsAbout: [
                 "Robotics",
                 "STEM Education",
@@ -101,6 +111,33 @@ export default function RootLayout({
                 "CAD",
                 "Community Outreach",
                 "Mentorship",
+                "Java Programming",
+                "Autonomous Programming",
+                "Robot Design",
+                "FTC Competition",
+                "FIRST Robotics",
+              ],
+              subjectOf: [
+                {
+                  "@type": "WebPage",
+                  name: "Team Members",
+                  url: "https://rustinpiece.com/team",
+                },
+                {
+                  "@type": "WebPage",
+                  name: "Mentors",
+                  url: "https://rustinpiece.com/mentors",
+                },
+                {
+                  "@type": "WebPage",
+                  name: "Sponsors",
+                  url: "https://rustinpiece.com/sponsors",
+                },
+                {
+                  "@type": "WebPage",
+                  name: "Community Impact",
+                  url: "https://rustinpiece.com/community",
+                },
               ],
             }),
           }}
@@ -149,6 +186,35 @@ export default function RootLayout({
                   item: "https://rustinpiece.com/contact",
                 },
               ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Rust in Piece FTC Team 19772",
+              url: "https://rustinpiece.com",
+              logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
+              description:
+                "FTC robotics team from Princeton STEM Academy dedicated to STEM education, mentorship, and competitive robotics",
+              email: "rustinpieceftc@gmail.com",
+              foundingDate: "2023",
+              numberOfEmployees: {
+                "@type": "QuantitativeValue",
+                value: 18,
+              },
+              areaServed: {
+                "@type": "Place",
+                name: "Princeton, New Jersey",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "rustinpieceftc@gmail.com",
+                contactType: "General Inquiries",
+              },
             }),
           }}
         />
