@@ -1,9 +1,6 @@
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://rustinpiece.org/sitemap.xml
+Sitemap: https://www.rustinpiece.org/sitemap.xml
 
-# Crawl-delay for polite crawling
 Crawl-delay: 1
