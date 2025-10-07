@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Heart } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Navigation() {
   const navLinks = [
@@ -19,8 +20,8 @@ export function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">RP</span>
+            <div className="w-10 h-10 relative flex items-center justify-center">
+              <Image src="/favicon.ico" alt="Rust in Piece Logo" width={40} height={40} className="object-contain" />
             </div>
             <span className="font-bold text-xl text-foreground">Rust in Piece</span>
             <Badge className="ml-2 bg-primary text-primary-foreground border-primary">#19772</Badge>
@@ -34,7 +35,6 @@ export function Navigation() {
               </Link>
             ))}
             <div className="flex items-center space-x-2">
-              
               <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
                 <a
                   href="https://hcb.hackclub.com/donations/start/rust-in-piece"
@@ -59,8 +59,14 @@ export function Navigation() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col space-y-4 mt-8">
                 <div className="flex items-center space-x-2 pb-4 border-b border-border">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-sm">RP</span>
+                  <div className="w-10 h-10 relative flex items-center justify-center">
+                    <Image
+                      src="/favicon.ico"
+                      alt="Rust in Piece Logo"
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
                   </div>
                   <span className="font-bold text-lg text-foreground">Rust in Piece</span>
                   <Badge className="bg-primary text-primary-foreground border-primary">#19772</Badge>
