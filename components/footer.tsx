@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 relative flex items-center justify-center">
-                <Image src="/favicon.ico" alt="Rust in Piece Logo" width={40} height={40} className="object-contain" />
+                <Image src="/logo.png" alt="Rust in Piece Logo" width={40} height={40} className="object-contain" />
               </div>
               <span className="font-bold text-lg">Rust in Piece</span>
             </div>

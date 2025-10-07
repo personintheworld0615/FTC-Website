@@ -21,7 +21,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 relative flex items-center justify-center">
-              <Image src="/favicon.ico" alt="Rust in Piece Logo" width={40} height={40} className="object-contain" />
+              <Image src="/logo.png" alt="Rust in Piece Logo" width={40} height={80} className="object-contain leading-8" />
             </div>
             <span className="font-bold text-xl text-foreground">Rust in Piece</span>
             <Badge className="ml-2 bg-primary text-primary-foreground border-primary">#19772</Badge>
@@ -60,13 +60,7 @@ export function Navigation() {
               <div className="flex flex-col space-y-4 mt-8">
                 <div className="flex items-center space-x-2 pb-4 border-b border-border">
                   <div className="w-10 h-10 relative flex items-center justify-center">
-                    <Image
-                      src="/favicon.ico"
-                      alt="Rust in Piece Logo"
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
+                    <Image src="/logo.png" alt="Rust in Piece Logo" width={40} height={40} className="object-contain" />
                   </div>
                   <span className="font-bold text-lg text-foreground">Rust in Piece</span>
                   <Badge className="bg-primary text-primary-foreground border-primary">#19772</Badge>
