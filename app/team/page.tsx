@@ -20,7 +20,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Leadership", "CAD", "Design"],
       bio: "Supports team leadership and drives innovation.",
-      image: "/chinny.jpeg?height=300&width=300&text=Co-Captain",
+      image: "/chin2?height=300&width=300&text=Co-Captain",
     },
     {
       name: "Krish S",
@@ -63,7 +63,7 @@ export default function TeamPage() {
       grade: "12th Grade",
       specialties: ["Sensors", "Vision"],
       bio: "Develops robot programming and sensor integration.",
-      image: "/dosa.jpeg?height=300&width=300&text=Prog+Associate+1",
+      image: "/dosa2?height=300&width=300&text=Prog+Associate+1",
     },
     {
       name: "Vihaan M",
@@ -114,7 +114,7 @@ export default function TeamPage() {
       grade: "10th Grade",
       specialties: ["Learning Java", "Problem Solving"],
       bio: "Developing programming skills and logical thinking.",
-      image: "/sid.jpeg?height=300&width=300&text=Prog+Trainee+2",
+      image: "/sid2?height=300&width=300&text=Prog+Trainee+2",
     },
     {
       name: "Ankita S",
@@ -146,7 +146,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Assembly", "Mech"],
       bio: "Mastering CAD and Building the robot.",
-      image: "/rookie.jpeg?height=300&width=300&text=Outreach+Trainee+2",
+      image: "/sam2?height=300&width=300&text=Outreach+Trainee+2",
     },
     {
       name: "Ayush B",
