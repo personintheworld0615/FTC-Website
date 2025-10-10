@@ -33,7 +33,7 @@ export default function TeamPage() {
     {
       name: "Aarav G",
       role: "Business Lead",
-      grade: "11th Grade",
+      grade: "9th Grade",
       specialties: ["Outreach", "Sponsorships", "Marketing"],
       bio: "Manages business operations, sponsorships, and community engagement.",
       image: "/GOAT?height=300&width=300&text=Business+Lead",
@@ -179,7 +179,7 @@ export default function TeamPage() {
                 <img
                   src={member.image || "/placeholder.svg"}
                   alt={`${member.name} - ${member.role}`}
-                  className="w-24 h-24 rounded-full object-cover mx-auto"
+                  className="w-24 h-24 rounded-full object-cover object-center mx-auto"
                 />
               </div>
               <CardTitle className="text-xl">{member.name}</CardTitle>
@@ -221,8 +221,8 @@ export default function TeamPage() {
               The Minds Behind Rust in Piece
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
-              Our team of 18 dedicated students from Princeton STEM Academy brings together diverse skills,
-              perspectives, and a shared passion for robotics and innovation.
+              Our team of 18 dedicated students from Princeton STEM Academy combines diverse skills, unique
+              perspectives, and an unwavering passion for robotics and innovation.
             </p>
           </div>
         </div>

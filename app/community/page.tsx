@@ -34,25 +34,25 @@ export default function CommunityPage() {
       title: "FLL Team Mentorship",
       icon: Users,
       description:
-        "We actively mentor 2 FIRST Lego League teams, sharing our knowledge and passion for robotics with younger students.",
+        "We actively mentor two FIRST Lego League teams, sharing our knowledge and passion for robotics with the next generation of innovators.",
       details: [
-        "Weekly mentoring sessions during FLL season",
+        "Weekly mentoring sessions throughout the FLL season",
         "Hands-on guidance with robot design and programming",
         "Competition strategy and teamwork development",
-        "Inspiring the next generation of robotics enthusiasts",
+        "Inspiring future robotics enthusiasts through shared experience",
       ],
-      image: "/fll-team-sunfish.jpg",
+      image: "/fll-team-mentorship.jpg",
     },
     {
       title: "Annual STEM Camp",
       icon: GraduationCap,
       description:
-        "Our flagship community program brings STEM education to 3rd-8th grade students through hands-on activities and robotics workshops.",
+        "Our flagship community program brings engaging STEM education to 3rd-8th grade students through hands-on activities and interactive robotics workshops.",
       details: [
-        "Week-long summer camp experience",
-        "Introduction to programming and engineering",
-        "Team-building activities and challenges",
-        "Inspiring interest in STEM careers",
+        "Week-long immersive summer camp experience",
+        "Introduction to programming and engineering principles",
+        "Team-building activities and collaborative challenges",
+        "Inspiring interest in STEM careers and lifelong learning",
       ],
       image: "/summer-camp-robotics.jpg",
     },
@@ -60,12 +60,12 @@ export default function CommunityPage() {
       title: "Constant Outreaches",
       icon: Target,
       description:
-        "We actively participate in community events and demonstrations to spread awareness about FIRST and inspire students to explore STEM through robotics.",
+        "We actively participate in community events and public demonstrations to spread awareness about FIRST and inspire students to explore STEM through robotics.",
       details: [
-        "Regular participation in community parades and events",
-        "Public demonstrations of our robot and technology",
-        "Promoting FIRST values of Gracious Professionalism",
-        "Engaging with the community to inspire future roboticists",
+        "Regular participation in community parades and festivals",
+        "Public demonstrations showcasing our robot and technology",
+        "Promoting FIRST values of Gracious Professionalism and Coopertition",
+        "Engaging with the community to inspire the next generation of roboticists",
       ],
       image: "/community-outreach-parade.jpg",
     },
@@ -105,7 +105,7 @@ export default function CommunityPage() {
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
               Beyond competition, we're committed to inspiring the next generation through mentorship, education, and
-              community outreach that makes STEM accessible to all students.
+              community outreach that makes STEM accessible and exciting for all students.
             </p>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function CommunityPage() {
                 <Target className="w-6 h-6 text-primary" />
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Our Impact by the Numbers</h2>
               </div>
-              <p className="text-lg text-muted-foreground">Measuring our commitment to community education</p>
+              <p className="text-lg text-muted-foreground">Measuring our commitment to community STEM education</p>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -150,7 +150,7 @@ export default function CommunityPage() {
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Our Community Programs</h2>
               </div>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Dedicated initiatives that bring STEM education and robotics to our community
+                Dedicated initiatives bringing STEM education and robotics excellence to our community
               </p>
             </div>
 
@@ -194,7 +194,7 @@ export default function CommunityPage() {
                         <img
                           src={program.image || "/placeholder.svg"}
                           alt={program.title}
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-cover object-center rounded-2xl"
                         />
                       </div>
                     </div>
@@ -213,7 +213,7 @@ export default function CommunityPage() {
             <div className="text-center space-y-4 animate-fade-in">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Community Voices</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Hear from those who have experienced our programs firsthand
+                Testimonials from those who have experienced our programs firsthand
               </p>
             </div>
 
@@ -250,7 +250,7 @@ export default function CommunityPage() {
             </h2>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
               Whether you're a student, parent, educator, or community member, there are many ways to join our mission
-              of inspiring the next generation through STEM education.
+              of inspiring the next generation through hands-on STEM education and robotics.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>
