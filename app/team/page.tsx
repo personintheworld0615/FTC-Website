@@ -74,7 +74,7 @@ export default function TeamPage() {
       image: "/3slices.jpg?height=300&width=300&text=Prog+Associate+2",
     },
     {
-      name: "Atharv L",
+      name: "Atharv S",
       role: "Mechanical Associate",
       grade: "9th Grade",
       specialties: ["Assembly", "CNC"],
