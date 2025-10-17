@@ -46,7 +46,7 @@ export default function ContactPage() {
       icon: MapPin,
       title: "Visit Us",
       description: "Princeton STEM Academy",
-      contact: "Princeton, New Jersey",
+      contact: "During school hours",
       link: "#",
     },
   ]
@@ -113,12 +113,7 @@ export default function ContactPage() {
             <Badge variant="outline" className="text-primary border-primary">
               Get In Touch
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
-              Contact FTC Team 19772 in Princeton, NJ
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Reach out to Rust in Piece, Princeton STEM Academy's premier FIRST Tech Challenge robotics team
-            </p>
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">Contact Us</h1>
           </div>
         </div>
       </section>
@@ -331,7 +326,6 @@ export default function ContactPage() {
                   <div className="space-y-1">
                     <h3 className="font-semibold text-foreground">Location</h3>
                     <p className="text-sm text-muted-foreground">Princeton STEM Academy</p>
-                    <p className="text-xs text-muted-foreground">Princeton, NJ</p>
                   </div>
                 </CardContent>
               </Card>
@@ -341,7 +335,7 @@ export default function ContactPage() {
                   <Users className="w-8 h-8 text-primary mx-auto" />
                   <div className="space-y-1">
                     <h3 className="font-semibold text-foreground">Team Size</h3>
-                    <p className="text-sm text-muted-foreground">18 Members</p>
+                    <p className="text-sm text-muted-foreground">17 Members</p>
                   </div>
                 </CardContent>
               </Card>
