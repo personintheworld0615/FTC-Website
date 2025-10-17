@@ -14,7 +14,11 @@ export function Footer() {
               </div>
               <span className="font-bold text-lg">Rust in Piece</span>
             </div>
-            <p className="text-sm text-muted-foreground">FTC Team 19772 from Princeton STEM Academy</p>
+            <p className="text-sm text-muted-foreground">
+              FTC Team 19772 from Princeton STEM Academy
+              <br />
+              <span className="text-primary font-medium">Princeton, NJ</span>
+            </p>
           </div>
 
           <div className="space-y-4">
@@ -47,21 +51,30 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Connect</h3>
             <div className="flex space-x-4">
-              <a href="mailto:rust123" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="mailto:rustinpieceftc@gmail.com"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Email Rust in Piece FTC Team"
+              >
                 <Mail className="w-5 h-5" />
               </a>
               <a
                 href="https://www.instagram.com/rust_in_piece_robotics/"
                 className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow Rust in Piece on Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
+            <p className="text-xs text-muted-foreground">📍 Based in Princeton, New Jersey</p>
           </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 Rust in Piece - FTC Team 19772. All rights reserved.</p>
+          <p>
+            &copy; 2025 Rust in Piece - FTC Team 19772 | Princeton STEM Academy Robotics | Princeton, NJ. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

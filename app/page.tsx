@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge"
 import { Users, Trophy, Heart, Zap, Cpu } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { InteractiveCounter } from "@/components/interactive-counter"
 import { useState, useEffect } from "react"
 
 export default function HomePage() {
@@ -69,12 +68,14 @@ export default function HomePage() {
                       className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent text-balance cursor-pointer select-none"
                       onClick={handleLogoClick}
                     >
-                      Rust in Piece
+                      Meet Rust in Piece – FTC Team #19772 from Princeton STEM Academy
                     </h1>
                     <p className="text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed">
-                      Princeton STEM Academy's{" "}
-                      <span className="text-primary font-semibold">premier FTC robotics team</span>, passionate about
-                      STEM education, engineering innovation, and building the future through competitive robotics.
+                      A <span className="text-primary font-semibold">premier FTC robotics team in Princeton, NJ</span>,
+                      passionate about <span className="text-primary font-semibold">STEM education</span>, engineering
+                      innovation, and competing in the{" "}
+                      <span className="text-primary font-semibold">FIRST Tech Challenge</span>. We're building the
+                      future through competitive robotics and community outreach.
                     </p>
                   </div>
 
@@ -168,15 +169,11 @@ export default function HomePage() {
                   <div className="text-sm font-medium text-muted-foreground">Team Members</div>
                 </div>
                 <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-accent/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    2
-                  </div>
+                  <div className="text-4xl font-bold text-accent mb-2">2</div>
                   <div className="text-sm font-medium text-muted-foreground">FLL Teams Mentored</div>
                 </div>
                 <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-secondary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
-                  <div className="text-4xl font-bold text-secondary mb-2">
-                    1
-                  </div>
+                  <div className="text-4xl font-bold text-secondary mb-2">1</div>
                   <div className="text-sm font-medium text-muted-foreground">Annual STEM Camp</div>
                 </div>
                 <div className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 hover:scale-105 hover:shadow-lg transition-all duration-300 group">
@@ -198,10 +195,12 @@ export default function HomePage() {
                 </h2>
                 <div className="w-24 h-1 bg-gradient-orange mx-auto rounded-full"></div>
                 <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-                  We are an FTC robotics team passionate about{" "}
-                  <span className="text-primary font-semibold">STEM education</span>, engineering, and innovation. We
-                  design, build, and program competitive robots while also mentoring younger students and giving back to
-                  our community through educational outreach and STEM advocacy.
+                  We are an <span className="text-primary font-semibold">FTC robotics team near Princeton, NJ</span>{" "}
+                  passionate about <span className="text-primary font-semibold">STEM education</span>, engineering, and
+                  innovation. As <span className="text-primary font-semibold">Team 19772</span>, we design, build, and
+                  program competitive robots for the{" "}
+                  <span className="text-primary font-semibold">FIRST Tech Challenge</span> while mentoring younger
+                  students and giving back to our community through educational outreach and STEM advocacy.
                 </p>
               </div>
             </div>

@@ -12,7 +12,7 @@ export default function MentorsPage() {
       title: "Head of our Academy",
       background: "Princeton Stem Academy CEO",
       expertise: ["Leadership", "Robotics", "Organization"],
-      experience: "Experienced with teaching, Experience in FRC and FTC",
+      experience: "Experience in FTC",
       bio: "Dr. Rogers brings extensive experience in robotics engineering and has been instrumental in guiding our team's technical development and strategic thinking.",
       image: "/dr-rogers.jpg",
     },
