@@ -81,14 +81,7 @@ export default function TeamPage() {
       bio: "Assists with robot construction and mechanical systems.",
       image: "/atharv.jpeg?height=300&width=300&text=Mech+Associate+1",
     },
-    {
-      name: "Veer S",
-      role: "Mechanical Associate",
-      grade: "11th Grade",
-      specialties: ["Assembly", "CAD"],
-      bio: "Supports mechanical design and material selection.",
-      image: "/veer.jpg?height=300&width=300&text=Mech+Associate+2",
-    },
+  
     {
       name: "Varsha K",
       role: "Outreach Associate",
@@ -107,6 +100,14 @@ export default function TeamPage() {
       specialties: ["Learning Java", "Basic Programming"],
       bio: "New to programming, eager to learn robot control systems.",
       image: "/felix.jpg?height=300&width=300&text=Prog+Trainee+1",
+    },
+      {
+      name: "Veer S",
+      role: "Mechanical Trainee",
+      grade: "11th Grade",
+      specialties: ["Assembly", "CAD"],
+      bio: "Supports mechanical design and material selection.",
+      image: "/veer.jpg?height=300&width=300&text=Mech+Associate+2",
     },
     {
       name: "Sid M",

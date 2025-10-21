@@ -94,8 +94,10 @@ export default function RootLayout({
               },
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Princeton",
+                streetAddress: "666 Plainsboro Rd #1161",
+                addressLocality: "Plainsboro Township",
                 addressRegion: "NJ",
+                postalCode: "08536",
                 addressCountry: "US",
               },
               sameAs: [

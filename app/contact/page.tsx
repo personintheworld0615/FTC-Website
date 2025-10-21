@@ -44,10 +44,10 @@ export default function ContactPage() {
     },
     {
       icon: MapPin,
-      title: "Visit Us",
-      description: "Princeton STEM Academy",
-      contact: "During school hours",
-      link: "#",
+      title: "Where We Are",
+      description: "The Princeton STEM Academy",
+      contact: "666 Plainsboro Rd #1161, Plainsboro Township, NJ 08536",
+      link: "https://maps.google.com/?q=666+Plainsboro+Rd+1161+Plainsboro+Township+NJ+08536",
     },
   ]
 
@@ -325,7 +325,8 @@ export default function ContactPage() {
                   <MapPin className="w-8 h-8 text-primary mx-auto" />
                   <div className="space-y-1">
                     <h3 className="font-semibold text-foreground">Location</h3>
-                    <p className="text-sm text-muted-foreground">Princeton STEM Academy</p>
+                    <p className="text-sm text-muted-foreground">666 Plainsboro Rd #1161</p>
+                    <p className="text-sm text-muted-foreground">Plainsboro Township, NJ</p>
                   </div>
                 </CardContent>
               </Card>

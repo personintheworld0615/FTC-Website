@@ -14,7 +14,10 @@ export function Footer() {
               </div>
               <span className="font-bold text-lg">Rust in Piece</span>
             </div>
-            <p className="text-sm text-muted-foreground">FTC Team 19772 from Princeton STEM Academy</p>
+            <p className="text-sm text-muted-foreground">FTC Team 19772</p>
+            <p className="text-sm text-muted-foreground">The Princeton STEM Academy</p>
+            <p className="text-sm text-muted-foreground">666 Plainsboro Rd #1161</p>
+            <p className="text-sm text-muted-foreground">Plainsboro Township, NJ 08536</p>
           </div>
 
           <div className="space-y-4">
@@ -47,7 +50,10 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Connect</h3>
             <div className="flex space-x-4">
-              <a href="mailto:rust123" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="mailto:rustinpieceftc@gmail.com"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Mail className="w-5 h-5" />
               </a>
               <a
