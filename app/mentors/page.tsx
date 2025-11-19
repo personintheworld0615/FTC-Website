@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { GraduationCap, Users, Lightbulb, Award } from "lucide-react"
+import { GraduationCap, Users, Lightbulb, Award, Network } from 'lucide-react'
 
 export default function MentorsPage() {
   const mentors = [
@@ -24,6 +24,15 @@ export default function MentorsPage() {
       experience: "10+ years in software development and robotics",
       bio: "Mr. Levi provides hands-on technical guidance and helps our team navigate the complexities of competitive robotics programming and electronics.",
       image: "/mr-levy.jpg",
+    },
+  ]
+
+  const connections = [
+    {
+      name: "Sid Reddy",
+      title: "Industry Connection",
+      description: "Working at a luxury tech company",
+      image: "/sid-reddy.jpg",
     },
   ]
 
@@ -127,7 +136,7 @@ export default function MentorsPage() {
                       <img
                         src={mentor.image || "/placeholder.svg"}
                         alt={`${mentor.name} - ${mentor.title}`}
-                        className="w-32 h-32 rounded-full object-cover mx-auto"
+                        className="w-32 h-32 rounded-full object-cover mx-auto object-[center_30%]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -156,6 +165,50 @@ export default function MentorsPage() {
                       <h4 className="font-semibold text-foreground">Experience</h4>
                       <p className="text-sm text-muted-foreground">{mentor.experience}</p>
                     </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12">
+            <div className="text-center space-y-4 animate-fade-in">
+              <div className="flex items-center justify-center space-x-2">
+                <Network className="w-6 h-6 text-primary" />
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Connect</h2>
+              </div>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Building bridges with industry leaders to provide real-world insights
+              </p>
+            </div>
+
+            <div className="flex justify-center">
+              {connections.map((connection, index) => (
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up max-w-md w-full"
+                >
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto">
+                      <img
+                        src={connection.image || "/placeholder.svg"}
+                        alt={connection.name}
+                        className="w-32 h-32 rounded-full object-cover mx-auto object-center"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <CardTitle className="text-2xl">{connection.name}</CardTitle>
+                      <Badge variant="outline" className="border-primary text-primary">
+                        {connection.title}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">{connection.description}</p>
                   </CardContent>
                 </Card>
               ))}
