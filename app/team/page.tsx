@@ -12,7 +12,7 @@ export default function TeamPage() {
       grade: "11th Grade",
       specialties: ["Leadership", "Strategy", "Team Management"],
       bio: "Leads the team with vision and oversees all operations.",
-      image: "/kudeti.jpg?height=300&width=300&text=Captain",
+      image: "/kudeti?height=300&width=300&text=Captain",
     },
     {
       name: "Chinmay C",
