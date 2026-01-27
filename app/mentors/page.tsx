@@ -10,11 +10,11 @@ export default function MentorsPage() {
     {
       name: "Dr. Rogers",
       title: "Head of our Academy",
-      background: "Princeton STEM Academy CEO",
+      background: "Princeton Stem Academy CEO",
       expertise: ["Leadership", "Robotics", "Organization"],
       experience: "Experience in FTC",
       bio: "Dr. Rogers brings extensive experience in robotics engineering and has been instrumental in guiding our team's technical development and strategic thinking.",
-      image: "/images/dr-rogers.png",
+      image: "/dr-rogers.jpg",
     },
     {
       name: "Mr. Levy",
@@ -22,8 +22,8 @@ export default function MentorsPage() {
       background: "Industry Professional",
       expertise: ["Programming", "Electronics", "Competition Strategy"],
       experience: "10+ years in software development and robotics",
-      bio: "Mr. Levy provides hands-on technical guidance and helps our team navigate the complexities of competitive robotics programming and electronics.",
-      image: "/images/mr-levy.png",
+      bio: "Mr. Levi provides hands-on technical guidance and helps our team navigate the complexities of competitive robotics programming and electronics.",
+      image: "/mr-levy.jpg",
     },
   ]
 
@@ -32,7 +32,7 @@ export default function MentorsPage() {
       name: "Sid Reddy",
       title: "Industry Connection",
       description: "Working at a luxury tech company",
-      image: "/images/sid-reddy.png",
+      image: "/sid-reddy.jpg",
     },
   ]
 
@@ -41,52 +41,53 @@ export default function MentorsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 border-b border-border">
+      <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <Badge variant="secondary" className="text-sm font-medium">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <Badge variant="outline" className="text-primary border-primary animate-slide-up">
               Our Mentors
             </Badge>
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up delay-100">
               Guiding Our Journey
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Meet the experienced professionals who provide guidance, expertise, and inspiration to help our team reach new heights in robotics excellence.
+            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
+              Meet the experienced professionals who provide guidance, expertise, and inspiration to help our team reach
+              new heights in robotics and engineering excellence.
             </p>
           </div>
         </div>
       </section>
 
       {/* Mentorship Philosophy */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <div className="space-y-8 animate-slide-left">
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <GraduationCap className="w-5 h-5 text-primary" />
-                  </div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-foreground">Our Mentorship Philosophy</h2>
+                <div className="flex items-center space-x-2">
+                  <GraduationCap className="w-6 h-6 text-primary" />
+                  <h2 className="text-3xl font-bold text-foreground">Our Mentorship Philosophy</h2>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  Our mentors guide us to discover solutions ourselves. Through their expertise and encouragement, we learn to think critically, solve complex problems, and develop both technical skills and leadership qualities.
+                <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+                  Our mentors don't just provide answers—they guide us to discover solutions ourselves. Through their
+                  expertise and encouragement, we learn to think critically, solve complex problems, and develop both
+                  technical skills and leadership qualities.
                 </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-lg border border-border bg-card">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Lightbulb className="w-4 h-4 text-primary" />
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Lightbulb className="w-5 h-5 text-primary" />
                     <h3 className="font-semibold text-foreground">Innovation</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Encouraging creative thinking and novel approaches to engineering challenges.
                   </p>
                 </div>
-                <div className="p-4 rounded-lg border border-border bg-card">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Users className="w-4 h-4 text-primary" />
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-5 h-5 text-primary" />
                     <h3 className="font-semibold text-foreground">Collaboration</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -96,12 +97,12 @@ export default function MentorsPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-xl overflow-hidden border border-border">
+            <div className="relative animate-slide-right">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
                 <img
-                  src="/images/mentorship-philosophy.png"
+                  src="/mentorship-philosophy.jpg"
                   alt="Mentor teaching team members in workshop setting"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
             </div>
@@ -110,52 +111,58 @@ export default function MentorsPage() {
       </section>
 
       {/* Meet Our Mentors */}
-      <section className="py-16 lg:py-20 bg-muted/30">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-10">
-            <div className="text-center space-y-3">
-              <div className="flex items-center justify-center gap-2">
-                <Award className="w-5 h-5 text-primary" />
-                <h2 className="text-2xl lg:text-3xl font-bold text-foreground">Meet Our Mentors</h2>
+          <div className="space-y-12">
+            <div className="text-center space-y-4 animate-fade-in">
+              <div className="flex items-center justify-center space-x-2">
+                <Award className="w-6 h-6 text-primary" />
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Meet Our Mentors</h2>
               </div>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                Experienced professionals dedicated to nurturing the next generation of engineers
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Experienced professionals dedicated to nurturing the next generation of engineers and innovators
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8">
               {mentors.map((mentor, index) => (
-                <Card key={index} className="border border-border hover:shadow-md transition-shadow duration-200">
-                  <CardHeader className="text-center pb-4">
-                    <div className="mx-auto mb-4">
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto">
                       <img
                         src={mentor.image || "/placeholder.svg"}
                         alt={`${mentor.name} - ${mentor.title}`}
-                        className="w-28 h-28 rounded-full object-cover border-2 border-border"
+                        className="w-32 h-32 rounded-full object-cover mx-auto object-[center_30%]"
                       />
                     </div>
-                    <CardTitle className="text-xl">{mentor.name}</CardTitle>
-                    <Badge className="w-fit mx-auto bg-primary text-primary-foreground">
-                      {mentor.title}
-                    </Badge>
-                    <CardDescription className="font-medium">{mentor.background}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4 pt-0">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{mentor.bio}</p>
-
                     <div className="space-y-2">
-                      <h4 className="text-sm font-semibold text-foreground">Areas of Expertise</h4>
-                      <div className="flex flex-wrap gap-1.5">
+                      <CardTitle className="text-2xl">{mentor.name}</CardTitle>
+                      <Badge variant="default" className="bg-primary">
+                        {mentor.title}
+                      </Badge>
+                      <CardDescription className="text-base font-medium">{mentor.background}</CardDescription>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <p className="text-muted-foreground leading-relaxed">{mentor.bio}</p>
+
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-foreground">Areas of Expertise</h4>
+                      <div className="flex flex-wrap gap-2">
                         {mentor.expertise.map((skill, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs font-normal">
+                          <Badge key={idx} variant="secondary" className="text-xs">
                             {skill}
                           </Badge>
                         ))}
                       </div>
                     </div>
 
-                    <div className="space-y-1">
-                      <h4 className="text-sm font-semibold text-foreground">Experience</h4>
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-foreground">Experience</h4>
                       <p className="text-sm text-muted-foreground">{mentor.experience}</p>
                     </div>
                   </CardContent>
@@ -166,38 +173,42 @@ export default function MentorsPage() {
         </div>
       </section>
 
-      {/* Connect Section */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-10">
-            <div className="text-center space-y-3">
-              <div className="flex items-center justify-center gap-2">
-                <Network className="w-5 h-5 text-primary" />
-                <h2 className="text-2xl lg:text-3xl font-bold text-foreground">Connect</h2>
+          <div className="space-y-12">
+            <div className="text-center space-y-4 animate-fade-in">
+              <div className="flex items-center justify-center space-x-2">
+                <Network className="w-6 h-6 text-primary" />
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Connect</h2>
               </div>
-              <p className="text-muted-foreground max-w-xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Building bridges with industry leaders to provide real-world insights
               </p>
             </div>
 
             <div className="flex justify-center">
               {connections.map((connection, index) => (
-                <Card key={index} className="border border-border hover:shadow-md transition-shadow duration-200 max-w-sm w-full">
-                  <CardHeader className="text-center pb-4">
-                    <div className="mx-auto mb-4">
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up max-w-md w-full"
+                >
+                  <CardHeader className="text-center space-y-4">
+                    <div className="mx-auto">
                       <img
                         src={connection.image || "/placeholder.svg"}
                         alt={connection.name}
-                        className="w-28 h-28 rounded-full object-cover border-2 border-border"
+                        className="w-32 h-32 rounded-full object-cover mx-auto object-center"
                       />
                     </div>
-                    <CardTitle className="text-xl">{connection.name}</CardTitle>
-                    <Badge variant="outline" className="w-fit mx-auto">
-                      {connection.title}
-                    </Badge>
+                    <div className="space-y-2">
+                      <CardTitle className="text-2xl">{connection.name}</CardTitle>
+                      <Badge variant="outline" className="border-primary text-primary">
+                        {connection.title}
+                      </Badge>
+                    </div>
                   </CardHeader>
-                  <CardContent className="text-center pt-0">
-                    <p className="text-sm text-muted-foreground">{connection.description}</p>
+                  <CardContent className="text-center space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">{connection.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -207,55 +218,52 @@ export default function MentorsPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-16 lg:py-20 bg-muted/30">
+      <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center space-y-3">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div className="text-center space-y-4 animate-fade-in">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">
                 The Impact of Great Mentorship
               </h2>
-              <p className="text-muted-foreground">How our mentors help shape the future of STEM education</p>
+              <p className="text-lg text-muted-foreground">How our mentors help shape the future of STEM education</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4">
-              <Card className="border border-border">
-                <CardHeader className="text-center pb-2">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                    <GraduationCap className="w-5 h-5 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Skill Development</CardTitle>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="animate-slide-up delay-100 hover:scale-105 transition-all duration-300">
+                <CardHeader className="text-center">
+                  <GraduationCap className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle>Skill Development</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-center text-sm">
-                    Our mentors help team members develop both technical expertise and essential soft skills like leadership and problem-solving.
+                  <CardDescription className="text-center">
+                    Our mentors help team members develop both technical expertise and essential soft skills like
+                    leadership, communication, and problem-solving.
                   </CardDescription>
                 </CardContent>
               </Card>
 
-              <Card className="border border-border">
-                <CardHeader className="text-center pb-2">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                    <Users className="w-5 h-5 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Career Guidance</CardTitle>
+              <Card className="animate-slide-up delay-200 hover:scale-105 transition-all duration-300">
+                <CardHeader className="text-center">
+                  <Users className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle>Career Guidance</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-center text-sm">
-                    With their industry experience, our mentors provide valuable insights into STEM career paths and future opportunities.
+                  <CardDescription className="text-center">
+                    With their industry experience, our mentors provide valuable insights into STEM career paths and
+                    help students make informed decisions about their futures.
                   </CardDescription>
                 </CardContent>
               </Card>
 
-              <Card className="border border-border">
-                <CardHeader className="text-center pb-2">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                    <Lightbulb className="w-5 h-5 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Innovation Culture</CardTitle>
+              <Card className="animate-slide-up delay-300 hover:scale-105 transition-all duration-300">
+                <CardHeader className="text-center">
+                  <Lightbulb className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle>Innovation Culture</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-center text-sm">
-                    They foster a culture of innovation and continuous learning, encouraging students to push boundaries.
+                  <CardDescription className="text-center">
+                    They foster a culture of innovation and continuous learning, encouraging students to push boundaries
+                    and explore new possibilities.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -265,20 +273,26 @@ export default function MentorsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center space-y-6 p-8 rounded-xl border border-border bg-card">
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
+          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
               Interested in Mentoring?
             </h2>
-            <p className="text-muted-foreground">
-              We're always looking for experienced professionals who want to share their knowledge and help inspire the next generation of engineers.
+            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
+              We're always looking for experienced professionals who want to share their knowledge and help inspire the
+              next generation of engineers and innovators.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="secondary" size="lg" asChild>
                 <a href="/contact">Get Involved</a>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                asChild
+              >
                 <a href="/team">Learn About Our Team</a>
               </Button>
             </div>
