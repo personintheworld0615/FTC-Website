@@ -12,7 +12,7 @@ export default function TeamPage() {
       grade: "11th Grade",
       specialties: ["Leadership", "Strategy", "Team Management"],
       bio: "Leads the team with vision and oversees all operations.",
-      image: "/kudeti.jpg?height=300&width=300&text=Captain",
+      image: "/kudeti?height=300&width=300&text=Captain",
     },
     {
       name: "Chinmay C",
@@ -20,7 +20,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Leadership", "CAD", "Design"],
       bio: "Supports team leadership and drives innovation.",
-      image: "/chin2,jpg?height=300&width=300&text=Co-Captain",
+      image: "/chin2?height=300&width=300&text=Co-Captain",
     },
     {
       name: "Krish S",
@@ -36,9 +36,16 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Outreach", "Sponsorships", "Marketing"],
       bio: "Manages business operations, sponsorships, and community engagement.",
-      image: "/GOAT.jpg?height=300&width=300&text=Business+Lead",
+      image: "/GOAT?height=300&width=300&text=Business+Lead",
     },
-
+    {
+      name: "Srihaan B",
+      role: "Mechanical Lead",
+      grade: "10th Grade",
+      specialties: ["CAD", "Assembly", "Engineering"],
+      bio: "Leads mechanical design and construction of robot systems.",
+      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
+    },
     {
       name: "Ishana M",
       role: "Outreach Captain",
@@ -56,15 +63,7 @@ export default function TeamPage() {
       grade: "12th Grade",
       specialties: ["Sensors", "Vision"],
       bio: "Develops robot programming and sensor integration.",
-      image: "/dosa2.jpg?height=300&width=300&text=Prog+Associate+1",
-    },
-        {
-      name: "Srihaan B",
-      role: "Mechanical Associate",
-      grade: "10th Grade",
-      specialties: ["CAD", "Assembly", "Engineering"],
-      bio: "Helps mechanical design and construction of robot systems.",
-      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
+      image: "/dosa2?height=300&width=300&text=Prog+Associate+1",
     },
     {
       name: "Vihaan M",
@@ -94,7 +93,14 @@ export default function TeamPage() {
   ]
 
   const trainees = [
-  
+    {
+      name: "Felix Z",
+      role: "Programming Trainee",
+      grade: "8th Grade",
+      specialties: ["Learning Java", "Basic Programming"],
+      bio: "New to programming, eager to learn robot control systems.",
+      image: "/felix.jpg?height=300&width=300&text=Prog+Trainee+1",
+    },
       {
       name: "Veer S",
       role: "Mechanical Trainee",
