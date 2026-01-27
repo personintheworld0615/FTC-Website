@@ -38,14 +38,7 @@ export default function TeamPage() {
       bio: "Manages business operations, sponsorships, and community engagement.",
       image: "/GOAT.jpg?height=300&width=300&text=Business+Lead",
     },
-    {
-      name: "Srihaan B",
-      role: "Mechanical Lead",
-      grade: "10th Grade",
-      specialties: ["CAD", "Assembly", "Engineering"],
-      bio: "Leads mechanical design and construction of robot systems.",
-      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
-    },
+
     {
       name: "Ishana M",
       role: "Outreach Captain",
@@ -64,6 +57,14 @@ export default function TeamPage() {
       specialties: ["Sensors", "Vision"],
       bio: "Develops robot programming and sensor integration.",
       image: "/dosa2.jpg?height=300&width=300&text=Prog+Associate+1",
+    },
+        {
+      name: "Srihaan B",
+      role: "Mechanical Associate",
+      grade: "10th Grade",
+      specialties: ["CAD", "Assembly", "Engineering"],
+      bio: "Helps mechanical design and construction of robot systems.",
+      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
     },
     {
       name: "Vihaan M",
@@ -93,14 +94,7 @@ export default function TeamPage() {
   ]
 
   const trainees = [
-    {
-      name: "Felix Z",
-      role: "Programming Trainee",
-      grade: "8th Grade",
-      specialties: ["Learning Java", "Basic Programming"],
-      bio: "New to programming, eager to learn robot control systems.",
-      image: "/felix.jpg?height=300&width=300&text=Prog+Trainee+1",
-    },
+  
       {
       name: "Veer S",
       role: "Mechanical Trainee",
