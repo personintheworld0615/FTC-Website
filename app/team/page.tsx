@@ -36,7 +36,7 @@ export default function TeamPage() {
       grade: "9th Grade",
       specialties: ["Outreach", "Sponsorships", "Marketing"],
       bio: "Manages business operations, sponsorships, and community engagement.",
-      image: "/GOAT.jpg?height=300&width=300&text=Business+Lead",
+      image: "/GOAT.png?height=300&width=300&text=Business+Lead",
     },
 
     {
