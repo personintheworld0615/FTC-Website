@@ -46,6 +46,17 @@ export default function TeamPage() {
       bio: "Leads mechanical design and construction of robot systems.",
       image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
     },
+<<<<<<< HEAD
+=======
+    {
+      name: "Srihaan B",
+      role: "Mechanical Lead",
+      grade: "10th Grade",
+      specialties: ["CAD", "Assembly", "Engineering"],
+      bio: "Leads mechanical design and construction of robot systems.",
+      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
+    },
+>>>>>>> parent of b0dd531 (feat: enhance team member profiles on TeamPage)
     {
       name: "Ishana M",
       role: "Outreach Captain",
@@ -63,7 +74,11 @@ export default function TeamPage() {
       grade: "12th Grade",
       specialties: ["Sensors", "Vision"],
       bio: "Develops robot programming and sensor integration.",
+<<<<<<< HEAD
       image: "/dosa2?height=300&width=300&text=Prog+Associate+1",
+=======
+      image: "/dosa2.jpg?height=300&width=300&text=Prog+Associate+1",
+>>>>>>> parent of b0dd531 (feat: enhance team member profiles on TeamPage)
     },
     {
       name: "Vihaan M",
