@@ -1,0 +1,80 @@
+Index: app/team/page.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { Navigation } from \"@/components/navigation\"\nimport { Footer } from \"@/components/footer\"\nimport { Card, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Crown, Star, Zap } from \"lucide-react\"\n\nexport default function TeamPage() {\n  const leadership = [\n    {\n      name: \"Rohin K\",\n      role: \"Captain\",\n      grade: \"11th Grade\",\n      specialties: [\"Leadership\", \"Strategy\", \"Team Management\"],\n      bio: \"Leads the team with vision and oversees all operations.\",\n      image: \"/kudeti?height=300&width=300&text=Captain\",\n    },\n    {\n      name: \"Chinmay C\",\n      role: \"Co-Captain\",\n      grade: \"9th Grade\",\n      specialties: [\"Leadership\", \"CAD\", \"Design\"],\n      bio: \"Supports team leadership and drives innovation.\",\n      image: \"/chin2?height=300&width=300&text=Co-Captain\",\n    },\n    {\n      name: \"Krish S\",\n      role: \"Programming Lead\",\n      grade: \"10th Grade\",\n      specialties: [\"Java\", \"Autonomous\", \"Control Systems\"],\n      bio: \"Leads all programming activities and robot control systems.\",\n      image: \"/krish.jpg?height=300&width=300&text=Programming+Lead\",\n    },\n    {\n      name: \"Aarav G\",\n      role: \"Business Lead\",\n      grade: \"9th Grade\",\n      specialties: [\"Outreach\", \"Sponsorships\", \"Marketing\"],\n      bio: \"Manages business operations, sponsorships, and community engagement.\",\n      image: \"/GOAT?height=300&width=300&text=Business+Lead\",\n    },\n    {\n      name: \"Srihaan B\",\n      role: \"Mechanical Lead\",\n      grade: \"10th Grade\",\n      specialties: [\"CAD\", \"Assembly\", \"Engineering\"],\n      bio: \"Leads mechanical design and construction of robot systems.\",\n      image: \"/sri.JPG?height=300&width=300&text=Srihaan+M\",\n    },\n    {\n      name: \"Ishana M\",\n      role: \"Outreach Captain\",\n      grade: \"11th Grade\",\n      specialties: [\"Community Engagement\", \"Social Media\", \"Events\"],\n      bio: \"Leads all outreach initiatives and community engagement efforts.\",\n      image: \"/ishana.jpg?height=300&width=300&text=Ishana+M\",\n    },\n  ]\n\n  const associates = [\n    {\n      name: \"Akshit T\",\n      role: \"Programming Associate\",\n      grade: \"12th Grade\",\n      specialties: [\"Sensors\", \"Vision\"],\n      bio: \"Develops robot programming and sensor integration.\",\n      image: \"/dosa2?height=300&width=300&text=Prog+Associate+1\",\n    },\n    {\n      name: \"Vihaan M\",\n      role: \"Programming Associate\",\n      grade: \"9th Grade\",\n      specialties: [\"Java\", \"Testing\"],\n      bio: \"Works on robot control algorithms and testing protocols.\",\n      image: \"/3slices.jpg?height=300&width=300&text=Prog+Associate+2\",\n    },\n    {\n      name: \"Atharv S\",\n      role: \"Mechanical Associate\",\n      grade: \"9th Grade\",\n      specialties: [\"Assembly\", \"CNC\"],\n      bio: \"Assists with robot construction and mechanical systems.\",\n      image: \"/atharv.jpeg?height=300&width=300&text=Mech+Associate+1\",\n    },\n  \n    {\n      name: \"Varsha K\",\n      role: \"Outreach Associate\",\n      grade: \"10th Grade\",\n      specialties: [\"Social Media\", \"Events\"],\n      bio: \"Manages social media presence and event coordination.\",\n      image: \"/varsha.jpg?height=300&width=300&text=Outreach+Associate+1\",\n    },\n  ]\n\n  const trainees = [\n    {\n      name: \"Felix Z\",\n      role: \"Programming Trainee\",\n      grade: \"8th Grade\",\n      specialties: [\"Learning Java\", \"Basic Programming\"],\n      bio: \"New to programming, eager to learn robot control systems.\",\n      image: \"/felix.jpg?height=300&width=300&text=Prog+Trainee+1\",\n    },\n      {\n      name: \"Veer S\",\n      role: \"Mechanical Trainee\",\n      grade: \"11th Grade\",\n      specialties: [\"Assembly\", \"CAD\"],\n      bio: \"Supports mechanical design and material selection.\",\n      image: \"/veer.jpg?height=300&width=300&text=Mech+Associate+2\",\n    },\n    {\n      name: \"Sid M\",\n      role: \"Programming Trainee\",\n      grade: \"10th Grade\",\n      specialties: [\"Learning Java\", \"Problem Solving\"],\n      bio: \"Developing programming skills and logical thinking.\",\n      image: \"/sid2?height=300&width=300&text=Prog+Trainee+2\",\n    },\n    {\n      name: \"Ankita S\",\n      role: \"Programming Trainee\",\n      grade: \"9th Grade\",\n      specialties: [\"Learning java\", \"Learning teleop\"],\n      bio: \"Learning mechanical design principles and tool usage.\",\n      image: \"/ankita.jpg?height=300&width=300&text=Mech+Trainee+1\",\n    },\n    {\n      name: \"Aditya N\",\n      role: \"Mechanical Trainee\",\n      grade: \"8th Grade\",\n      specialties: [\"CAD\", \"Assembly\"],\n      bio: \"Gaining hands-on experience with robot assembly.\",\n      image: \"/tuffnavale.jpg?height=300&width=300&text=Mech+Trainee+2\",\n    },\n    {\n      name: \"Aditya D\",\n      role: \"Mechanical Trainee\",\n      grade: \"10th Grade\",\n      specialties: [\"Physics\", \"Learning Business\"],\n      bio: \"Developing communication and business skills.\",\n      image: \"/IMG_2381.jpg?height=300&width=300&text=Outreach+Trainee+1\",\n    },\n    {\n      name: \"Samarth p\",\n      role: \"Mech Trainee\",\n      grade: \"9th Grade\",\n      specialties: [\"Assembly\", \"Mech\"],\n      bio: \"Mastering CAD and Building the robot.\",\n      image: \"/sam2?height=300&width=300&text=Outreach+Trainee+2\",\n    },\n    {\n      name: \"Ayush B\",\n      role: \"Outreach Trainee\",\n      grade: \"8th Grade\",\n      specialties: [\"Fundraising\", \"Spreadability\"],\n      bio: \"Learning how to spread FIRST and fundraise money.\",\n      image: \"/Ahush?height=300&width=300&text=Outreach+Trainee+2\",\n    },\n  ]\n\n  const TeamSection = ({ title, members, icon: Icon, badgeVariant, delay = 0 }) => (\n    <div className=\"space-y-8 animate-fade-in\" style={{ animationDelay: `${delay}ms` }}>\n      <div className=\"text-center space-y-4\">\n        <div className=\"flex items-center justify-center space-x-2\">\n          <Icon className=\"w-6 h-6 text-primary\" />\n          <h3 className=\"text-2xl lg:text-3xl font-bold text-foreground\">{title}</h3>\n        </div>\n      </div>\n\n      <div className=\"grid md:grid-cols-2 lg:grid-cols-3 gap-6\">\n        {members.map((member, index) => (\n          <Card\n            key={index}\n            className=\"group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up\"\n            style={{ animationDelay: `${delay + index * 100}ms` }}\n          >\n            <CardHeader className=\"text-center\">\n              <div className=\"mx-auto mb-4\">\n                <img\n                  src={member.image || \"/placeholder.svg\"}\n                  alt={`${member.name} - ${member.role}`}\n                  className=\"w-24 h-24 rounded-full object-cover object-center mx-auto\"\n                />\n              </div>\n              <CardTitle className=\"text-xl\">{member.name}</CardTitle>\n              <div className=\"space-y-2\">\n                <Badge variant={badgeVariant} className={badgeVariant === \"default\" ? \"bg-primary\" : \"\"}>\n                  {member.role}\n                </Badge>\n                <CardDescription className=\"text-sm\">{member.grade}</CardDescription>\n              </div>\n            </CardHeader>\n            <CardContent className=\"space-y-4\">\n              <p className=\"text-sm text-muted-foreground text-center\">{member.bio}</p>\n              <div className=\"flex flex-wrap gap-1 justify-center\">\n                {member.specialties.map((specialty, idx) => (\n                  <Badge key={idx} variant=\"secondary\" className=\"text-xs\">\n                    {specialty}\n                  </Badge>\n                ))}\n              </div>\n            </CardContent>\n          </Card>\n        ))}\n      </div>\n    </div>\n  )\n\n  return (\n    <div className=\"min-h-screen bg-background\">\n      <Navigation />\n\n      {/* Hero Section */}\n      <section className=\"py-20 lg:py-32\">\n        <div className=\"container mx-auto px-4 sm:px-6 lg:px-8\">\n          <div className=\"max-w-4xl mx-auto text-center space-y-8 animate-fade-in\">\n            <Badge variant=\"outline\" className=\"text-primary border-primary animate-slide-up\">\n              Meet Our Team\n            </Badge>\n            <h1 className=\"text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up delay-100\">\n              The Minds Behind Rust in Piece\n            </h1>\n            <p className=\"text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200\">\n              Our team of 18 dedicated students from Princeton STEM Academy combines diverse skills, unique\n              perspectives, and an unwavering passion for robotics and innovation.\n            </p>\n          </div>\n        </div>\n      </section>\n\n      {/* Team Stats */}\n      <section className=\"py-16 bg-muted/50\">\n        <div className=\"container mx-auto px-4 sm:px-6 lg:px-8\">\n          <div className=\"grid grid-cols-2 lg:grid-cols-4 gap-8\">\n            <div className=\"text-center animate-slide-up delay-100\">\n              <div className=\"text-3xl font-bold text-primary\">18</div>\n              <div className=\"text-sm text-muted-foreground\">Total Members</div>\n            </div>\n            <div className=\"text-center animate-slide-up delay-200\">\n              <div className=\"text-3xl font-bold text-primary\">6</div>\n              <div className=\"text-sm text-muted-foreground\">Leadership Roles</div>\n            </div>\n            <div className=\"text-center animate-slide-up delay-300\">\n              <div className=\"text-3xl font-bold text-primary\">3</div>\n              <div className=\"text-sm text-muted-foreground\">Departments</div>\n            </div>\n            <div className=\"text-center animate-slide-up delay-500\">\n              <div className=\"text-3xl font-bold text-primary\">100%</div>\n              <div className=\"text-sm text-muted-foreground\">Dedication</div>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* Team Hierarchy */}\n      <section className=\"py-20\">\n        <div className=\"container mx-auto px-4 sm:px-6 lg:px-8 space-y-20\">\n          <TeamSection title=\"Leadership Team\" members={leadership} icon={Crown} badgeVariant=\"default\" delay={0} />\n\n          <TeamSection title=\"Associates\" members={associates} icon={Star} badgeVariant=\"secondary\" delay={200} />\n\n          <TeamSection title=\"Trainees\" members={trainees} icon={Zap} badgeVariant=\"outline\" delay={400} />\n        </div>\n      </section>\n\n      <Footer />\n    </div>\n  )\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/team/page.tsx b/app/team/page.tsx
+--- a/app/team/page.tsx	(revision 108c556573f3ae487896b8ee01481a3a64512356)
++++ b/app/team/page.tsx	(date 1769482590190)
+@@ -12,7 +12,7 @@
+       grade: "11th Grade",
+       specialties: ["Leadership", "Strategy", "Team Management"],
+       bio: "Leads the team with vision and oversees all operations.",
+-      image: "/kudeti?height=300&width=300&text=Captain",
++      image: "/kudeti.jpg?height=300&width=300&text=Captain",
+     },
+     {
+       name: "Chinmay C",
+@@ -20,7 +20,7 @@
+       grade: "9th Grade",
+       specialties: ["Leadership", "CAD", "Design"],
+       bio: "Supports team leadership and drives innovation.",
+-      image: "/chin2?height=300&width=300&text=Co-Captain",
++      image: "/chin2,jpg?height=300&width=300&text=Co-Captain",
+     },
+     {
+       name: "Krish S",
+@@ -36,16 +36,9 @@
+       grade: "9th Grade",
+       specialties: ["Outreach", "Sponsorships", "Marketing"],
+       bio: "Manages business operations, sponsorships, and community engagement.",
+-      image: "/GOAT?height=300&width=300&text=Business+Lead",
++      image: "/GOAT.jpg?height=300&width=300&text=Business+Lead",
+     },
+-    {
+-      name: "Srihaan B",
+-      role: "Mechanical Lead",
+-      grade: "10th Grade",
+-      specialties: ["CAD", "Assembly", "Engineering"],
+-      bio: "Leads mechanical design and construction of robot systems.",
+-      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
+-    },
++
+     {
+       name: "Ishana M",
+       role: "Outreach Captain",
+@@ -63,7 +56,15 @@
+       grade: "12th Grade",
+       specialties: ["Sensors", "Vision"],
+       bio: "Develops robot programming and sensor integration.",
+-      image: "/dosa2?height=300&width=300&text=Prog+Associate+1",
++      image: "/dosa2.jpg?height=300&width=300&text=Prog+Associate+1",
++    },
++        {
++      name: "Srihaan B",
++      role: "Mechanical Associate",
++      grade: "10th Grade",
++      specialties: ["CAD", "Assembly", "Engineering"],
++      bio: "Helps mechanical design and construction of robot systems.",
++      image: "/sri.JPG?height=300&width=300&text=Srihaan+M",
+     },
+     {
+       name: "Vihaan M",
+@@ -93,14 +94,7 @@
+   ]
+ 
+   const trainees = [
+-    {
+-      name: "Felix Z",
+-      role: "Programming Trainee",
+-      grade: "8th Grade",
+-      specialties: ["Learning Java", "Basic Programming"],
+-      bio: "New to programming, eager to learn robot control systems.",
+-      image: "/felix.jpg?height=300&width=300&text=Prog+Trainee+1",
+-    },
++  
+       {
+       name: "Veer S",
+       role: "Mechanical Trainee",
