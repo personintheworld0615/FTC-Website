@@ -93,7 +93,7 @@ export default function SponsorsPage() {
   ]
 
   return (
-    <div className="min-h-screen relative z-0">
+    <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
@@ -125,8 +125,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Why Sponsor Us */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-sm pointer-events-none -z-10" />
+      <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <SlideUp className="space-y-8">
@@ -199,7 +198,7 @@ export default function SponsorsPage() {
 
             {/* Desktop Table View */}
             <SlideUp className="hidden lg:block overflow-x-auto">
-              <div className="min-w-full border border-white/20 dark:border-white/10 rounded-xl overflow-hidden shadow-2xl bg-background/40 backdrop-blur-xl">
+              <div className="min-w-full border-4 border-primary rounded-xl overflow-hidden shadow-2xl">
                 {/* Header Row */}
                 <div className="grid grid-cols-5 bg-gradient-orange">
                   <div className="p-6 border-r-2 border-primary/30 flex items-center justify-center">
@@ -216,14 +215,14 @@ export default function SponsorsPage() {
                 </div>
 
                 {/* Price Row */}
-                <div className="grid grid-cols-5 bg-background/60 border-b border-white/10">
-                  <div className="p-6 border-r border-white/10 flex items-center justify-center">
+                <div className="grid grid-cols-5 bg-muted/30">
+                  <div className="p-6 border-r-2 border-border flex items-center justify-center bg-muted">
                     <h4 className="text-lg font-bold text-foreground">PRICE</h4>
                   </div>
                   {sponsorshipTiers.map((tier, index) => (
                     <div
                       key={index}
-                      className={`p-6 ${index < sponsorshipTiers.length - 1 ? "border-r border-white/10" : ""} flex items-center justify-center bg-transparent`}
+                      className={`p-6 ${index < sponsorshipTiers.length - 1 ? "border-r-2 border-border" : ""} flex items-center justify-center bg-card`}
                     >
                       <Badge variant="outline" className="text-lg px-4 py-2 border-primary text-primary font-bold">
                         {tier.amount}
@@ -236,9 +235,9 @@ export default function SponsorsPage() {
                 {benefitsList.map((benefit, benefitIndex) => (
                   <div
                     key={benefitIndex}
-                    className={`grid grid-cols-5 ${benefitIndex % 2 === 0 ? "bg-white/5" : "bg-transparent"} border-b border-white/10`}
+                    className={`grid grid-cols-5 ${benefitIndex % 2 === 0 ? "bg-muted/20" : "bg-card"}`}
                   >
-                    <div className="p-6 border-r border-white/10 flex items-center">
+                    <div className="p-6 border-r-2 border-border flex items-center bg-muted/50">
                       <p className="text-sm font-medium text-foreground leading-relaxed">{benefit.name}</p>
                     </div>
                     {sponsorshipTiers.map((tier, tierIndex) => {
@@ -247,7 +246,7 @@ export default function SponsorsPage() {
                       return (
                         <div
                           key={tierIndex}
-                          className={`p-6 ${tierIndex < sponsorshipTiers.length - 1 ? "border-r border-white/10" : ""} flex items-center justify-center`}
+                          className={`p-6 ${tierIndex < sponsorshipTiers.length - 1 ? "border-r-2 border-border" : ""} flex items-center justify-center`}
                         >
                           {checkmarkCount > 0 && (
                             <div className="flex gap-1">
@@ -283,7 +282,7 @@ export default function SponsorsPage() {
                 return (
                   <StaggerItem key={index}>
                     <TiltCard>
-                      <Card className={`${tier.borderColor} border hover:shadow-xl transition-all duration-300 bg-background/60 backdrop-blur-xl`}>
+                      <Card className={`${tier.borderColor} border-2 hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm`}>
                         <CardHeader className="text-center space-y-4 bg-gradient-orange rounded-t-lg">
                           <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto">
                             <IconComponent className="w-8 h-8 text-primary-foreground" />
@@ -332,8 +331,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Current Sponsors */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-sm pointer-events-none -z-10" />
+      <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center space-y-4 animate-fade-in">
@@ -347,7 +345,7 @@ export default function SponsorsPage() {
               {currentSponsors.map((sponsor, index) => (
                 <Card
                   key={index}
-                  className="text-center hover:shadow-xl hover:scale-105 transition-all duration-300 animate-slide-up group bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10"
+                  className="text-center hover:shadow-xl hover:scale-105 transition-all duration-300 animate-slide-up group"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <CardHeader className="space-y-4">
@@ -393,9 +391,10 @@ export default function SponsorsPage() {
         </div>
       </section>
 
-      <section className="py-20 relative">
+      {/* Call to Action */}
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-black/80 dark:bg-black/40 backdrop-blur-2xl border border-white/20 rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in relative overflow-hidden shadow-2xl">
+          <div className="bg-gradient-orange rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
 

@@ -76,13 +76,6 @@
   --sidebar-ring: oklch(0.72 0.2 60 / 0.6);
 }
 
-@layer utilities {
-  .bg-grid-pattern {
-    background-image: linear-gradient(to right, currentColor 1px, transparent 1px),
-      linear-gradient(to bottom, currentColor 1px, transparent 1px);
-  }
-}
-
 /* Added custom animations and gradients for more dynamic feel */
 @keyframes float {
   0%,
