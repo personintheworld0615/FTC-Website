@@ -223,10 +223,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} bg-slate-50 text-slate-950`}>
         <AnimatedCursor />
         <AmbientBackground />
-        <Suspense fallback={null}>{children}</Suspense>
+        <div className="relative z-10">
+          <Suspense fallback={null}>{children}</Suspense>
+        </div>
       </body>
     </html>
   )
