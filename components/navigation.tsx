@@ -12,6 +12,7 @@ export function Navigation() {
     { href: "/mentors", label: "Mentors" },
     { href: "/sponsors", label: "Sponsors" },
     { href: "/community", label: "Community" },
+    { href: "/resources", label: "Resources" },
     { href: "/contact", label: "Contact" },
   ]
 
