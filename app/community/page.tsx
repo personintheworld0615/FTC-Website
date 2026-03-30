@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Heart, Users, GraduationCap, Target } from "lucide-react"
+import { SlideUp, TiltCard, StaggerContainer, StaggerItem, ScaleIn } from "@/components/animations"
 
 export default function CommunityPage() {
   const impactStats = [
@@ -96,17 +97,23 @@ export default function CommunityPage() {
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <Badge variant="outline" className="text-primary border-primary animate-slide-up">
-              Community Impact
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up delay-100">
-              Building Tomorrow's Innovators
-            </h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
-              Beyond competition, we're committed to inspiring the next generation through mentorship, education, and
-              community outreach that makes STEM accessible and exciting for all students.
-            </p>
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <SlideUp delay={0.1}>
+              <Badge variant="outline" className="text-primary border-primary animate-pulse-glow">
+                Community Impact
+              </Badge>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
+                Building Tomorrow's Innovators
+              </h1>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+                Beyond competition, we're committed to inspiring the next generation through mentorship, education, and
+                community outreach that makes STEM accessible and exciting for all students.
+              </p>
+            </SlideUp>
           </div>
         </div>
       </section>
@@ -123,19 +130,19 @@ export default function CommunityPage() {
               <p className="text-lg text-muted-foreground">Measuring our commitment to community STEM education</p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {impactStats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center space-y-2 animate-slide-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="text-4xl lg:text-5xl font-bold text-primary">{stat.number}</div>
-                  <div className="text-lg font-semibold text-foreground">{stat.label}</div>
-                  <div className="text-sm text-muted-foreground">{stat.description}</div>
-                </div>
+                <StaggerItem key={index}>
+                  <div className="text-center space-y-2">
+                    <div className="text-4xl lg:text-5xl font-bold text-primary group-hover:animate-bounce">
+                      {stat.number}
+                    </div>
+                    <div className="text-lg font-semibold text-foreground">{stat.label}</div>
+                    <div className="text-sm text-muted-foreground">{stat.description}</div>
+                  </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
       </section>
@@ -160,10 +167,10 @@ export default function CommunityPage() {
                 const isEven = index % 2 === 0
 
                 return (
-                  <div
+                  <SlideUp
                     key={index}
-                    className={`grid lg:grid-cols-2 gap-12 items-center animate-slide-up ${isEven ? "" : "lg:grid-flow-col-dense"}`}
-                    style={{ animationDelay: `${index * 200}ms` }}
+                    className={`grid lg:grid-cols-2 gap-12 items-center ${isEven ? "" : "lg:grid-flow-col-dense"}`}
+                    delay={index * 0.2}
                   >
                     <div className={`space-y-6 ${isEven ? "" : "lg:col-start-2"}`}>
                       <div className="space-y-4">
@@ -190,15 +197,17 @@ export default function CommunityPage() {
                     </div>
 
                     <div className={`relative ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}`}>
-                      <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden">
-                        <img
-                          src={program.image || "/placeholder.svg"}
-                          alt={program.title}
-                          className="w-full h-full object-cover object-center rounded-2xl"
-                        />
-                      </div>
+                      <TiltCard>
+                        <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden hover:shadow-2xl transition-all duration-300">
+                          <img
+                            src={program.image || "/placeholder.svg"}
+                            alt={program.title}
+                            className="w-full h-full object-cover object-center rounded-2xl hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                      </TiltCard>
                     </div>
-                  </div>
+                  </SlideUp>
                 )
               })}
             </div>
@@ -217,26 +226,26 @@ export default function CommunityPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <StaggerContainer className="grid md:grid-cols-3 gap-6">
               {testimonials.map((testimonial, index) => (
-                <Card
-                  key={index}
-                  className="hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <CardContent className="p-6 space-y-4">
-                    <div className="text-primary text-4xl font-serif">"</div>
-                    <blockquote className="text-muted-foreground italic leading-relaxed">
-                      {testimonial.quote}
-                    </blockquote>
-                    <div className="space-y-1">
-                      <div className="font-semibold text-foreground">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <StaggerItem key={index}>
+                  <TiltCard>
+                    <Card className="h-full hover:shadow-lg transition-all duration-300 shadow-md">
+                      <CardContent className="p-6 space-y-4">
+                        <div className="text-primary text-4xl font-serif">"</div>
+                        <blockquote className="text-muted-foreground italic leading-relaxed">
+                          {testimonial.quote}
+                        </blockquote>
+                        <div className="space-y-1">
+                          <div className="font-semibold text-foreground">{testimonial.author}</div>
+                          <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TiltCard>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
       </section>
@@ -245,26 +254,28 @@ export default function CommunityPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
-              Get Involved in Our Community
-            </h2>
-            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
-              Whether you're a student, parent, educator, or community member, there are many ways to join our mission
-              of inspiring the next generation through hands-on STEM education and robotics.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" asChild>
-                <a href="/contact">Partner With Us</a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                asChild
-              >
-                <a href="mailto:rustinpieceftc@gmail.com">Request a Demo</a>
-              </Button>
-            </div>
+            <ScaleIn>
+              <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
+                Get Involved in Our Community
+              </h2>
+              <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
+                Whether you're a student, parent, educator, or community member, there are many ways to join our mission
+                of inspiring the next generation through hands-on STEM education and robotics.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="secondary" size="lg" className="shadow-xl" asChild>
+                  <a href="/contact">Partner With Us</a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  asChild
+                >
+                  <a href="mailto:rustinpieceftc@gmail.com">Request a Demo</a>
+                </Button>
+              </div>
+            </ScaleIn>
           </div>
         </div>
       </section>

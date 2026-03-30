@@ -4,6 +4,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Crown, Star, Heart, Building, Handshake, Trophy, Check } from "lucide-react"
+import { SlideUp, TiltCard, StaggerContainer, StaggerItem } from "@/components/animations"
+
+interface Sponsor {
+  name: string
+  tier: string
+  logo: string
+  description: string
+}
 
 export default function SponsorsPage() {
   const benefitsList = [
@@ -68,7 +76,7 @@ export default function SponsorsPage() {
     },
   ]
 
-  const currentSponsors = [
+  const currentSponsors: Sponsor[] = [
     /*{
       name: "TechCorp Industries",
       tier: "Platinum Partner",
@@ -95,17 +103,23 @@ export default function SponsorsPage() {
         <div className="absolute bottom-20 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <Badge variant="outline" className="text-primary border-primary animate-pulse-glow">
-              Our Sponsors
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up">
-              Partners in Innovation
-            </h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
-              We're grateful for the generous support of our sponsors who make our robotics journey possible and help us
-              inspire the next generation of STEM leaders.
-            </p>
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <SlideUp delay={0.1}>
+              <Badge variant="outline" className="text-primary border-primary animate-pulse-glow">
+                Our Sponsors
+              </Badge>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
+                Partners in Innovation
+              </h1>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+                We're grateful for the generous support of our sponsors who make our robotics journey possible and help us
+                inspire the next generation of STEM leaders.
+              </p>
+            </SlideUp>
           </div>
         </div>
       </section>
@@ -114,7 +128,7 @@ export default function SponsorsPage() {
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-slide-up">
+            <SlideUp className="space-y-8">
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
                   <Handshake className="w-6 h-6 text-primary animate-bounce" />
@@ -155,17 +169,19 @@ export default function SponsorsPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </SlideUp>
 
-            <div className="relative animate-slide-up delay-300">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-500 group">
-                <img
-                  src="/sponsor-partnership.jpg"
-                  alt="Team members with sponsor representatives in workshop"
-                  className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
+            <SlideUp delay={0.3} className="relative">
+              <TiltCard>
+                <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-500 group shadow-lg">
+                  <img
+                    src="/sponsor-partnership.jpg"
+                    alt="Team members with sponsor representatives in workshop"
+                    className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </TiltCard>
+            </SlideUp>
           </div>
         </div>
       </section>
@@ -181,7 +197,7 @@ export default function SponsorsPage() {
             </div>
 
             {/* Desktop Table View */}
-            <div className="hidden lg:block overflow-x-auto animate-slide-up">
+            <SlideUp className="hidden lg:block overflow-x-auto">
               <div className="min-w-full border-4 border-primary rounded-xl overflow-hidden shadow-2xl">
                 {/* Header Row */}
                 <div className="grid grid-cols-5 bg-gradient-orange">
@@ -257,59 +273,59 @@ export default function SponsorsPage() {
                   frequency/prominence
                 </p>
               </div>
-            </div>
+            </SlideUp>
 
             {/* Mobile Card View */}
-            <div className="lg:hidden grid gap-6">
+            <StaggerContainer className="lg:hidden grid gap-6">
               {sponsorshipTiers.map((tier, index) => {
                 const IconComponent = tier.icon
                 return (
-                  <Card
-                    key={index}
-                    className={`${tier.borderColor} border-2 hover:shadow-xl transition-all duration-300 animate-slide-up`}
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <CardHeader className="text-center space-y-4 bg-gradient-orange rounded-t-lg">
-                      <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto">
-                        <IconComponent className="w-8 h-8 text-primary-foreground" />
-                      </div>
-                      <div className="space-y-2">
-                        <CardTitle className="text-2xl text-primary-foreground uppercase">{tier.name}</CardTitle>
-                        <Badge variant="secondary" className="text-lg px-4 py-2 font-bold">
-                          {tier.amount}
-                        </Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4 pt-6">
-                      <h4 className="font-semibold text-foreground">Benefits Include:</h4>
-                      <ul className="space-y-3">
-                        {benefitsList.map((benefit, benefitIdx) => {
-                          const checkmarkCount = benefit.checkmarks[tier.key]
+                  <StaggerItem key={index}>
+                    <TiltCard>
+                      <Card className={`${tier.borderColor} border-2 hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm`}>
+                        <CardHeader className="text-center space-y-4 bg-gradient-orange rounded-t-lg">
+                          <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto">
+                            <IconComponent className="w-8 h-8 text-primary-foreground" />
+                          </div>
+                          <div className="space-y-2">
+                            <CardTitle className="text-2xl text-primary-foreground uppercase">{tier.name}</CardTitle>
+                            <Badge variant="secondary" className="text-lg px-4 py-2 font-bold">
+                              {tier.amount}
+                            </Badge>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="space-y-4 pt-6">
+                          <h4 className="font-semibold text-foreground">Benefits Include:</h4>
+                          <ul className="space-y-3">
+                            {benefitsList.map((benefit, benefitIdx) => {
+                              const checkmarkCount = benefit.checkmarks[tier.key]
 
-                          return (
-                            <li
-                              key={benefitIdx}
-                              className={`flex items-start space-x-3 ${checkmarkCount === 0 ? "opacity-30" : ""}`}
-                            >
-                              <div className="flex gap-1 mt-0.5">
-                                {checkmarkCount > 0 ? (
-                                  Array.from({ length: checkmarkCount }).map((_, i) => (
-                                    <Check key={i} className="w-5 h-5 text-primary flex-shrink-0" />
-                                  ))
-                                ) : (
-                                  <div className="w-5 h-5 flex-shrink-0" />
-                                )}
-                              </div>
-                              <span className="text-sm text-muted-foreground leading-relaxed">{benefit.name}</span>
-                            </li>
-                          )
-                        })}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                              return (
+                                <li
+                                  key={benefitIdx}
+                                  className={`flex items-start space-x-3 ${checkmarkCount === 0 ? "opacity-30" : ""}`}
+                                >
+                                  <div className="flex gap-1 mt-0.5">
+                                    {checkmarkCount > 0 ? (
+                                      Array.from({ length: checkmarkCount }).map((_, i) => (
+                                        <Check key={i} className="w-5 h-5 text-primary flex-shrink-0" />
+                                      ))
+                                    ) : (
+                                      <div className="w-5 h-5 flex-shrink-0" />
+                                    )}
+                                  </div>
+                                  <span className="text-sm text-muted-foreground leading-relaxed">{benefit.name}</span>
+                                </li>
+                              )
+                            })}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    </TiltCard>
+                  </StaggerItem>
                 )
               })}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
       </section>

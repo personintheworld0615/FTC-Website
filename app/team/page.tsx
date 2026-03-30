@@ -3,6 +3,24 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Crown, Star, Zap } from "lucide-react"
+import { SlideUp, TiltCard, StaggerContainer, StaggerItem } from "@/components/animations"
+
+interface TeamMember {
+  name: string
+  role: string
+  grade: string
+  specialties: string[]
+  bio: string
+  image: string
+}
+
+interface TeamSectionProps {
+  title: string
+  members: TeamMember[]
+  icon: React.ElementType
+  badgeVariant: "default" | "secondary" | "outline"
+  delay?: number
+}
 
 export default function TeamPage() {
   const leadership = [
@@ -151,8 +169,8 @@ export default function TeamPage() {
     },
   ]
 
-  const TeamSection = ({ title, members, icon: Icon, badgeVariant, delay = 0 }) => (
-    <div className="space-y-8 animate-fade-in" style={{ animationDelay: `${delay}ms` }}>
+  const TeamSection = ({ title, members, icon: Icon, badgeVariant, delay = 0 }: TeamSectionProps) => (
+    <SlideUp className="space-y-8" delay={delay / 1000}>
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center space-x-2">
           <Icon className="w-6 h-6 text-primary" />
@@ -160,13 +178,11 @@ export default function TeamPage() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {members.map((member, index) => (
-          <Card
-            key={index}
-            className="group hover:shadow-lg transition-all duration-300 hover:scale-105 animate-slide-up"
-            style={{ animationDelay: `${delay + index * 100}ms` }}
-          >
+      <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {members.map((member: TeamMember, index: number) => (
+          <StaggerItem key={index}>
+            <TiltCard>
+              <Card className="h-full group hover:shadow-lg transition-all duration-300 shadow-md bg-white/60 backdrop-blur-sm border-primary/10">
             <CardHeader className="text-center">
               <div className="mx-auto mb-4">
                 <img
@@ -186,7 +202,7 @@ export default function TeamPage() {
             <CardContent className="space-y-4">
               <p className="text-sm text-muted-foreground text-center">{member.bio}</p>
               <div className="flex flex-wrap gap-1 justify-center">
-                {member.specialties.map((specialty, idx) => (
+                {member.specialties.map((specialty: string, idx: number) => (
                   <Badge key={idx} variant="secondary" className="text-xs">
                     {specialty}
                   </Badge>
@@ -194,9 +210,11 @@ export default function TeamPage() {
               </div>
             </CardContent>
           </Card>
+            </TiltCard>
+          </StaggerItem>
         ))}
-      </div>
-    </div>
+      </StaggerContainer>
+    </SlideUp>
   )
 
   return (
@@ -206,17 +224,23 @@ export default function TeamPage() {
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <Badge variant="outline" className="text-primary border-primary animate-slide-up">
-              Meet Our Team
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance animate-slide-up delay-100">
-              The Minds Behind Rust in Piece
-            </h1>
-            <p className="text-xl text-muted-foreground text-pretty leading-relaxed animate-slide-up delay-200">
-              Our team of 17 dedicated students from Princeton STEM Academy combines diverse skills, unique
-              perspectives, and an unwavering passion for robotics and innovation.
-            </p>
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <SlideUp delay={0.1}>
+              <Badge variant="outline" className="text-primary border-primary">
+                Meet Our Team
+              </Badge>
+            </SlideUp>
+            <SlideUp delay={0.2}>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
+                The Minds Behind Rust in Piece
+              </h1>
+            </SlideUp>
+            <SlideUp delay={0.3}>
+              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+                Our team of 17 dedicated students from Princeton STEM Academy combines diverse skills, unique
+                perspectives, and an unwavering passion for robotics and innovation.
+              </p>
+            </SlideUp>
           </div>
         </div>
       </section>
@@ -224,24 +248,32 @@ export default function TeamPage() {
       {/* Team Stats */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center animate-slide-up delay-100">
-              <div className="text-3xl font-bold text-primary">18</div>
-              <div className="text-sm text-muted-foreground">Total Members</div>
-            </div>
-            <div className="text-center animate-slide-up delay-200">
-              <div className="text-3xl font-bold text-primary">6</div>
-              <div className="text-sm text-muted-foreground">Leadership Roles</div>
-            </div>
-            <div className="text-center animate-slide-up delay-300">
-              <div className="text-3xl font-bold text-primary">3</div>
-              <div className="text-sm text-muted-foreground">Departments</div>
-            </div>
-            <div className="text-center animate-slide-up delay-500">
-              <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Dedication</div>
-            </div>
-          </div>
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <StaggerItem>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">17</div>
+                <div className="text-sm text-muted-foreground">Total Members</div>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">6</div>
+                <div className="text-sm text-muted-foreground">Leadership Roles</div>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">3</div>
+                <div className="text-sm text-muted-foreground">Departments</div>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">Dedication</div>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
