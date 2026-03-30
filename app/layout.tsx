@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Suspense } from "react"
+import { AnimatedCursor } from "@/components/animated-cursor"
+import { AmbientBackground } from "@/components/ambient-background"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -222,6 +224,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <AnimatedCursor />
+        <AmbientBackground />
         <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>

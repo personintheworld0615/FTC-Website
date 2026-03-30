@@ -91,7 +91,7 @@ export default function CommunityPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative z-0">
       <Navigation />
 
       {/* Hero Section */}
@@ -119,7 +119,8 @@ export default function CommunityPage() {
       </section>
 
       {/* Impact Statistics */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-background/40 backdrop-blur-sm pointer-events-none -z-10" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center space-y-4 animate-fade-in">
@@ -216,7 +217,8 @@ export default function CommunityPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-background/40 backdrop-blur-sm pointer-events-none -z-10" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center space-y-4 animate-fade-in">
@@ -230,7 +232,7 @@ export default function CommunityPage() {
               {testimonials.map((testimonial, index) => (
                 <StaggerItem key={index}>
                   <TiltCard>
-                    <Card className="h-full hover:shadow-lg transition-all duration-300 shadow-md">
+                    <Card className="h-full hover:shadow-primary/20 transition-all duration-300 shadow-lg bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10">
                       <CardContent className="p-6 space-y-4">
                         <div className="text-primary text-4xl font-serif">"</div>
                         <blockquote className="text-muted-foreground italic leading-relaxed">
@@ -250,10 +252,9 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in">
+          <div className="bg-primary/90 dark:bg-primary/40 backdrop-blur-2xl border border-white/20 dark:border-white/10 rounded-2xl p-8 lg:p-12 text-center space-y-6 animate-fade-in shadow-2xl">
             <ScaleIn>
               <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance">
                 Get Involved in Our Community

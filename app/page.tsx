@@ -33,7 +33,7 @@ export default function HomePage() {
   }, [clickCount])
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen text-foreground relative z-0">
       <Navigation />
 
       {showEasterEgg && (
@@ -49,8 +49,8 @@ export default function HomePage() {
       <main>
         <article>
           <section id="home" className="relative py-20 lg:py-32 overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+            {/* Background decoration handled by layout but we can keep hints */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"></div>
             <div className="absolute top-20 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-20 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
 
@@ -112,7 +112,7 @@ export default function HomePage() {
                   </SlideUp>
 
                   <div className="grid grid-cols-3 gap-4 text-sm">
-                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-primary/20 border border-primary/30 hover:bg-primary/30 transition-all duration-300 group">
+                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-background/30 backdrop-blur-md border border-primary/20 hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 group shadow-lg">
                       <Users
                         className="w-6 h-6 text-primary group-hover:scale-110 transition-transform"
                         aria-hidden="true"
@@ -120,7 +120,7 @@ export default function HomePage() {
                       <span className="font-bold text-foreground">17</span>
                       <span className="text-muted-foreground text-center">Team Members</span>
                     </div>
-                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/20 border border-accent/30 hover:bg-accent/30 transition-all duration-300 group">
+                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-background/30 backdrop-blur-md border border-accent/20 hover:bg-accent/20 hover:border-accent/40 transition-all duration-300 group shadow-lg">
                       <Trophy
                         className="w-6 h-6 text-accent group-hover:scale-110 transition-transform"
                         aria-hidden="true"
@@ -128,7 +128,7 @@ export default function HomePage() {
                       <span className="font-semibold text-foreground">Multiple</span>
                       <span className="text-muted-foreground text-center">Awards</span>
                     </div>
-                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-secondary/20 border border-secondary/30 hover:bg-secondary/30 transition-all duration-300 group">
+                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-background/30 backdrop-blur-md border border-secondary/20 hover:bg-secondary/20 hover:border-secondary/40 transition-all duration-300 group shadow-lg">
                       <Heart
                         className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform"
                         aria-hidden="true"
@@ -146,7 +146,7 @@ export default function HomePage() {
                       aria-hidden="true"
                     ></div>
                     <TiltCard>
-                      <div className="relative aspect-square bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 rounded-3xl p-4 border border-primary/20 hover:border-primary/40 transition-all duration-500 group">
+                      <div className="relative aspect-square bg-background/20 backdrop-blur-xl rounded-3xl p-4 border border-white/20 dark:border-white/10 hover:border-primary/40 transition-all duration-500 group shadow-2xl">
                         <img
                           src="/images/design-mode/team-hero.png"
                           alt="Rust in Piece FTC Team 19772 members wearing orange team shirts standing together at Princeton STEM Academy, showcasing our diverse and passionate robotics team"
@@ -171,12 +171,14 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="py-16 bg-gradient-warm" aria-label="Team statistics">
+          <section className="py-16 relative" aria-label="Team statistics">
+            {/* Ambient separating layer */}
+            <div className="absolute inset-0 bg-background/40 backdrop-blur-sm pointer-events-none -z-10" />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 shadow-sm">
+                    <div className="text-center p-6 h-full rounded-2xl bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg hover:shadow-primary/20 transition-all">
                       <div className="text-4xl font-bold text-primary mb-2">17</div>
                       <div className="text-sm font-medium text-muted-foreground">Team Members</div>
                     </div>
@@ -184,7 +186,7 @@ export default function HomePage() {
                 </StaggerItem>
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-accent/20 shadow-sm">
+                    <div className="text-center p-6 h-full rounded-2xl bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg hover:shadow-accent/20 transition-all">
                       <div className="text-4xl font-bold text-accent mb-2">
                         2
                       </div>
@@ -194,7 +196,7 @@ export default function HomePage() {
                 </StaggerItem>
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-secondary/20 shadow-sm">
+                    <div className="text-center p-6 h-full rounded-2xl bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg hover:shadow-secondary/20 transition-all">
                       <div className="text-4xl font-bold text-secondary mb-2">
                         1
                       </div>
@@ -204,7 +206,7 @@ export default function HomePage() {
                 </StaggerItem>
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 shadow-sm">
+                    <div className="text-center p-6 h-full rounded-2xl bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg hover:shadow-primary/20 transition-all">
                       <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
                         ∞
                       </div>
@@ -234,7 +236,8 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="py-20 bg-muted/30" aria-labelledby="achievements-heading">
+          <section className="py-20 relative" aria-labelledby="achievements-heading">
+            <div className="absolute inset-0 bg-background/10 backdrop-blur-md pointer-events-none -z-10 border-y border-white/10"></div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="space-y-12">
                 <SlideUp className="text-center space-y-6">
@@ -250,7 +253,7 @@ export default function HomePage() {
                 <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <StaggerItem>
                     <TiltCard className="h-full">
-                      <Card className="h-full border-primary/20 bg-gradient-to-br from-white to-primary/5 group shadow-md hover:shadow-xl transition-all duration-300">
+                      <Card className="h-full bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10 group shadow-lg hover:shadow-primary/20 transition-all duration-300">
                         <CardHeader>
                           <CardTitle className="flex items-center space-x-3">
                             <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
@@ -275,7 +278,7 @@ export default function HomePage() {
 
                   <StaggerItem>
                     <TiltCard className="h-full">
-                      <Card className="h-full border-accent/20 bg-gradient-to-br from-white to-accent/5 group shadow-md hover:shadow-xl transition-all duration-300">
+                      <Card className="h-full bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10 group shadow-lg hover:shadow-accent/20 transition-all duration-300">
                         <CardHeader>
                           <CardTitle className="flex items-center space-x-3">
                             <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
@@ -296,7 +299,7 @@ export default function HomePage() {
 
                   <StaggerItem>
                     <TiltCard className="h-full">
-                      <Card className="h-full border-secondary/20 bg-gradient-to-br from-white to-secondary/5 group shadow-md hover:shadow-xl transition-all duration-300">
+                      <Card className="h-full bg-background/60 backdrop-blur-xl border border-white/20 dark:border-white/10 group shadow-lg hover:shadow-secondary/20 transition-all duration-300">
                         <CardHeader>
                           <CardTitle className="flex items-center space-x-3">
                             <div className="p-2 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors">
@@ -321,7 +324,7 @@ export default function HomePage() {
 
           <section className="py-20" aria-labelledby="cta-heading">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="relative bg-gradient-orange rounded-3xl p-8 lg:p-16 text-center space-y-8 overflow-hidden">
+              <div className="relative bg-black/80 dark:bg-black/40 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 lg:p-16 text-center space-y-8 overflow-hidden shadow-2xl">
                 {/* Background decoration */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>

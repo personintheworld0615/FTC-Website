@@ -36,3 +36,5 @@ This file contains a growing ruleset that improves over time. **At session start
 ## Learned Rules
 
 <!-- New rules are appended below this line. Do not edit above this section. -->
+
+1. [UX] Always stick to Light Mode. Never use dark mode overrides or toggles unless explicitly asked — user preference for light mode aesthetic.
