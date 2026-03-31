@@ -14,6 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Instagram, MapPin, Clock, Users, Heart, Trophy } from "lucide-react"
 import { useState } from "react"
 import { sendContactEmail } from "@/app/actions/send-email"
+import { SlideUp, TiltCard, StaggerContainer, StaggerItem } from "@/components/animations"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -107,14 +108,21 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge variant="outline" className="text-primary border-primary">
-              Get In Touch
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">Contact Us</h1>
-          </div>
+      <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[40vh]">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 z-0"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <StaggerContainer className="max-w-4xl mx-auto text-center space-y-8">
+            <StaggerItem>
+              <Badge variant="outline" className="text-sm font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full border-primary/50 text-primary">
+                Get In Touch
+              </Badge>
+            </StaggerItem>
+            <StaggerItem>
+              <h1 className="text-5xl lg:text-7xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[0.9]">
+                Contact <span className="font-serif italic text-[1.1em] font-light">Us.</span>
+              </h1>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -163,7 +171,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Send Us a Message</h2>
+                <h2 className="text-3xl lg:text-4xl font-sans font-bold uppercase tracking-tight text-foreground">Send Us a Message</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Fill out the form below and we'll get back to you as soon as possible. Whether you're interested in
                   joining, sponsoring, or collaborating, we're excited to hear from you!

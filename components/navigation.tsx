@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -16,11 +19,28 @@ export function Navigation() {
     { href: "/contact", label: "Contact" },
   ]
 
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
+    <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <nav
+        className={`pointer-events-auto transition-all duration-500 rounded-[2rem] px-4 sm:px-6 flex justify-between items-center
+          ${scrolled
+            ? "bg-background/80 backdrop-blur-xl border border-border shadow-xl py-2 w-full max-w-5xl"
+            : "bg-transparent py-4 w-full max-w-7xl"
+          }
+        `}
+      >
+        <div className="flex items-center w-full justify-between">
+          <Link href="/" className="flex items-center space-x-2 shrink-0">
             <div className="w-10 h-10 relative flex items-center justify-center">
               <Image src="/logo.png" alt="Rust in Piece Logo" width={40} height={80} className="object-contain leading-8" />
             </div>
@@ -29,14 +49,16 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex flex-1 items-center justify-center space-x-1 lg:space-x-4">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-foreground hover:text-primary transition-colors">
+              <Link key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-3 py-2 rounded-full hover:bg-primary/5">
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center space-x-2">
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+          </div>
+
+          <div className="hidden md:flex items-center shrink-0">
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground transform-gpu transition-all" asChild>
                 <a
                   href="https://hcb.hackclub.com/donations/start/rust-in-piece"
                   target="_blank"
@@ -47,7 +69,6 @@ export function Navigation() {
                 </a>
               </Button>
             </div>
-          </div>
 
           {/* Mobile Navigation */}
           <Sheet>
@@ -94,7 +115,7 @@ export function Navigation() {
             </SheetContent>
           </Sheet>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   )
 }

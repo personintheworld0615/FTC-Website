@@ -170,11 +170,11 @@ export default function TeamPage() {
   ]
 
   const TeamSection = ({ title, members, icon: Icon, badgeVariant, delay = 0 }: TeamSectionProps) => (
-    <SlideUp className="space-y-8" delay={delay / 1000}>
+    <SlideUp className="space-y-12" delay={delay / 1000}>
       <div className="text-center space-y-4">
-        <div className="flex items-center justify-center space-x-2">
-          <Icon className="w-6 h-6 text-primary" />
-          <h3 className="text-2xl lg:text-3xl font-bold text-foreground">{title}</h3>
+        <div className="flex items-center justify-center space-x-3 mb-8">
+          <Icon className="w-8 h-8 text-primary" />
+          <h3 className="text-4xl lg:text-5xl font-sans font-bold tracking-tight text-foreground uppercase">{title}</h3>
         </div>
       </div>
 
@@ -222,26 +222,27 @@ export default function TeamPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <SlideUp delay={0.1}>
-              <Badge variant="outline" className="text-primary border-primary">
+      <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[50vh]">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 z-0"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <StaggerContainer className="max-w-4xl mx-auto text-center space-y-8">
+            <StaggerItem>
+              <Badge variant="outline" className="text-sm font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full border-primary/50 text-primary">
                 Meet Our Team
               </Badge>
-            </SlideUp>
-            <SlideUp delay={0.2}>
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
-                The Minds Behind Rust in Piece
+            </StaggerItem>
+            <StaggerItem>
+              <h1 className="text-5xl lg:text-7xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[0.9]">
+                The Minds Behind <span className="font-serif italic text-[1.1em] font-light">Rust in Piece.</span>
               </h1>
-            </SlideUp>
-            <SlideUp delay={0.3}>
-              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+            </StaggerItem>
+            <StaggerItem>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
                 Our team of 17 dedicated students from Princeton STEM Academy combines diverse skills, unique
                 perspectives, and an unwavering passion for robotics and innovation.
               </p>
-            </SlideUp>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 

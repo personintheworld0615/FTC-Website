@@ -95,26 +95,27 @@ export default function CommunityPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <SlideUp delay={0.1}>
-              <Badge variant="outline" className="text-primary border-primary animate-pulse-glow">
+      <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[50vh]">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 z-0"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <StaggerContainer className="max-w-4xl mx-auto text-center space-y-8">
+            <StaggerItem>
+              <Badge variant="outline" className="text-sm font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full border-primary/50 text-primary">
                 Community Impact
               </Badge>
-            </SlideUp>
-            <SlideUp delay={0.2}>
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
-                Building Tomorrow's Innovators
+            </StaggerItem>
+            <StaggerItem>
+              <h1 className="text-5xl lg:text-7xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[0.9]">
+                Building Tomorrow's <span className="font-serif italic text-[1.1em] font-light">Innovators.</span>
               </h1>
-            </SlideUp>
-            <SlideUp delay={0.3}>
-              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+            </StaggerItem>
+            <StaggerItem>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
                 Beyond competition, we're committed to inspiring the next generation through mentorship, education, and
                 community outreach that makes STEM accessible and exciting for all students.
               </p>
-            </SlideUp>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -134,10 +135,10 @@ export default function CommunityPage() {
               {impactStats.map((stat, index) => (
                 <StaggerItem key={index}>
                   <div className="text-center space-y-2">
-                    <div className="text-4xl lg:text-5xl font-bold text-primary group-hover:animate-bounce">
+                    <div className="text-5xl lg:text-6xl font-mono font-bold text-primary group-hover:animate-bounce">
                       {stat.number}
                     </div>
-                    <div className="text-lg font-semibold text-foreground">{stat.label}</div>
+                    <div className="text-lg font-sans font-bold uppercase tracking-wider text-foreground">{stat.label}</div>
                     <div className="text-sm text-muted-foreground">{stat.description}</div>
                   </div>
                 </StaggerItem>

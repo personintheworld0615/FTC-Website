@@ -58,15 +58,15 @@ export default function SponsorRegistrationPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary via-orange-500 to-primary bg-clip-text text-transparent">
-              Become a Sponsor
+      <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[40vh]">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 z-0"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <h1 className="text-5xl lg:text-7xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[0.9]">
+              Become a <span className="font-serif italic text-[1.1em] font-light">Sponsor.</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Partner with Rust in Piece and help shape the future of STEM education
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
+              Partner with Rust in Piece and help shape the future of STEM education.
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function SponsorRegistrationPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Company Information */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-foreground">Company Information</h2>
+                <h2 className="text-3xl font-sans font-bold text-foreground tracking-tight uppercase">Company Information</h2>
 
                 <div className="space-y-2">
                   <Label htmlFor="companyName">
@@ -116,7 +116,7 @@ export default function SponsorRegistrationPage() {
 
               {/* Contact Information */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-foreground">Contact Information</h2>
+                <h2 className="text-3xl font-sans font-bold text-foreground tracking-tight uppercase">Contact Information</h2>
 
                 <div className="space-y-2">
                   <Label htmlFor="contactName">
@@ -174,7 +174,7 @@ export default function SponsorRegistrationPage() {
 
               {/* Sponsorship Details */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-foreground">Sponsorship Details</h2>
+                <h2 className="text-3xl font-sans font-bold text-foreground tracking-tight uppercase">Sponsorship Details</h2>
 
                 <div className="space-y-2">
                   <Label htmlFor="sponsorshipTier">

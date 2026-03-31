@@ -48,124 +48,69 @@ export default function HomePage() {
 
       <main>
         <article>
-          <section id="home" className="relative py-20 lg:py-32 overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
-            <div className="absolute top-20 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <section id="home" className="relative h-[100dvh] min-h-[600px] w-full overflow-hidden flex flex-col justify-end border-b border-border/40">
+            {/* Full-bleed background image */}
+            <div
+              className="absolute inset-0 bg-cover bg-[center_top_20%] bg-no-repeat opacity-80"
+              style={{ backgroundImage: "url('/images/design-mode/team-hero.png')" }}
+            ></div>
+            {/* Heavy gradient overlay fading to the light-mode background color */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20"></div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                  <div className="space-y-6">
-                    <SlideUp delay={0.1}>
-                      <Badge
-                        variant="outline"
-                        className="badge-high-contrast animate-pulse-glow cursor-pointer select-none"
-                        onClick={handleLogoClick}
-                      >
-                        <Zap className="w-3 h-3 mr-1" />
-                        FTC Team 19772
-                      </Badge>
-                    </SlideUp>
-                    <SlideUp delay={0.2}>
-                      <h1
-                        className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent text-balance cursor-pointer select-none"
-                        onClick={handleLogoClick}
-                      >
-                        Rust in Piece
-                      </h1>
-                    </SlideUp>
-                    <SlideUp delay={0.3}>
-                      <p className="text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed">
-                        Princeton STEM Academy's{" "}
-                        <span className="text-primary font-semibold">premier FTC robotics team</span>, passionate about
-                        STEM education, engineering innovation, and building the future through competitive robotics.
-                      </p>
-                    </SlideUp>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-16 md:pb-24">
+              <div className="max-w-4xl space-y-2">
+                <SlideUp delay={0.1}>
+                  <Badge
+                    variant="outline"
+                    className="font-mono text-xs tracking-widest uppercase border-primary/20 text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6 cursor-pointer select-none"
+                    onClick={handleLogoClick}
+                  >
+                    <Zap className="w-3 h-3 mr-2 inline" />
+                    FTC TEAM 19772
+                  </Badge>
+                </SlideUp>
+
+                <SlideUp delay={0.2} className="relative z-20 space-y-[-0.2em] md:space-y-[-0.4em]">
+                  <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold text-foreground tracking-tighter leading-none uppercase">
+                    Engineering the
+                  </h1>
+                  <h2
+                    className="text-7xl sm:text-[8rem] md:text-[11rem] font-drama text-primary leading-none tracking-tighter pr-4 pb-2 cursor-pointer select-none drop-shadow-sm"
+                    onClick={handleLogoClick}
+                  >
+                    Future.
+                  </h2>
+                </SlideUp>
+
+                <SlideUp delay={0.3}>
+                  <p className="text-lg md:text-2xl font-sans text-muted-foreground text-balance leading-relaxed max-w-2xl mt-8 mb-10 font-medium">
+                    Princeton STEM Academy's premier FTC robotics team. Precision mechanics driven by competitive excellence.
+                  </p>
+                </SlideUp>
+
+                <SlideUp delay={0.4}>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      size="lg"
+                      className="group transform-gpu"
+                      asChild
+                    >
+                      <a href="/team">
+                        Meet the Core Team
+                      </a>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border-primary/20 text-primary hover:bg-primary/5 transition-all duration-300 transform-gpu group"
+                      asChild
+                    >
+                      <a href="/mentors">
+                        <Cpu className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
+                        View Our Mentors
+                      </a>
+                    </Button>
                   </div>
-
-                  <SlideUp delay={0.4}>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button
-                        variant="outline"
-                        size="lg"
-                        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-transparent group"
-                        asChild
-                      >
-                        <a href="/mentors" aria-label="View our experienced robotics mentors">
-                          <Cpu className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                          View Our Mentors
-                        </a>
-                      </Button>
-                      <Button
-                        size="lg"
-                        className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
-                        asChild
-                      >
-                        <a href="/sponsors">
-                          <Heart className="w-4 h-4 mr-2 group-hover:animate-pulse" />
-                          Learn More
-                        </a>
-                      </Button>
-                    </div>
-                  </SlideUp>
-
-                  <div className="grid grid-cols-3 gap-4 text-sm">
-                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-primary/20 border border-primary/30 hover:bg-primary/30 transition-all duration-300 group">
-                      <Users
-                        className="w-6 h-6 text-primary group-hover:scale-110 transition-transform"
-                        aria-hidden="true"
-                      />
-                      <span className="font-bold text-foreground">17</span>
-                      <span className="text-muted-foreground text-center">Team Members</span>
-                    </div>
-                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-accent/20 border border-accent/30 hover:bg-accent/30 transition-all duration-300 group">
-                      <Trophy
-                        className="w-6 h-6 text-accent group-hover:scale-110 transition-transform"
-                        aria-hidden="true"
-                      />
-                      <span className="font-semibold text-foreground">Multiple</span>
-                      <span className="text-muted-foreground text-center">Awards</span>
-                    </div>
-                    <div className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-secondary/20 border border-secondary/30 hover:bg-secondary/30 transition-all duration-300 group">
-                      <Heart
-                        className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform"
-                        aria-hidden="true"
-                      />
-                      <span className="font-semibold text-foreground group-hover:animate-pulse">∞</span>
-                      <span className="text-muted-foreground text-center">Impact</span>
-                    </div>
-                  </div>
-                </div>
-
-                <SlideUp delay={0.2} className="relative">
-                  <ParallaxBlock speed={0.5} className="relative animate-float">
-                    <div
-                      className="absolute inset-0 bg-gradient-orange rounded-3xl blur-xl opacity-30"
-                      aria-hidden="true"
-                    ></div>
-                    <TiltCard>
-                      <div className="relative aspect-square bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 rounded-3xl p-4 border border-primary/20 hover:border-primary/40 transition-all duration-500 group">
-                        <img
-                          src="/images/design-mode/team-hero.png"
-                          alt="Rust in Piece FTC Team 19772 members wearing orange team shirts standing together at Princeton STEM Academy, showcasing our diverse and passionate robotics team"
-                          className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                          loading="eager"
-                          width="800"
-                          height="800"
-                        />
-                      </div>
-                    </TiltCard>
-                  </ParallaxBlock>
-                  <div
-                    className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-bounce delay-500"
-                    aria-hidden="true"
-                  ></div>
-                  <div
-                    className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full animate-bounce delay-1000"
-                    aria-hidden="true"
-                  ></div>
                 </SlideUp>
               </div>
             </div>

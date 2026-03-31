@@ -97,30 +97,27 @@ export default function SponsorsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
-        <div className="absolute top-20 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <SlideUp delay={0.1}>
-              <Badge variant="outline" className="text-primary border-primary animate-pulse-glow">
+      <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[50vh]">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 z-0"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <StaggerContainer className="max-w-4xl mx-auto text-center space-y-8">
+            <StaggerItem>
+              <Badge variant="outline" className="text-sm font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full border-primary/50 text-primary">
                 Our Sponsors
               </Badge>
-            </SlideUp>
-            <SlideUp delay={0.2}>
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
-                Partners in Innovation
+            </StaggerItem>
+            <StaggerItem>
+              <h1 className="text-5xl lg:text-7xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[0.9]">
+                Partners in <span className="font-serif italic text-[1.1em] font-light">Innovation.</span>
               </h1>
-            </SlideUp>
-            <SlideUp delay={0.3}>
-              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+            </StaggerItem>
+            <StaggerItem>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
                 We're grateful for the generous support of our sponsors who make our robotics journey possible and help us
                 inspire the next generation of STEM leaders.
               </p>
-            </SlideUp>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 

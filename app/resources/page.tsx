@@ -109,30 +109,27 @@ export default function ResourcesPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden border-b border-border/40">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"></div>
-          <div className="absolute top-20 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-
+        <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[50vh]">
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 z-0"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-3xl space-y-8">
-              <SlideUp delay={0.1}>
-                <Badge variant="outline" className="bg-primary/5 text-primary border-primary/20">
+            <StaggerContainer className="max-w-4xl mx-auto text-center space-y-8">
+              <StaggerItem>
+                <Badge variant="outline" className="text-sm font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full border-primary/50 text-primary">
                   Open Source & Knowledge
                 </Badge>
-              </SlideUp>
-              <SlideUp delay={0.2}>
-                <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-balance">
-                  Resources for the FTC Community
+              </StaggerItem>
+              <StaggerItem>
+                <h1 className="text-5xl lg:text-7xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[0.9]">
+                  Resources for the <span className="font-serif italic text-[1.1em] font-light">Community.</span>
                 </h1>
-              </SlideUp>
-              <SlideUp delay={0.3}>
-                <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
+              </StaggerItem>
+              <StaggerItem>
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
                   We believe in Gracious Professionalism. Here is a curated list of the best tools, libraries, and guides 
                   we use to build our robots and run our team. We hope these help rookie and veteran teams alike!
                 </p>
-              </SlideUp>
-            </div>
+              </StaggerItem>
+            </StaggerContainer>
           </div>
         </section>
 
