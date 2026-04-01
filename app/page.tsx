@@ -56,6 +56,9 @@ export default function HomePage() {
             ></div>
             {/* Heavy gradient overlay fading to the light-mode background color */}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20"></div>
+            {/* Ambient orange gradient blobs for atmosphere */}
+            <div className="absolute bottom-32 left-0 w-96 h-96 bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 right-10 w-64 h-64 bg-accent/6 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-16 md:pb-24">
               <div className="max-w-4xl space-y-2">
@@ -116,44 +119,40 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="py-16 bg-gradient-warm" aria-label="Team statistics">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="py-16 bg-gradient-warm relative overflow-hidden" aria-label="Team statistics">
+            {/* Subtle mesh overlay for texture */}
+            <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
               <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 shadow-sm">
-                      <div className="text-4xl font-bold text-primary mb-2">17</div>
-                      <div className="text-sm font-medium text-muted-foreground">Team Members</div>
+                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-primary/30 shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <div className="text-5xl font-bold text-primary mb-1 font-sans tracking-tighter">17</div>
+                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">Team Members</div>
                     </div>
                   </TiltCard>
                 </StaggerItem>
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-accent/20 shadow-sm">
-                      <div className="text-4xl font-bold text-accent mb-2">
-                        2
-                      </div>
-                      <div className="text-sm font-medium text-muted-foreground">FLL Teams Mentored</div>
+                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-accent/30 shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <div className="text-5xl font-bold text-accent mb-1 font-sans tracking-tighter">2</div>
+                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">FLL Teams Mentored</div>
                     </div>
                   </TiltCard>
                 </StaggerItem>
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-secondary/20 shadow-sm">
-                      <div className="text-4xl font-bold text-secondary mb-2">
-                        1
-                      </div>
-                      <div className="text-sm font-medium text-muted-foreground">Annual STEM Camp</div>
+                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-secondary/30 shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <div className="text-5xl font-bold text-secondary mb-1 font-sans tracking-tighter">1</div>
+                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">Annual STEM Camp</div>
                     </div>
                   </TiltCard>
                 </StaggerItem>
                 <StaggerItem>
                   <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/80 backdrop-blur-sm border border-primary/20 shadow-sm">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
-                        ∞
-                      </div>
-                      <div className="text-sm font-medium text-muted-foreground">Innovation</div>
+                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-primary/30 shadow-md hover:shadow-xl transition-shadow duration-300">
+                      <div className="text-5xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent mb-1 font-sans tracking-tighter">∞</div>
+                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">Innovation</div>
                     </div>
                   </TiltCard>
                 </StaggerItem>
@@ -267,9 +266,14 @@ export default function HomePage() {
           <section className="py-20" aria-labelledby="cta-heading">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative bg-gradient-orange rounded-3xl p-8 lg:p-16 text-center space-y-8 overflow-hidden">
-                {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+                {/* Layered atmosphere */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-white/5 blur-3xl rounded-full pointer-events-none"></div>
+                {/* Oversized background type */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+                  <span className="font-drama text-white/5 text-[20rem] leading-none tracking-tighter">R</span>
+                </div>
 
                 <ScaleIn>
                   <div className="relative">

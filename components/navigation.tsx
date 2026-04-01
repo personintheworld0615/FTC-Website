@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -51,14 +52,19 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-1 items-center justify-center space-x-1 lg:space-x-4">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-3 py-2 rounded-full hover:bg-primary/5">
+              <Link key={link.href} href={link.href} className="nav-link text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-full hover:bg-primary/5">
                 {link.label}
               </Link>
             ))}
           </div>
 
           <div className="hidden md:flex items-center shrink-0">
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground transform-gpu transition-all" asChild>
+            <motion.div
+              whileHover={{ scale: 1.06, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            >
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-primary/30 hover:shadow-lg transition-shadow" asChild>
                 <a
                   href="https://hcb.hackclub.com/donations/start/rust-in-piece"
                   target="_blank"
@@ -68,6 +74,7 @@ export function Navigation() {
                   Support Us
                 </a>
               </Button>
+            </motion.div>
             </div>
 
           {/* Mobile Navigation */}
