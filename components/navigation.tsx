@@ -33,10 +33,10 @@ export function Navigation() {
   return (
     <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <nav
-        className={`pointer-events-auto transition-all duration-500 rounded-[2rem] px-4 sm:px-6 flex justify-between items-center
+        className={`pointer-events-auto border transition-all duration-500 rounded-[2rem] px-4 sm:px-6 mx-auto
           ${scrolled
-            ? "bg-background/80 backdrop-blur-xl border border-border shadow-xl py-2 w-full max-w-5xl"
-            : "bg-transparent py-4 w-full max-w-7xl"
+            ? "bg-background/80 backdrop-blur-xl border-border shadow-xl py-2 w-full max-w-6xl"
+            : "bg-transparent border-transparent py-4 w-full max-w-7xl"
           }
         `}
       >
