@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
@@ -5,6 +6,18 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { SlideUp, TiltCard, StaggerContainer, StaggerItem } from "@/components/animations"
 import { ExternalLink, Code2, Wrench, BookOpen, GitBranch, Shield, Lightbulb } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "FTC Resources | Rust in Piece Team 19772",
+  description:
+    "Curated FTC programming, mechanical, and strategy resources from Team 19772. Pedro Pathing, Road Runner, FTC Dashboard, CAD libraries, game manuals, and more — vetted by competitive NJ FTC teams.",
+  alternates: { canonical: "https://www.rustinpiece.org/resources" },
+  openGraph: {
+    title: "FTC Resources | Rust in Piece Team 19772",
+    description: "Vetted FTC programming, CAD, and strategy resources from a competitive New Jersey FTC team.",
+    url: "https://www.rustinpiece.org/resources",
+  },
+}
 
 export default function ResourcesPage() {
   const resourceCategories = [

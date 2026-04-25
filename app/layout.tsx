@@ -23,6 +23,7 @@ const mono = Space_Mono({
 import "./globals.css"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.rustinpiece.org"),
   title: "Rust in Piece - FTC Team 19772 | Princeton STEM Academy Robotics",
   description:
     "Princeton STEM Academy FTC robotics team passionate about STEM education, engineering, and innovation. Mentoring FLL teams and inspiring the next generation of engineers through competitive robotics and community outreach.",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rustinpiece.com",
+    url: "https://www.rustinpiece.org",
     siteName: "Rust in Piece - FTC Team 19772",
     title: "Rust in Piece - FTC Team 19772 | Princeton STEM Academy Robotics",
     description:
@@ -59,13 +60,9 @@ export const metadata: Metadata = {
     ],
     creator: "@rust_in_piece_robotics",
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
   alternates: {
-    canonical: "https://rustinpiece.com",
+    canonical: "https://www.rustinpiece.org",
   },
-  generator: "v0.app",
   category: "Education",
   classification: "Robotics Team",
 }
@@ -88,7 +85,7 @@ export default function RootLayout({
               "@type": "SportsTeam",
               name: "Rust in Piece FTC Team 19772",
               alternateName: ["Team 19772", "Rust in Piece Robotics", "Rust in Piece"],
-              url: "https://rustinpiece.com",
+              url: "https://www.rustinpiece.org",
               logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
               image:
                 "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
@@ -140,22 +137,22 @@ export default function RootLayout({
                 {
                   "@type": "WebPage",
                   name: "Team Members",
-                  url: "https://rustinpiece.com/team",
+                  url: "https://www.rustinpiece.org/team",
                 },
                 {
                   "@type": "WebPage",
                   name: "Mentors",
-                  url: "https://rustinpiece.com/mentors",
+                  url: "https://www.rustinpiece.org/mentors",
                 },
                 {
                   "@type": "WebPage",
                   name: "Sponsors",
-                  url: "https://rustinpiece.com/sponsors",
+                  url: "https://www.rustinpiece.org/sponsors",
                 },
                 {
                   "@type": "WebPage",
                   name: "Community Impact",
-                  url: "https://rustinpiece.com/community",
+                  url: "https://www.rustinpiece.org/community",
                 },
               ],
             }),
@@ -172,37 +169,37 @@ export default function RootLayout({
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://rustinpiece.com",
+                  item: "https://www.rustinpiece.org",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Team",
-                  item: "https://rustinpiece.com/team",
+                  item: "https://www.rustinpiece.org/team",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Mentors",
-                  item: "https://rustinpiece.com/mentors",
+                  item: "https://www.rustinpiece.org/mentors",
                 },
                 {
                   "@type": "ListItem",
                   position: 4,
                   name: "Sponsors",
-                  item: "https://rustinpiece.com/sponsors",
+                  item: "https://www.rustinpiece.org/sponsors",
                 },
                 {
                   "@type": "ListItem",
                   position: 5,
                   name: "Community",
-                  item: "https://rustinpiece.com/community",
+                  item: "https://www.rustinpiece.org/community",
                 },
                 {
                   "@type": "ListItem",
                   position: 6,
                   name: "Contact",
-                  item: "https://rustinpiece.com/contact",
+                  item: "https://www.rustinpiece.org/contact",
                 },
               ],
             }),
@@ -215,7 +212,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Rust in Piece FTC Team 19772",
-              url: "https://rustinpiece.com",
+              url: "https://www.rustinpiece.org",
               logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Screenshot%202025-09-04%20at%206.19.03%E2%80%AFPM%281%29-u5yI5GjjGLWmPcTpGYDwQB6JBMU5vE.png",
               description:
                 "FTC robotics team from Princeton STEM Academy dedicated to STEM education, mentorship, and competitive robotics",

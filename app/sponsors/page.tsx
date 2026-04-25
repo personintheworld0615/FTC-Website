@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -5,6 +6,18 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Crown, Star, Heart, Building, Handshake, Trophy, Check } from "lucide-react"
 import { SlideUp, TiltCard, StaggerContainer, StaggerItem } from "@/components/animations"
+
+export const metadata: Metadata = {
+  title: "Sponsors | Rust in Piece FTC Team 19772",
+  description:
+    "Support Rust in Piece FTC Team 19772 from Princeton STEM Academy, NJ. Sponsor a competitive robotics team mentoring 100+ students. Rusted, Sterling, Platinum, and Title Sponsor tiers available.",
+  alternates: { canonical: "https://www.rustinpiece.org/sponsors" },
+  openGraph: {
+    title: "Sponsors | Rust in Piece FTC Team 19772",
+    description: "Support competitive youth robotics and STEM education in Princeton, NJ. Sponsorship tiers available.",
+    url: "https://www.rustinpiece.org/sponsors",
+  },
+}
 
 interface Sponsor {
   name: string

@@ -1,9 +1,22 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Crown, Star, Zap } from "lucide-react"
 import { SlideUp, TiltCard, StaggerContainer, StaggerItem } from "@/components/animations"
+
+export const metadata: Metadata = {
+  title: "Our Team | Rust in Piece FTC Team 19772",
+  description:
+    "Meet the 18 student engineers, programmers, and designers of Rust in Piece FTC Team 19772 from Princeton STEM Academy. Captains, lead engineers, software developers, and more.",
+  alternates: { canonical: "https://www.rustinpiece.org/team" },
+  openGraph: {
+    title: "Our Team | Rust in Piece FTC Team 19772",
+    description: "Meet the 18 student engineers, programmers, and designers of Rust in Piece FTC Team 19772.",
+    url: "https://www.rustinpiece.org/team",
+  },
+}
 
 interface TeamMember {
   name: string

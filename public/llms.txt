@@ -1,0 +1,38 @@
+# Rust in Piece — FTC Team 19772
+
+> Princeton STEM Academy competitive robotics team based in Plainsboro Township, NJ. Founded 2023. 18 student members competing in FIRST Tech Challenge (FTC).
+
+## Who We Are
+
+Rust in Piece is FTC Team 19772, a high school robotics team from Princeton STEM Academy in Plainsboro Township, NJ 08536. We design, build, and program robots to compete in the FIRST Tech Challenge. Beyond competition, we run community outreach programs including FLL team mentorship and annual STEM camps.
+
+## What We Do
+
+- **FTC Competition**: Design and build robots each season for FIRST Tech Challenge regional and state events
+- **FLL Mentorship**: Actively mentor 2 FIRST LEGO League (FLL) teams in robotics fundamentals and competition strategy
+- **STEM Camps**: Annual camps for 50+ students in grades 3–8 introducing robotics, programming, and engineering
+- **Community Outreach**: 100+ students reached through workshops and demonstrations in the Princeton, NJ area
+
+## Team Facts
+
+- Team number: 19772
+- Founded: 2023
+- Members: 18 students
+- School: Princeton STEM Academy
+- Location: 666 Plainsboro Rd #1161, Plainsboro Township, NJ 08536
+- Email: rustinpieceftc@gmail.com
+- Instagram: @rust_in_piece_robotics
+
+## Technical Expertise
+
+Java programming, autonomous path planning (Pedro Pathing, Road Runner), CAD/mechanical design, electronics, sensor integration, competition strategy, FTC SDK
+
+## Pages
+
+- [Home](https://www.rustinpiece.org/)
+- [Team Members](https://www.rustinpiece.org/team)
+- [Mentors](https://www.rustinpiece.org/mentors)
+- [Community Impact](https://www.rustinpiece.org/community)
+- [Sponsors](https://www.rustinpiece.org/sponsors)
+- [FTC Resources](https://www.rustinpiece.org/resources)
+- [Contact](https://www.rustinpiece.org/contact)

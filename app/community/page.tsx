@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
@@ -5,6 +6,18 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Heart, Users, GraduationCap, Target } from "lucide-react"
 import { SlideUp, TiltCard, StaggerContainer, StaggerItem, ScaleIn } from "@/components/animations"
+
+export const metadata: Metadata = {
+  title: "Community Impact | Rust in Piece FTC Team 19772",
+  description:
+    "Rust in Piece mentors 2 FLL robotics teams, runs annual STEM camps for 50+ students in grades 3–8, and has reached 100+ young engineers in the Princeton, NJ area through outreach and workshops.",
+  alternates: { canonical: "https://www.rustinpiece.org/community" },
+  openGraph: {
+    title: "Community Impact | Rust in Piece FTC Team 19772",
+    description: "Mentoring FLL teams, running STEM camps, and reaching 100+ students in the Princeton, NJ area.",
+    url: "https://www.rustinpiece.org/community",
+  },
+}
 
 export default function CommunityPage() {
   const impactStats = [
