@@ -1,14 +1,16 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, Trophy, Heart, Zap, Cpu } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { FadeIn, SlideUp, TiltCard, ScaleIn, ParallaxBlock, StaggerContainer, StaggerItem, Bounce } from "@/components/animations"
 import { InteractiveCounter } from "@/components/interactive-counter"
+import { RobotDivider } from "@/components/robot-divider"
 import { useState, useEffect } from "react"
+import { InteractiveRoboticArm } from "@/components/interactive-robotic-arm"
+import { MissionRobot } from "@/components/mission-robot"
 
 export default function HomePage() {
   const [clickCount, setClickCount] = useState(0)
@@ -39,26 +41,36 @@ export default function HomePage() {
       {showEasterEgg && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="bg-gradient-orange p-8 rounded-3xl shadow-2xl animate-in zoom-in duration-500 text-center">
-            <div className="text-6xl mb-4">🫔</div>
+            {/* Custom SVG Burrito/Wrap shape replacing emoji */}
+            <svg width="60" height="60" viewBox="0 0 100 100" className="mx-auto mb-4">
+              <path d="M20,50 Q50,20 80,50 Q50,80 20,50 Z" fill="oklch(0.72 0.15 75)" stroke="oklch(0.99 0.01 85)" strokeWidth="4" />
+              <path d="M25,48 C35,38 65,38 75,48" stroke="oklch(0.68 0.22 55)" strokeWidth="3" fill="none" />
+              <path d="M30,52 C40,62 60,62 70,52" stroke="oklch(0.68 0.22 55)" strokeWidth="3" fill="none" />
+            </svg>
             <h2 className="text-3xl font-bold text-white mb-2">Akshit discovery!</h2>
-            <p className="text-xl text-white/90">Akshit is a dosa eater! 🤫</p>
+            <p className="text-xl text-white/90">Akshit is a dosa eater!</p>
           </div>
         </div>
       )}
 
       <main>
         <article>
-          <section id="home" className="relative h-[100dvh] min-h-[600px] w-full overflow-hidden flex flex-col justify-end border-b border-border/40">
-            {/* Full-bleed background image */}
+          <section id="home" className="relative h-[100dvh] min-h-[600px] w-full overflow-hidden flex flex-col justify-end border-b border-border/40 bg-background">
+            {/* Full-bleed background image - upscaled to high resolution */}
             <div
-              className="absolute inset-0 bg-cover bg-[center_top_20%] bg-no-repeat opacity-80"
+              className="absolute inset-0 bg-cover bg-[center_top_20%] bg-no-repeat opacity-90"
               style={{ backgroundImage: "url('/images/design-mode/team-hero.png')" }}
             ></div>
-            {/* Heavy gradient overlay fading to the light-mode background color */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20"></div>
+            {/* Heavy gradient overlay fading to the warm light-mode background color */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-transparent"></div>
             {/* Ambient orange gradient blobs for atmosphere */}
-            <div className="absolute bottom-32 left-0 w-96 h-96 bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute top-1/4 right-10 w-64 h-64 bg-accent/6 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-32 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 right-10 w-64 h-64 bg-accent/8 rounded-full blur-[100px] pointer-events-none" />
+
+            {/* Interactive Robotic Arm Overlay */}
+            <div className="hidden lg:block absolute right-[8%] bottom-[14%] w-[480px] h-[480px] z-20 pointer-events-none">
+              <InteractiveRoboticArm />
+            </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-16 md:pb-24">
               <div className="max-w-4xl space-y-2">
@@ -75,19 +87,19 @@ export default function HomePage() {
 
                 <SlideUp delay={0.2} className="relative z-20 space-y-[-0.2em] md:space-y-[-0.4em]">
                   <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold text-foreground tracking-tighter leading-none uppercase">
-                    Engineering the
+                    We Build
                   </h1>
                   <h2
-                    className="text-7xl sm:text-[8rem] md:text-[11rem] font-drama text-primary leading-none tracking-tighter pr-4 pb-2 cursor-pointer select-none drop-shadow-sm"
+                    className="text-7xl sm:text-[8rem] md:text-[11rem] font-drama text-primary leading-none tracking-tighter pr-4 pb-2 cursor-pointer select-none drop-shadow-[0_2px_12px_#FCFAF7]"
                     onClick={handleLogoClick}
                   >
-                    Future.
+                    Robots.
                   </h2>
                 </SlideUp>
 
                 <SlideUp delay={0.3}>
-                  <p className="text-lg md:text-2xl font-sans text-muted-foreground text-balance leading-relaxed max-w-2xl mt-8 mb-10 font-medium">
-                    Princeton STEM Academy's premier FTC robotics team. Precision mechanics driven by competitive excellence.
+                  <p className="text-lg md:text-2xl font-sans text-muted-foreground text-balance leading-relaxed max-w-xl mt-8 mb-10 font-medium">
+                    We are FTC Team 19772 from Princeton STEM Academy. We design, build, and program competitive robots.
                   </p>
                 </SlideUp>
 
@@ -119,44 +131,52 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="py-16 bg-gradient-warm relative overflow-hidden" aria-label="Team statistics">
-            {/* Subtle mesh overlay for texture */}
-            <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
+          {/* Custom Animated Robot Divider between Hero and Stats */}
+          <RobotDivider />
+
+          <section className="py-24 relative overflow-hidden bg-background" aria-label="Team statistics">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-              <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                <StaggerItem>
-                  <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-primary/30 shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <div className="text-5xl font-bold text-primary mb-1 font-sans tracking-tighter">17</div>
-                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">Team Members</div>
-                    </div>
-                  </TiltCard>
-                </StaggerItem>
-                <StaggerItem>
-                  <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-accent/30 shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <div className="text-5xl font-bold text-accent mb-1 font-sans tracking-tighter">2</div>
-                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">FLL Teams Mentored</div>
-                    </div>
-                  </TiltCard>
-                </StaggerItem>
-                <StaggerItem>
-                  <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-secondary/30 shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <div className="text-5xl font-bold text-secondary mb-1 font-sans tracking-tighter">1</div>
-                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">Annual STEM Camp</div>
-                    </div>
-                  </TiltCard>
-                </StaggerItem>
-                <StaggerItem>
-                  <TiltCard>
-                    <div className="text-center p-6 h-full rounded-2xl bg-white/70 backdrop-blur-sm border border-primary/30 shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <div className="text-5xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent mb-1 font-sans tracking-tighter">∞</div>
-                      <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mt-2">Innovation</div>
-                    </div>
-                  </TiltCard>
-                </StaggerItem>
-              </StaggerContainer>
+              <div className="grid lg:grid-cols-12 gap-12 items-center">
+                {/* Left Column: Asymmetric Editorial Intro */}
+                <div className="lg:col-span-5 space-y-6">
+                  <h3 className="text-4xl sm:text-5xl font-sans font-extrabold text-foreground tracking-tighter leading-[1.05] uppercase">
+                    Innovation & Community
+                  </h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed font-medium max-w-xl">
+                    From the classroom to the competition arena, our numbers tell the story of a team dedicated to pushing mechanical boundaries while lifting up the communities around us.
+                  </p>
+                </div>
+                
+                {/* Right Column: Grid of stats */}
+                <div className="lg:col-span-7">
+                  <StaggerContainer className="grid grid-cols-2 gap-6">
+                     <StaggerItem>
+                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">17</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Team Members</div>
+                       </TiltCard>
+                     </StaggerItem>
+                     <StaggerItem>
+                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">2</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">FLL Teams Mentored</div>
+                       </TiltCard>
+                     </StaggerItem>
+                     <StaggerItem>
+                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">1</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Annual STEM Camp</div>
+                       </TiltCard>
+                     </StaggerItem>
+                     <StaggerItem>
+                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">∞</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Innovation</div>
+                       </TiltCard>
+                     </StaggerItem>
+                  </StaggerContainer>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -164,100 +184,88 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
               <SlideUp className="max-w-4xl mx-auto text-center space-y-8">
-                <h2 id="mission-heading" className="text-4xl lg:text-5xl font-bold text-foreground text-balance">
-                  Our <span className="text-primary">Mission</span>
+                <h2 id="mission-heading" className="text-4xl lg:text-5xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[1.05]">
+                  Our Mission
                 </h2>
-                <div className="w-24 h-1 bg-gradient-orange mx-auto rounded-full"></div>
-                <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-                  We are an FTC robotics team passionate about{" "}
-                  <span className="text-primary font-semibold">STEM education</span>, engineering, and innovation. We
-                  design, build, and program competitive robots while also mentoring younger students and giving back to
-                  our community through educational outreach and STEM advocacy.
-                </p>
+                <MissionRobot />
+                 <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-xl mx-auto">
+                   We are an FTC robotics team passionate about{" "}
+                   <span className="text-primary font-semibold">STEM education</span>, engineering, and innovation. We
+                   design, build, and program competitive robots while also mentoring younger students and giving back to
+                   our community through educational outreach and STEM advocacy.
+                 </p>
               </SlideUp>
             </div>
           </section>
 
-          <section className="py-20 bg-muted/30" aria-labelledby="achievements-heading">
+          {/* Custom Animated Robot Divider between Mission and Achievements */}
+          <RobotDivider />
+
+          <section className="py-24 bg-background" aria-labelledby="achievements-heading">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="space-y-12">
+              <div className="space-y-16">
                 <SlideUp className="text-center space-y-6">
-                  <h2 id="achievements-heading" className="text-4xl lg:text-5xl font-bold text-foreground">
-                    Recent <span className="text-primary">Achievements</span>
+                  <h2 id="achievements-heading" className="text-4xl lg:text-5xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[1.05]">
+                    Recent Achievements
                   </h2>
-                  <div className="w-24 h-1 bg-gradient-orange mx-auto rounded-full"></div>
-                  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  <p className="text-xl text-muted-foreground max-w-xl mx-auto font-medium">
                     Our team's dedication to excellence shows in our competitive performance and community impact.
                   </p>
                 </SlideUp>
 
                 <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <StaggerItem>
-                    <TiltCard className="h-full">
-                      <Card className="h-full border-primary/20 bg-gradient-to-br from-white to-primary/5 group shadow-md hover:shadow-xl transition-all duration-300">
-                        <CardHeader>
-                          <CardTitle className="flex items-center space-x-3">
-                            <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                              <Trophy className="w-6 h-6 text-primary" />
-                            </div>
-                            <span>Competition Excellence</span>
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription className="text-base leading-relaxed space-y-2">
-                            <span className="block font-semibold text-foreground">2025-2026 Season</span>
-                            <ul className="list-disc pl-4 space-y-1">
-                              <li>Think Award - NJ Upper Central Leagues</li>
-                              <li>Winning Alliance Captain</li>
-                              <li>Qualified for NJ State Championship</li>
-                            </ul>
-                          </CardDescription>
-                        </CardContent>
-                      </Card>
-                    </TiltCard>
-                  </StaggerItem>
-
-                  <StaggerItem>
-                    <TiltCard className="h-full">
-                      <Card className="h-full border-accent/20 bg-gradient-to-br from-white to-accent/5 group shadow-md hover:shadow-xl transition-all duration-300">
-                        <CardHeader>
-                          <CardTitle className="flex items-center space-x-3">
-                            <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                              <Users className="w-6 h-6 text-accent" />
-                            </div>
-                            <span>Mentorship Program</span>
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription className="text-base leading-relaxed">
-                            Successfully mentoring 2 FLL teams, sharing our knowledge and passion for robotics with the next
-                            generation of innovators.
-                          </CardDescription>
-                        </CardContent>
-                      </Card>
-                    </TiltCard>
-                  </StaggerItem>
-
-                  <StaggerItem>
-                    <TiltCard className="h-full">
-                      <Card className="h-full border-secondary/20 bg-gradient-to-br from-white to-secondary/5 group shadow-md hover:shadow-xl transition-all duration-300">
-                        <CardHeader>
-                          <CardTitle className="flex items-center space-x-3">
-                            <div className="p-2 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors">
-                              <Heart className="w-6 h-6 text-secondary" />
-                            </div>
-                            <span>STEM Camp</span>
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription className="text-base leading-relaxed">
-                            Hosting an annual STEM camp for 3rd–8th graders, inspiring young minds to explore science and
-                            technology through hands-on learning.
-                          </CardDescription>
-                        </CardContent>
-                      </Card>
-                    </TiltCard>
-                  </StaggerItem>
+                   <StaggerItem>
+                     <TiltCard className="h-full border border-primary/10 bg-white/80 hover:border-primary/35 transition-all duration-500 rounded-[2.5rem] shadow-sm hover:shadow-md p-8 flex flex-col justify-between">
+                       <div className="space-y-6 text-left">
+                         <h3 className="flex items-center space-x-3 text-xl font-bold text-foreground">
+                           <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
+                             <Trophy className="w-6 h-6 text-primary" />
+                           </div>
+                           <span>Competition Excellence</span>
+                         </h3>
+                         <div className="text-base leading-relaxed space-y-4">
+                           <span className="block font-bold text-foreground">2025-2026 Season</span>
+                           <ul className="space-y-2 text-muted-foreground font-medium">
+                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2" /> Think Award - NJ Upper Central Leagues</li>
+                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2" /> Winning Alliance Captain</li>
+                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2" /> Qualified for NJ State Championship</li>
+                           </ul>
+                         </div>
+                       </div>
+                     </TiltCard>
+                   </StaggerItem>
+ 
+                   <StaggerItem>
+                     <TiltCard className="h-full border border-primary/10 bg-white/80 hover:border-primary/35 transition-all duration-500 rounded-[2.5rem] shadow-sm hover:shadow-md p-8 flex flex-col justify-between">
+                       <div className="space-y-6 text-left">
+                         <h3 className="flex items-center space-x-3 text-xl font-bold text-foreground">
+                           <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
+                             <Users className="w-6 h-6 text-primary" />
+                           </div>
+                           <span>Mentorship Program</span>
+                         </h3>
+                         <p className="text-base leading-relaxed text-muted-foreground font-medium max-w-md">
+                           Successfully mentoring 2 FLL teams, sharing our knowledge and passion for robotics with the next generation of innovators and developers.
+                         </p>
+                       </div>
+                     </TiltCard>
+                   </StaggerItem>
+ 
+                   <StaggerItem>
+                     <TiltCard className="h-full border border-primary/10 bg-white/80 hover:border-primary/35 transition-all duration-500 rounded-[2.5rem] shadow-sm hover:shadow-md p-8 flex flex-col justify-between">
+                       <div className="space-y-6 text-left">
+                         <h3 className="flex items-center space-x-3 text-xl font-bold text-foreground">
+                           <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
+                             <Heart className="w-6 h-6 text-primary" />
+                           </div>
+                           <span>STEM Camp</span>
+                         </h3>
+                         <p className="text-base leading-relaxed text-muted-foreground font-medium max-w-md">
+                           Hosting an annual STEM camp for 3rd–8th graders, inspiring young minds to explore science and technology through hands-on learning and interactive projects.
+                         </p>
+                       </div>
+                     </TiltCard>
+                   </StaggerItem>
                 </StaggerContainer>
               </div>
             </div>
@@ -284,7 +292,7 @@ export default function HomePage() {
                       Ready to Join Our Journey?
                     </h2>
                     <div className="w-24 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
-                    <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto text-pretty leading-relaxed">
+                    <p className="text-xl text-primary-foreground/90 max-w-xl mx-auto text-pretty leading-relaxed">
                       Whether you're interested in becoming a sponsor or learning more about our community programs, we'd
                       love to hear from you and explore the possibilities together.
                     </p>

@@ -80,8 +80,8 @@ export function Navigation() {
           {/* Mobile Navigation */}
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-5 w-5" />
+              <Button variant="ghost" className="md:hidden w-11 h-11 p-0 flex items-center justify-center rounded-full">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>

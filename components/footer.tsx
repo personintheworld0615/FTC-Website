@@ -89,7 +89,7 @@ export function Footer() {
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]"></span>
             <span className="tracking-widest text-xs uppercase">System Operational</span>
           </div>
-          <p>&copy; {new Date().getFullYear()} Rust in Piece — FTC Team 19772. All rights reserved.</p>
+          <p className="text-center md:text-right text-balance leading-relaxed max-w-[280px] sm:max-w-md md:max-w-none">&copy; {new Date().getFullYear()} Rust in Piece — FTC Team 19772. All rights reserved.</p>
         </div>
       </div>
     </footer>
