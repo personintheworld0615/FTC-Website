@@ -68,7 +68,7 @@ export default function HomePage() {
             <div className="absolute top-1/4 right-10 w-64 h-64 bg-accent/8 rounded-full blur-[100px] pointer-events-none" />
 
             {/* Interactive Robotic Arm Overlay */}
-            <div className="hidden lg:block absolute right-[8%] top-[15%] w-[480px] h-[480px] z-20 pointer-events-none">
+            <div className="hidden lg:block absolute right-[8%] bottom-[8%] w-[480px] h-[480px] z-20 pointer-events-none">
               <InteractiveRoboticArm />
             </div>
 
