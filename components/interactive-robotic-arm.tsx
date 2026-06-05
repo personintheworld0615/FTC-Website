@@ -14,7 +14,7 @@ export function InteractiveRoboticArm() {
   const [isClicked, setIsClicked] = useState(false)
 
   // Game state variables
-  const [gameState, setGameState] = useState<"idle" | "countdown" | "active" | "gameover">("idle")
+  const [gameState, setGameState] = useState<"idle" | "instructions" | "countdown" | "active" | "gameover">("idle")
   const [score, setScore] = useState(0)
   const [timeLeft, setTimeLeft] = useState(30)
   const [clicks, setClicks] = useState(0)
@@ -375,7 +375,7 @@ export function InteractiveRoboticArm() {
                 SYSTEM STANDBY // READY
               </span>
               <button 
-                onClick={() => setGameState("countdown")}
+                onClick={() => setGameState("instructions")}
                 className="w-full bg-primary hover:bg-primary/95 text-white font-mono text-[10px] font-bold tracking-widest uppercase py-2.5 px-4 rounded-xl transition-all duration-300 cursor-pointer active:scale-95 shadow-sm pointer-events-auto"
               >
                 INITIALIZE RUN
@@ -393,6 +393,41 @@ export function InteractiveRoboticArm() {
               <div className="text-6xl font-sans font-extrabold text-foreground tracking-tighter leading-none">
                 {countdown}
               </div>
+            </div>
+          </div>
+        )}
+
+        {gameState === "instructions" && (
+          <div className="absolute inset-0 flex flex-col items-center justify-start pt-2">
+            <div className="bg-white/95 border border-primary/15 rounded-2xl p-5 shadow-xl flex flex-col items-center justify-center space-y-4 pointer-events-auto backdrop-blur-sm max-w-[280px] text-center">
+              <div>
+                <span className="font-mono text-[9px] text-primary tracking-widest uppercase block mb-1">
+                  MISSION PROTOCOLS
+                </span>
+                <h4 className="text-xs font-sans font-bold text-foreground uppercase tracking-tight">
+                  Alignment Challenge
+                </h4>
+              </div>
+              <div className="w-full text-left font-mono text-[9px] text-muted-foreground space-y-2 text-pretty border-y border-primary/10 py-3">
+                <div className="flex gap-2">
+                  <span className="text-primary font-bold">[01]</span>
+                  <span>GUIDE CLAW TO DOTTED VECTOR TARGETS</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="text-primary font-bold">[02]</span>
+                  <span>CLICK MOUSE TO PINCH CLAW & GRAB TARGET</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="text-primary font-bold">[03]</span>
+                  <span>COLLECT AS MANY AS POSSIBLE IN 30s</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setGameState("countdown")}
+                className="w-full bg-primary hover:bg-primary/95 text-white font-mono text-[10px] font-bold tracking-widest uppercase py-2.5 px-4 rounded-xl transition-all duration-300 cursor-pointer active:scale-95 shadow-sm pointer-events-auto"
+              >
+                START CHALLENGE
+              </button>
             </div>
           </div>
         )}
@@ -420,12 +455,20 @@ export function InteractiveRoboticArm() {
                   </span>
                 </div>
               </div>
-              <button 
-                onClick={() => setGameState("countdown")}
-                className="w-full bg-primary hover:bg-primary/95 text-white font-mono text-[10px] font-bold tracking-widest uppercase py-2.5 px-4 rounded-xl transition-all duration-300 cursor-pointer active:scale-95 shadow-sm pointer-events-auto"
-              >
-                RE-INITIALIZE RUN
-              </button>
+              <div className="flex flex-col gap-2 w-full">
+                <button 
+                  onClick={() => setGameState("countdown")}
+                  className="w-full bg-primary hover:bg-primary/95 text-white font-mono text-[10px] font-bold tracking-widest uppercase py-2.5 px-4 rounded-xl transition-all duration-300 cursor-pointer active:scale-95 shadow-sm pointer-events-auto"
+                >
+                  RE-INITIALIZE RUN
+                </button>
+                <button 
+                  onClick={() => setGameState("instructions")}
+                  className="w-full bg-transparent hover:bg-primary/5 text-primary font-mono text-[8px] font-bold tracking-widest uppercase py-1.5 transition-all duration-300 cursor-pointer pointer-events-auto"
+                >
+                  VIEW MISSION RULES
+                </button>
+              </div>
             </div>
           </div>
         )}
