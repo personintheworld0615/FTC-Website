@@ -287,3 +287,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+@property --grad-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-grad {
+  0% {
+    --grad-angle: 0deg;
+  }
+  100% {
+    --grad-angle: 360deg;
+  }
+}
+
+.animate-rotate-gradient {
+  animation: rotate-grad 4s linear infinite;
+}
