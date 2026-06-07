@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer"
 import { FadeIn, SlideUp, TiltCard, ScaleIn, ParallaxBlock, StaggerContainer, StaggerItem, Bounce } from "@/components/animations"
 import { InteractiveCounter } from "@/components/interactive-counter"
 import { RobotDivider } from "@/components/robot-divider"
-import { useState, useEffect } from "react"
+
 import { MissionRobot } from "@/components/mission-robot"
 import Image from "next/image"
 import dynamic from "next/dynamic"
@@ -20,45 +20,11 @@ const InteractiveRoboticArm = dynamic(
 )
 
 export default function HomePage() {
-  const [clickCount, setClickCount] = useState(0)
-  const [showEasterEgg, setShowEasterEgg] = useState(false)
-
-  const handleLogoClick = () => {
-    setClickCount((prev) => prev + 1)
-    if (clickCount === 6) {
-      // Triggers on 7th click
-      setShowEasterEgg(true)
-      setTimeout(() => setShowEasterEgg(false), 3000) // Hide after 3 seconds
-      setClickCount(0) // Reset counter
-    }
-  }
-
-  // Reset click count after 5 seconds of inactivity
-  useEffect(() => {
-    if (clickCount > 0) {
-      const timer = setTimeout(() => setClickCount(0), 5000)
-      return () => clearTimeout(timer)
-    }
-  }, [clickCount])
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {showEasterEgg && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="bg-gradient-orange p-8 rounded-3xl shadow-2xl animate-in zoom-in duration-500 text-center">
-            {/* Custom SVG Burrito/Wrap shape replacing emoji */}
-            <svg width="60" height="60" viewBox="0 0 100 100" className="mx-auto mb-4">
-              <path d="M20,50 Q50,20 80,50 Q50,80 20,50 Z" fill="oklch(0.72 0.15 75)" stroke="oklch(0.99 0.01 85)" strokeWidth="4" />
-              <path d="M25,48 C35,38 65,38 75,48" stroke="oklch(0.68 0.22 55)" strokeWidth="3" fill="none" />
-              <path d="M30,52 C40,62 60,62 70,52" stroke="oklch(0.68 0.22 55)" strokeWidth="3" fill="none" />
-            </svg>
-            <h2 className="text-3xl font-bold text-white mb-2">Akshit discovery!</h2>
-            <p className="text-xl text-white/90">Akshit is a dosa eater!</p>
-          </div>
-        </div>
-      )}
 
       <main>
         <article>
@@ -90,8 +56,7 @@ export default function HomePage() {
                 <SlideUp delay={0.1}>
                   <Badge
                     variant="outline"
-                    className="font-mono text-xs tracking-widest uppercase border-primary/20 text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6 cursor-pointer select-none"
-                    onClick={handleLogoClick}
+                    className="font-mono text-xs tracking-widest uppercase border-primary/20 text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6 select-none"
                   >
                     <Zap className="w-3 h-3 mr-2 inline" />
                     FTC TEAM 19772
@@ -103,8 +68,7 @@ export default function HomePage() {
                     We Build
                   </h1>
                   <h2
-                    className="text-7xl sm:text-[8rem] md:text-[11rem] font-drama text-primary leading-none tracking-tighter pr-4 pb-2 cursor-pointer select-none drop-shadow-[0_2px_12px_#FCFAF7]"
-                    onClick={handleLogoClick}
+                    className="text-7xl sm:text-[8rem] md:text-[11rem] font-drama text-primary leading-none tracking-tighter pr-4 pb-2 select-none drop-shadow-[0_2px_12px_#FCFAF7]"
                   >
                     Robots.
                   </h2>
