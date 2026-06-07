@@ -285,6 +285,29 @@ export default function CommunityPage() {
       )
     },
     {
+      title: "CS & AI Summer Camp",
+      category: "youth",
+      metric: "K-7th",
+      metricLabel: "Grades",
+      icon: GraduationCap,
+      description: "Our annual week-long computer science and artificial intelligence camp designed to introduce elementary and middle school students to coding and machine learning.",
+      details: [
+        "July 20 - July 24 at Princeton STEM Academy",
+        "Learn core logic flows, Scratch, and Python foundations",
+        "Understand computer vision models and sensor-guided automation in robotics",
+        "Build and test intelligent software agents through hands-on group projects"
+      ],
+      svgIllustration: (
+        <svg viewBox="0 0 200 150" className="w-full h-full text-primary/20" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="35" y="35" width="130" height="80" rx="10" className="stroke-primary" strokeWidth="2" />
+          <circle cx="65" cy="75" r="15" className="stroke-secondary" />
+          <circle cx="135" cy="75" r="15" className="stroke-secondary" />
+          <path d="M 65 75 L 135 75" className="stroke-accent" strokeDasharray="3 3" />
+          <text x="100" y="55" textAnchor="middle" className="fill-foreground font-mono text-[9px]">AI MODEL</text>
+        </svg>
+      )
+    },
+    {
       title: "Summer Battlebots Camp",
       category: "youth",
       metric: "8",
@@ -627,6 +650,16 @@ export default function CommunityPage() {
                                 </li>
                               ))}
                             </ul>
+                            {program.title === "CS & AI Summer Camp" && (
+                              <div className="pt-2">
+                                <Button size="sm" className="rounded-xl px-4 py-2 text-xs font-bold bg-[#C85A32] text-white hover:bg-[#C85A32]/90 transition-transform active:scale-95" asChild>
+                                  <a href="/camp">
+                                    Learn More & Register
+                                    <ArrowRight className="w-3 h-3 ml-1.5 inline-block shrink-0" />
+                                  </a>
+                                </Button>
+                              </div>
+                            )}
                           </div>
 
                           {/* Graphical Placeholder Column */}
