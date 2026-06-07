@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Award, Network, Cpu, Briefcase } from 'lucide-react'
 import { SlideUp, StaggerContainer, StaggerItem, TiltCard } from "@/components/animations"
 import { motion, useMotionValue, useSpring } from "framer-motion"
+import { MentorConnectionWeb } from "@/components/mentor-connection-web"
 
 interface Mentor {
   name: string
@@ -381,9 +382,8 @@ export default function MentorsPage() {
                 </p>
               </StaggerItem>
             </StaggerContainer>
-            <SlideUp className="relative w-full aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden border-2 border-border/40 shadow-sm hidden lg:block grayscale-[0.2]">
-              <img src="/images/mentorship-philosophy.png" alt="Mentorship Philosophy" className="w-full h-full object-cover mix-blend-normal" />
-              <div className="absolute inset-0 bg-primary/5 mix-blend-multiply border border-primary/10 rounded-[2rem] pointer-events-none"></div>
+            <SlideUp className="relative w-full aspect-square md:aspect-[4/3] hidden lg:block">
+              <MentorConnectionWeb />
             </SlideUp>
           </div>
         </div>
