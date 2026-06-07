@@ -50,9 +50,9 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex flex-1 items-center justify-center space-x-1 lg:space-x-4">
+          <div className="hidden md:flex flex-1 items-center justify-center space-x-0.5 lg:space-x-2">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 px-4 py-3 rounded-full hover:bg-primary/5">
+              <Link key={link.href} href={link.href} className="nav-link text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 px-2.5 lg:px-3 py-3 rounded-full hover:bg-primary/5">
                 {link.label}
               </Link>
             ))}
