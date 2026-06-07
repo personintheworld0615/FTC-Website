@@ -197,7 +197,7 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => (
               <ul className="space-y-2">
                 {mentor.highlights.map((highlight, idx) => (
                   <li key={idx} className="text-xs text-muted-foreground flex items-start gap-2.5 leading-relaxed group/bullet">
-                    <span className="text-primary font-mono text-[9px] mt-1 select-none transition-transform duration-200 ease-out group-hover/bullet:translate-x-1">//</span>
+                    <span className="text-primary font-mono text-[9px] mt-1 select-none transition-transform duration-200 ease-out group-hover/bullet:translate-x-1">→</span>
                     <span>{highlight}</span>
                   </li>
                 ))}
@@ -357,9 +357,57 @@ export default function MentorsPage() {
     },
   ]
 
+  const partnerList = [
+    { name: "Coinbase", component: <CompanyLogo name="COINBASE" /> },
+    { name: "J & J", component: <CompanyLogo name="J & J" /> },
+    { name: "BNY Mellon", component: <CompanyLogo name="BNY" /> },
+    { name: "RIMOWA", component: <CompanyLogo name="RIMOWA" /> },
+    { name: "NJIT", component: <CompanyLogo name="NJIT" /> },
+    { name: "Onshape", component: <CompanyLogo name="ONSHAPE" /> },
+    { name: "Knowlify", component: <CompanyLogo name="KNOWLIFY" /> },
+    { name: "UPIT", component: <CompanyLogo name="UPIT" /> },
+  ]
+
+  const adviceList = [
+    "Explained projectile motion equations for scoring mechanics",
+    "Aided with component CAD modeling design processes",
+    "Offered subsystems (Shooter + Intake) design reviews",
+    "Guided on interpolating lookup tables for automated shooting",
+    "Coordinated corporate sponsorship and financial planning",
+    "Provided structural advice on Engineering Portfolio layout",
+    "Encouraged integrating ODO tracking in teleop mode",
+    "Assisted in heading lock controls and waypoint navigation",
+    "Advised on subassembly programming class layouts",
+    "Optimized software performance during autonomous periods",
+    "Coached presenters on public speaking, tone, and slide delivery",
+  ]
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes marquee-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee-scroll 35s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+        @keyframes marquee-reverse-scroll {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-marquee-reverse {
+          animation: marquee-reverse-scroll 45s linear infinite;
+        }
+        .animate-marquee-reverse:hover {
+          animation-play-state: paused;
+        }
+      ` }} />
 
       {/* Hero Section */}
       <section className="py-24 lg:py-32 border-b border-border/20 relative overflow-hidden flex flex-col justify-center min-h-[40vh]">
@@ -388,6 +436,51 @@ export default function MentorsPage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Logo Marquee */}
+      <div className="relative w-full overflow-hidden py-8 bg-card border-b border-border/10">
+        <div className="flex w-max items-center gap-16 animate-marquee animate-in fade-in duration-700">
+          {partnerList.map((partner, index) => (
+            <div key={`part-1-${index}`} className="flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:text-primary transition-all duration-300">
+              {partner.component}
+              <span className="font-mono text-xs font-bold uppercase tracking-widest">{partner.name}</span>
+            </div>
+          ))}
+          {partnerList.map((partner, index) => (
+            <div key={`part-2-${index}`} className="flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:text-primary transition-all duration-300">
+              {partner.component}
+              <span className="font-mono text-xs font-bold uppercase tracking-widest">{partner.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Advice Ticker */}
+      <div className="relative w-full overflow-hidden py-12 bg-muted/30 border-b border-border/20">
+        <div className="text-center mb-6">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold">DIRECT ADVICE & FOCUS AREAS FROM OUR PARTNERS</span>
+        </div>
+        <div className="flex w-max items-center gap-6 animate-marquee-reverse animate-in fade-in duration-1000">
+          {adviceList.map((advice, index) => (
+            <div 
+              key={`adv-1-${index}`} 
+              className="px-6 py-4 rounded-full bg-white border border-primary/5 hover:border-primary/25 shadow-sm flex items-center gap-3 transition-all select-none font-medium text-sm text-foreground"
+            >
+              <span className="text-primary font-mono text-xs select-none">→</span>
+              <span>{advice}</span>
+            </div>
+          ))}
+          {adviceList.map((advice, index) => (
+            <div 
+              key={`adv-2-${index}`} 
+              className="px-6 py-4 rounded-full bg-white border border-primary/5 hover:border-primary/25 shadow-sm flex items-center gap-3 transition-all select-none font-medium text-sm text-foreground"
+            >
+              <span className="text-primary font-mono text-xs select-none">→</span>
+              <span>{advice}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Expanded Mentors Showcase (Direct Visual Presentation) */}
       <section className="py-24 lg:py-32 bg-slate-50/30 border-b border-border/20">
