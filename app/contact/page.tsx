@@ -1,3 +1,4 @@
+/* Hallmark · macrostructure: Long Document · design-system: DESIGN.md */
 "use client"
 
 import type React from "react"
@@ -173,8 +174,8 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <h2 className="text-3xl lg:text-4xl font-sans font-bold uppercase tracking-tight text-foreground">Send Us a Message</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Fill out the form below and we'll get back to you as soon as possible. Whether you're interested in
-                  joining, sponsoring, or collaborating, we're excited to hear from you!
+                  Fill out the form below and we'll get back to you as soon as possible. We are excited to hear from you
+                  about joining, sponsoring, or collaborating with our team!
                 </p>
               </div>
 

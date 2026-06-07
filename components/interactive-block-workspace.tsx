@@ -274,7 +274,8 @@ export function InteractiveBlockWorkspace() {
                           type="button"
                           onClick={() => removeBlock(index)}
                           disabled={isRunning}
-                          className="hover:bg-white/20 p-1 rounded transition-colors disabled:opacity-40"
+                          aria-label="Remove block"
+                          className="hover:bg-white/20 p-1.5 rounded transition-colors disabled:opacity-40 before:content-[''] before:absolute before:inset-[-8px] relative"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
@@ -299,6 +300,7 @@ export function InteractiveBlockWorkspace() {
             <Button
               type="button"
               variant="outline"
+              aria-label="Reset robot simulation"
               className="border-[#EAE3DB] rounded-xl py-4"
               onClick={resetRobot}
             >

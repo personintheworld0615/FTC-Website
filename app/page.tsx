@@ -1,3 +1,4 @@
+/* Hallmark · macrostructure: Marquee Hero · design-system: DESIGN.md */
 "use client"
 
 import { Button } from "@/components/ui/button"
@@ -9,8 +10,14 @@ import { FadeIn, SlideUp, TiltCard, ScaleIn, ParallaxBlock, StaggerContainer, St
 import { InteractiveCounter } from "@/components/interactive-counter"
 import { RobotDivider } from "@/components/robot-divider"
 import { useState, useEffect } from "react"
-import { InteractiveRoboticArm } from "@/components/interactive-robotic-arm"
 import { MissionRobot } from "@/components/mission-robot"
+import Image from "next/image"
+import dynamic from "next/dynamic"
+
+const InteractiveRoboticArm = dynamic(
+  () => import("@/components/interactive-robotic-arm").then((mod) => mod.InteractiveRoboticArm),
+  { ssr: false }
+)
 
 export default function HomePage() {
   const [clickCount, setClickCount] = useState(0)
@@ -56,11 +63,17 @@ export default function HomePage() {
       <main>
         <article>
           <section id="home" className="relative h-[100dvh] min-h-[600px] w-full overflow-hidden flex flex-col justify-end border-b border-border/40 bg-background">
-            {/* Full-bleed background image - upscaled to high resolution */}
-            <div
-              className="absolute inset-0 bg-cover bg-[center_top_20%] bg-no-repeat opacity-90"
-              style={{ backgroundImage: "url('/images/design-mode/team-hero.png')" }}
-            ></div>
+            {/* Full-bleed background image - optimized with Next.js Image */}
+            <div className="absolute inset-0 opacity-90">
+              <Image
+                src="/images/design-mode/team-hero.png"
+                alt="FTC Team 19772 members in orange team shirts"
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-[center_top_20%]"
+              />
+            </div>
             {/* Heavy gradient overlay fading to the warm light-mode background color */}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-transparent"></div>
             {/* Ambient orange gradient blobs for atmosphere */}
@@ -140,7 +153,7 @@ export default function HomePage() {
                 {/* Left Column: Asymmetric Editorial Intro */}
                 <div className="lg:col-span-5 space-y-6">
                   <h3 className="text-4xl sm:text-5xl font-sans font-extrabold text-foreground tracking-tighter leading-[1.05] uppercase">
-                    Innovation & Community
+                    Engineering & Community
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed font-medium max-w-xl">
                     From the classroom to the competition arena, our numbers tell the story of a team dedicated to pushing mechanical boundaries while lifting up the communities around us.
@@ -171,7 +184,7 @@ export default function HomePage() {
                      <StaggerItem>
                        <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
                          <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">∞</div>
-                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Innovation</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Creativity</div>
                        </TiltCard>
                      </StaggerItem>
                   </StaggerContainer>
@@ -190,7 +203,7 @@ export default function HomePage() {
                 <MissionRobot />
                  <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-xl mx-auto">
                    We are an FTC robotics team passionate about{" "}
-                   <span className="text-primary font-semibold">STEM education</span>, engineering, and innovation. We
+                   <span className="text-primary font-semibold">STEM education</span>, design, and engineering. We
                    design, build, and program competitive robots while also mentoring younger students and giving back to
                    our community through educational outreach and STEM advocacy.
                  </p>
@@ -293,8 +306,8 @@ export default function HomePage() {
                     </h2>
                     <div className="w-24 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
                     <p className="text-xl text-primary-foreground/90 max-w-xl mx-auto text-pretty leading-relaxed">
-                      Whether you're interested in becoming a sponsor or learning more about our community programs, we'd
-                      love to hear from you and explore the possibilities together.
+                      Interested in sponsoring our team or participating in our community programs? We'd
+                      love to hear from you to see how we can work together.
                     </p>
                   </div>
 

@@ -1,23 +1,21 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Plus_Jakarta_Sans, Instrument_Serif, Space_Mono } from "next/font/google"
+import { Albert_Sans, Prata, JetBrains_Mono } from "next/font/google"
 import { Suspense } from "react"
 
-const jakarta = Plus_Jakarta_Sans({
+const albert = Albert_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
 })
 
-const drama = Instrument_Serif({
+const drama = Prata({
   subsets: ["latin"],
   weight: "400",
-  style: "italic",
   variable: "--font-drama",
 })
 
-const mono = Space_Mono({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
   variable: "--font-mono",
 })
 import "./globals.css"
@@ -235,10 +233,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`font-sans ${jakarta.variable} ${drama.variable} ${mono.variable} bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground`}>
+      <body className={`font-sans ${albert.variable} ${drama.variable} ${mono.variable} bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground`}>
         {/* Cinematic Global Noise Overlay */}
         <div
-          className="pointer-events-none fixed inset-0 z-[100] opacity-[0.03]"
+          className="pointer-events-none fixed inset-0 z-[100] opacity-[0.05]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
           }}

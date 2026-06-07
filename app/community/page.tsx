@@ -1,3 +1,4 @@
+/* Hallmark · macrostructure: Stat-Led · design-system: DESIGN.md */
 "use client"
 
 import React, { useState, useEffect, useRef } from "react"

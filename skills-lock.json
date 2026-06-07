@@ -21,6 +21,11 @@
       "sourceType": "github",
       "computedHash": "bea0635c86cae57a087b9939106d4da0729a6297afdf894667bd32d215d46018"
     },
+    "avoid-ai-writing": {
+      "source": "conorbronsdon/avoid-ai-writing",
+      "sourceType": "github",
+      "computedHash": "01059fa5db2b5600409e9a10baf96611ff3b1f78622867cb2cbab3aad4309435"
+    },
     "bolder": {
       "source": "pbakaus/impeccable",
       "sourceType": "github",
@@ -75,6 +80,12 @@
       "source": "greensock/gsap-skills",
       "sourceType": "github",
       "computedHash": "c4a01101d9e1aafbf4b49f75d74f9349790d8741981ba0237c990093863035a6"
+    },
+    "hallmark": {
+      "source": "nutlope/hallmark",
+      "sourceType": "github",
+      "skillPath": "skills/hallmark/SKILL.md",
+      "computedHash": "8a8ecafd613f09e701330b5aa4a591ac539abb2605596df4a2394f03628d1d76"
     },
     "harden": {
       "source": "pbakaus/impeccable",

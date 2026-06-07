@@ -1,3 +1,4 @@
+/* Hallmark · macrostructure: Long Document · design-system: DESIGN.md */
 "use client"
 
 import React, { useState } from "react"
@@ -31,9 +32,14 @@ import {
   Instagram
 } from "lucide-react"
 import { SlideUp, StaggerContainer, StaggerItem, ScaleIn } from "@/components/animations"
-import { InteractiveBlockWorkspace } from "@/components/interactive-block-workspace"
 import { registerCamp } from "@/app/actions/camp-actions"
 import { toast } from "sonner"
+import dynamic from "next/dynamic"
+
+const InteractiveBlockWorkspace = dynamic(
+  () => import("@/components/interactive-block-workspace").then((mod) => mod.InteractiveBlockWorkspace),
+  { ssr: false }
+)
 
 export default function CampPage() {
   const [formData, setFormData] = useState({
@@ -135,7 +141,7 @@ export default function CampPage() {
                 <span className="font-serif italic font-light text-primary capitalize tracking-normal">Summer Camp</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium pt-2">
-                A week-long immersive coding and robotics program hosted by FTC Team 19772 "Rust in Piece" at the Princeton STEM Academy.
+                A week-long immersive coding and robotics program hosted by FTC Team 19772 “Rust in Piece” at the Princeton STEM Academy.
               </p>
             </StaggerItem>
 

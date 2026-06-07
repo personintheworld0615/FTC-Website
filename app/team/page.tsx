@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Crown, Star, Zap } from "lucide-react"
@@ -197,11 +198,14 @@ export default function TeamPage() {
             <TiltCard>
               <Card className="h-full group hover:shadow-lg transition-all duration-300 shadow-md bg-white/60 backdrop-blur-sm border-primary/10">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-4">
-                <img
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 relative">
+                <Image
                   src={member.image || "/placeholder.svg"}
                   alt={`${member.name} - ${member.role}`}
-                  className="w-24 h-24 rounded-full object-cover object-center mx-auto"
+                  fill
+                  sizes="96px"
+                  className="object-cover object-center"
+                  loading="lazy"
                 />
               </div>
               <CardTitle className="text-xl">{member.name}</CardTitle>

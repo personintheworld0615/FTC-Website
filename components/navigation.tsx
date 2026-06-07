@@ -30,14 +30,13 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
   return (
     <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <nav
-        className={`pointer-events-auto border transition-all duration-500 rounded-[2rem] px-4 sm:px-6 mx-auto
+        className={`pointer-events-auto border transition-colors duration-500 rounded-[2rem] px-4 sm:px-6 py-3 mx-auto w-full max-w-6xl
           ${scrolled
-            ? "bg-background/80 backdrop-blur-xl border-border shadow-xl py-2 w-full max-w-6xl"
-            : "bg-transparent border-transparent py-4 w-full max-w-7xl"
+            ? "bg-background/80 backdrop-blur-xl border-border shadow-xl"
+            : "bg-transparent border-transparent shadow-none"
           }
         `}
       >
@@ -53,7 +52,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-1 items-center justify-center space-x-1 lg:space-x-4">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-full hover:bg-primary/5">
+              <Link key={link.href} href={link.href} className="nav-link text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 px-4 py-3 rounded-full hover:bg-primary/5">
                 {link.label}
               </Link>
             ))}

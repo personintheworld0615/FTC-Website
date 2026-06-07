@@ -1,8 +1,10 @@
+/* Hallmark · macrostructure: Long Document · design-system: DESIGN.md */
 "use client"
 
 import React, { useRef, useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -154,11 +156,16 @@ function AvatarContainer({ mentor }: { mentor: Mentor }) {
       className="relative z-10 w-32 h-32 rounded-full overflow-hidden flex items-center justify-center bg-background border-[6px] border-background shadow-sm group/avatar"
     >
       {mentor.image ? (
-        <img
-          src={mentor.image}
-          alt={`${mentor.name} - ${mentor.title}`}
-          className="w-full h-full object-cover transition-transform duration-200 ease-out group-hover/avatar:scale-105"
-        />
+        <div className="w-full h-full relative">
+          <Image
+            src={mentor.image}
+            alt={`${mentor.name} - ${mentor.title}`}
+            fill
+            sizes="128px"
+            className="object-cover transition-transform duration-200 ease-out group-hover/avatar:scale-105"
+            loading="lazy"
+          />
+        </div>
       ) : (
         <AvatarPlaceholder name={mentor.name} />
       )}
@@ -483,7 +490,7 @@ export default function MentorsPage() {
       </div>
 
       {/* Expanded Mentors Showcase (Direct Visual Presentation) */}
-      <section className="py-24 lg:py-32 bg-slate-50/30 border-b border-border/20">
+      <section className="py-24 lg:py-32 bg-muted/10 border-b border-border/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-28">
           
           {/* Section 1: Core Mentors */}
