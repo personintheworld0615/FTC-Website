@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Crown, Star, Heart, Building, Cpu, Users, GraduationCap, Compass } from "lucide-react"
 import { SlideUp, TiltCard, StaggerContainer, StaggerItem } from "@/components/animations"
+import Link from "next/link"
 
 export function SponsorsContent() {
   const [clickCount, setClickCount] = useState(0)
@@ -168,7 +169,7 @@ export function SponsorsContent() {
             </StaggerItem>
             <StaggerItem className="pt-4">
               <Button size="lg" className={`rounded-xl px-8 uppercase tracking-wider text-xs font-bold transition-[transform,background-color] duration-200 ease-out active:scale-[0.97] bg-primary text-primary-foreground hover:bg-primary/90 ${goldTheme ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90" : ""}`} asChild>
-                <a href="mailto:rustinpieceftc@gmail.com">Become a Partner</a>
+                <Link href="/sponsor-registration">Become a Partner</Link>
               </Button>
             </StaggerItem>
           </StaggerContainer>
@@ -314,7 +315,7 @@ export function SponsorsContent() {
                   <span className={`font-mono text-4xl font-extrabold ${primaryColorClass} transition-colors duration-1000`}>$2,500+</span>
                   <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Annual Investment</span>
                   <Button size="lg" className={`w-full md:w-auto rounded-xl px-6 uppercase tracking-wider text-xs font-bold bg-primary text-primary-foreground hover:bg-primary/90 mt-2 transition-[transform,background-color] duration-200 ease-out active:scale-[0.97] ${goldTheme ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90" : ""}`} asChild>
-                    <a href="mailto:rustinpieceftc@gmail.com?subject=Title%20Sponsorship%20Inquiry%20-%20FTC%2019772">Invest at Title</a>
+                    <Link href="/sponsor-registration?tier=title">Invest at Title</Link>
                   </Button>
                 </div>
               </Card>
@@ -338,7 +339,7 @@ export function SponsorsContent() {
                     </p>
                   </div>
                   <Button className={`w-full rounded-xl uppercase tracking-wider text-xs font-bold border border-border bg-transparent text-foreground hover:bg-muted/10 hover:border-primary/50 mt-6 ${goldTheme ? "hover:border-[#D4AF37]/50" : ""}`} asChild>
-                    <a href="mailto:rustinpieceftc@gmail.com?subject=Platinum%20Sponsorship%20Inquiry%20-%20FTC%2019772">Select Platinum</a>
+                    <Link href="/sponsor-registration?tier=platinum">Select Platinum</Link>
                   </Button>
                 </Card>
               </TiltCard>
@@ -359,7 +360,7 @@ export function SponsorsContent() {
                     </p>
                   </div>
                   <Button className={`w-full rounded-xl uppercase tracking-wider text-xs font-bold border border-border bg-transparent text-foreground hover:bg-muted/10 hover:border-primary/50 mt-6 ${goldTheme ? "hover:border-[#D4AF37]/50" : ""}`} asChild>
-                    <a href="mailto:rustinpieceftc@gmail.com?subject=Sterling%20Sponsorship%20Inquiry%20-%20FTC%2019772">Select Sterling</a>
+                    <Link href="/sponsor-registration?tier=sterling">Select Sterling</Link>
                   </Button>
                 </Card>
               </TiltCard>
@@ -380,7 +381,7 @@ export function SponsorsContent() {
                     </p>
                   </div>
                   <Button className={`w-full rounded-xl uppercase tracking-wider text-xs font-bold border border-border bg-transparent text-foreground hover:bg-muted/10 hover:border-primary/50 mt-6 ${goldTheme ? "hover:border-[#D4AF37]/50" : ""}`} asChild>
-                    <a href="mailto:rustinpieceftc@gmail.com?subject=Rusted%20Sponsorship%20Inquiry%20-%20FTC%2019772">Select Rusted</a>
+                    <Link href="/sponsor-registration?tier=rusted">Select Rusted</Link>
                   </Button>
                 </Card>
               </TiltCard>

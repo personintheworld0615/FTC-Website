@@ -12,6 +12,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Building2, Mail, Phone, User, Globe, MessageSquare } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function SponsorRegistrationPage() {
   const router = useRouter()
@@ -24,6 +26,16 @@ export default function SponsorRegistrationPage() {
     sponsorshipTier: "",
     companyWebsite: "",
     message: "",
+  })
+
+  useState(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search)
+      const tier = params.get("tier")
+      if (tier && ["rusted", "sterling", "platinum", "title"].includes(tier)) {
+        formData.sponsorshipTier = tier
+      }
+    }
   })
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,9 +68,11 @@ export default function SponsorRegistrationPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      {/* Hero Section */}
-      <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[40vh]">
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navigation />
+      <main className="flex-1 bg-gradient-to-b from-background to-muted/20">
+        {/* Hero Section */}
+        <section className="py-24 lg:py-32 border-b border-border/40 relative overflow-hidden flex flex-col justify-center min-h-[40vh]">
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 z-0"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
@@ -219,6 +233,8 @@ export default function SponsorRegistrationPage() {
           </Card>
         </div>
       </section>
+      </main>
+      <Footer />
     </div>
   )
 }

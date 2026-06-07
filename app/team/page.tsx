@@ -179,7 +179,7 @@ export default function TeamPage() {
       grade: "8th Grade",
       specialties: ["Fundraising", "Spreadability"],
       bio: "Learning how to spread FIRST and fundraise money.",
-      image: "/Ahush?height=300&width=300&text=Outreach+Trainee+2",
+      image: "/Ahush.jpg?height=300&width=300&text=Outreach+Trainee+2",
     },
   ]
 
