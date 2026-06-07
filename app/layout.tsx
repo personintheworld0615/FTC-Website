@@ -2,6 +2,9 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Albert_Sans, Prata, JetBrains_Mono } from "next/font/google"
 import { Suspense } from "react"
+import { AIChatbot } from "@/components/ai-chatbot"
+import { SoundEngine } from "@/components/sound-engine"
+import "./globals.css"
 
 const albert = Albert_Sans({
   subsets: ["latin"],
@@ -18,7 +21,6 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
-import "./globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rustinpiece.org"),
@@ -243,6 +245,8 @@ export default function RootLayout({
         />
 
         <Suspense fallback={null}>{children}</Suspense>
+        <AIChatbot />
+        <SoundEngine />
       </body>
     </html>
   )
