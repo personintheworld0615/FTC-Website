@@ -65,7 +65,7 @@ export function SponsorsContent() {
   const fillAccentColor = goldTheme ? "oklch(0.78 0.12 85)" : "oklch(0.58 0.20 55)"
 
   return (
-    <div className={`min-h-screen bg-background transition-colors duration-1000 ${goldTheme ? "selection:bg-[#D4AF37]/20" : ""}`}>
+    <div className={`min-h-screen bg-background transition-colors duration-500 ease-out ${goldTheme ? "selection:bg-[#D4AF37]/20" : ""}`}>
       <Navigation />
 
       {/* Secret Gold Theme Notification */}
@@ -167,7 +167,7 @@ export function SponsorsContent() {
               </p>
             </StaggerItem>
             <StaggerItem className="pt-4">
-              <Button size="lg" className={`rounded-xl px-8 uppercase tracking-wider text-xs font-bold transition-all duration-200 ease-out active:scale-[0.97] bg-primary text-primary-foreground hover:bg-primary/90 ${goldTheme ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90" : ""}`} asChild>
+              <Button size="lg" className={`rounded-xl px-8 uppercase tracking-wider text-xs font-bold transition-[transform,background-color] duration-200 ease-out active:scale-[0.97] bg-primary text-primary-foreground hover:bg-primary/90 ${goldTheme ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90" : ""}`} asChild>
                 <a href="mailto:rustinpieceftc@gmail.com">Become a Partner</a>
               </Button>
             </StaggerItem>
@@ -190,7 +190,7 @@ export function SponsorsContent() {
           {/* Asymmetric Bento Box Grid */}
           <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <StaggerItem className="md:col-span-2">
-              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
+              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 active:scale-[0.99] transition-[border-color,transform,box-shadow] duration-200 ease-out cursor-pointer">
                 <div className="space-y-6">
                   <div className={`w-12 h-12 ${primaryBgClass} rounded-full flex items-center justify-center transition-colors duration-1000`}>
                     <Users className={`w-6 h-6 ${primaryColorClass} transition-colors duration-1000`} />
@@ -210,7 +210,7 @@ export function SponsorsContent() {
             </StaggerItem>
 
             <StaggerItem>
-              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
+              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 active:scale-[0.99] transition-[border-color,transform,box-shadow] duration-200 ease-out cursor-pointer">
                 <div className="space-y-6">
                   <div className={`w-12 h-12 ${primaryBgClass} rounded-full flex items-center justify-center transition-colors duration-1000`}>
                     <Cpu className={`w-6 h-6 ${primaryColorClass} transition-colors duration-1000`} />
@@ -230,7 +230,7 @@ export function SponsorsContent() {
             </StaggerItem>
 
             <StaggerItem>
-              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
+              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 active:scale-[0.99] transition-[border-color,transform,box-shadow] duration-200 ease-out cursor-pointer">
                 <div className="space-y-6">
                   <div className={`w-12 h-12 ${primaryBgClass} rounded-full flex items-center justify-center transition-colors duration-1000`}>
                     <GraduationCap className={`w-6 h-6 ${primaryColorClass} transition-colors duration-1000`} />
@@ -250,7 +250,7 @@ export function SponsorsContent() {
             </StaggerItem>
 
             <StaggerItem className="md:col-span-2">
-              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
+              <Card className="h-full rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between hover:border-primary/20 active:scale-[0.99] transition-[border-color,transform,box-shadow] duration-200 ease-out cursor-pointer">
                 <div className="space-y-6">
                   <div className={`w-12 h-12 ${primaryBgClass} rounded-full flex items-center justify-center transition-colors duration-1000`}>
                     <Compass className={`w-6 h-6 ${primaryColorClass} transition-colors duration-1000`} />
@@ -287,13 +287,13 @@ export function SponsorsContent() {
           <div className="grid gap-8 max-w-5xl mx-auto">
             {/* Title Sponsor - Mega Asymmetric Horizontal Card */}
             <TiltCard>
-              <Card className={`rounded-[2.5rem] bg-card border-2 ${primaryBorderClass} p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-8 group transition-colors duration-1000`}>
+              <Card className={`rounded-[2.5rem] bg-card border-2 ${primaryBorderClass} p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-8 group transition-[border-color,background-color] duration-500 ease-out`}>
                 <div className={`absolute top-0 right-0 w-32 h-32 ${primaryBgClass} rounded-full blur-2xl transition-colors duration-1000`}></div>
                 <div className="space-y-4 md:w-2/3">
                   <div className="flex items-center gap-3">
                     <div 
                       onClick={handleCrownClick}
-                      className={`w-10 h-10 ${primaryBgClass} rounded-full flex items-center justify-center cursor-pointer select-none active:scale-90 transition-all duration-300 duration-1000 relative group/crown`}
+                      className={`w-10 h-10 ${primaryBgClass} rounded-full flex items-center justify-center cursor-pointer select-none active:scale-90 transition-[transform,background-color] duration-200 ease-out relative group/crown`}
                       title="Click me 5 times for a surprise!"
                     >
                       <Crown className={`w-5 h-5 ${primaryColorClass} transition-colors duration-1000 ${clickCount > 0 ? "animate-bounce" : ""}`} />
@@ -313,7 +313,7 @@ export function SponsorsContent() {
                 <div className="flex flex-col items-start md:items-end gap-3 shrink-0 md:w-1/3">
                   <span className={`font-mono text-4xl font-extrabold ${primaryColorClass} transition-colors duration-1000`}>$2,500+</span>
                   <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Annual Investment</span>
-                  <Button size="lg" className={`w-full md:w-auto rounded-xl px-6 uppercase tracking-wider text-xs font-bold bg-primary text-primary-foreground hover:bg-primary/90 mt-2 ${goldTheme ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90" : ""}`} asChild>
+                  <Button size="lg" className={`w-full md:w-auto rounded-xl px-6 uppercase tracking-wider text-xs font-bold bg-primary text-primary-foreground hover:bg-primary/90 mt-2 transition-[transform,background-color] duration-200 ease-out active:scale-[0.97] ${goldTheme ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90" : ""}`} asChild>
                     <a href="mailto:rustinpieceftc@gmail.com?subject=Title%20Sponsorship%20Inquiry%20-%20FTC%2019772">Invest at Title</a>
                   </Button>
                 </div>
@@ -324,7 +324,7 @@ export function SponsorsContent() {
             <div className="grid md:grid-cols-3 gap-6">
               {/* Platinum */}
               <TiltCard>
-                <Card className="rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between h-full hover:border-primary/50 transition-colors">
+                <Card className="rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between h-full hover:border-primary/50 active:scale-[0.99] transition-[border-color,transform,box-shadow] duration-200 ease-out cursor-pointer">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className={`w-10 h-10 ${primaryBgClass} rounded-full flex items-center justify-center transition-colors duration-1000`}>
@@ -345,7 +345,7 @@ export function SponsorsContent() {
 
               {/* Sterling */}
               <TiltCard>
-                <Card className="rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between h-full hover:border-primary/50 transition-colors">
+                <Card className="rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between h-full hover:border-primary/50 active:scale-[0.99] transition-[border-color,transform,box-shadow] duration-200 ease-out cursor-pointer">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className={`w-10 h-10 ${primaryBgClass} rounded-full flex items-center justify-center transition-colors duration-1000`}>
@@ -366,7 +366,7 @@ export function SponsorsContent() {
 
               {/* Rusted */}
               <TiltCard>
-                <Card className="rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between h-full hover:border-primary/50 transition-colors">
+                <Card className="rounded-[2.5rem] bg-card border border-border/40 p-8 flex flex-col justify-between h-full hover:border-primary/50 active:scale-[0.99] transition-[border-color,transform,box-shadow] duration-200 ease-out cursor-pointer">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className={`w-10 h-10 ${primaryBgClass} rounded-full flex items-center justify-center transition-colors duration-1000`}>
