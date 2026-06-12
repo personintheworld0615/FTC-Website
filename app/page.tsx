@@ -1,5 +1,5 @@
-/* Hallmark · macrostructure: Marquee Hero · design-system: DESIGN.md */
-
+import { promises as fs } from "fs"
+import path from "path"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Users, Trophy, Heart, Zap, Cpu } from "lucide-react"
@@ -18,7 +18,10 @@ const InteractiveRoboticArm = dynamic(
   { ssr: false }
 )
 
-export default function HomePage() {
+export default async function HomePage() {
+  const filePath = path.join(process.cwd(), "lib", "copy.json")
+  const fileContent = await fs.readFile(filePath, "utf8")
+  const copy = JSON.parse(fileContent)
 
   return (
     <div className="min-h-screen bg-background">
@@ -58,24 +61,24 @@ export default function HomePage() {
                     className="font-mono text-xs tracking-widest uppercase border-primary/20 text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6 select-none"
                   >
                     <Zap className="w-3 h-3 mr-2 inline" />
-                    FTC TEAM 19772
+                    {copy.hero.badgeText}
                   </Badge>
                 </SlideUp>
 
                 <SlideUp delay={0.2} className="relative z-20 space-y-[-0.2em] md:space-y-[-0.4em]">
                   <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold text-foreground tracking-tighter leading-none uppercase">
-                    We Build
+                    {copy.hero.title1}
                   </h1>
                   <h2
                     className="text-7xl sm:text-[8rem] md:text-[11rem] font-drama text-primary leading-none tracking-tighter pr-4 pb-2 select-none drop-shadow-[0_2px_12px_#FCFAF7]"
                   >
-                    Robots.
+                    {copy.hero.title2}
                   </h2>
                 </SlideUp>
 
                 <SlideUp delay={0.3}>
                   <p className="text-lg md:text-2xl font-sans text-muted-foreground text-balance leading-relaxed max-w-xl mt-8 mb-10 font-medium">
-                    We are 18 students from Princeton STEM Academy building, programming, and competing with custom robots in the FIRST Tech Challenge.
+                    {copy.hero.subtitle}
                   </p>
                 </SlideUp>
 
@@ -87,7 +90,7 @@ export default function HomePage() {
                       asChild
                     >
                       <a href="/team">
-                        Meet the Core Team
+                        {copy.hero.primaryCtaText}
                       </a>
                     </Button>
                     <Button
@@ -98,7 +101,7 @@ export default function HomePage() {
                     >
                       <a href="/mentors">
                         <Cpu className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                        View Our Mentors
+                        {copy.hero.secondaryCtaText}
                       </a>
                     </Button>
                   </div>
@@ -116,10 +119,10 @@ export default function HomePage() {
                 {/* Left Column: Asymmetric Editorial Intro */}
                 <div className="lg:col-span-5 space-y-6">
                   <h3 className="text-4xl sm:text-5xl font-sans font-extrabold text-foreground tracking-tighter leading-[1.05] uppercase">
-                    Engineering & Community
+                    {copy.stats.title}
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed font-medium max-w-xl">
-                    We spend our after-school hours and weekends in the lab designing mechanical setups, testing autonomous code, and teaching robotics to local students.
+                    {copy.stats.description}
                   </p>
                 </div>
                 
@@ -128,26 +131,26 @@ export default function HomePage() {
                   <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
                      <StaggerItem className="md:col-span-2">
                        <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
-                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">17</div>
-                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Team Members</div>
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">{copy.stats.card1Value}</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">{copy.stats.card1Label}</div>
                        </TiltCard>
                      </StaggerItem>
                      <StaggerItem className="md:col-span-1">
                        <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
-                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">2</div>
-                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">FLL Teams Mentored</div>
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">{copy.stats.card2Value}</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">{copy.stats.card2Label}</div>
                        </TiltCard>
                      </StaggerItem>
                      <StaggerItem className="md:col-span-1">
                        <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
-                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">1</div>
-                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Annual STEM Camp</div>
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">{copy.stats.card3Value}</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">{copy.stats.card3Label}</div>
                        </TiltCard>
                      </StaggerItem>
                      <StaggerItem className="md:col-span-2">
                        <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
-                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">∞</div>
-                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Creativity</div>
+                         <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">{copy.stats.card4Value}</div>
+                         <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">{copy.stats.card4Label}</div>
                        </TiltCard>
                      </StaggerItem>
                   </StaggerContainer>
@@ -161,11 +164,11 @@ export default function HomePage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
               <SlideUp className="max-w-4xl mx-auto text-center space-y-8">
                 <h2 id="mission-heading" className="text-4xl lg:text-5xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[1.05]">
-                  Our Mission
+                  {copy.mission.title}
                 </h2>
                 <MissionRobot />
                   <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-xl mx-auto">
-                    We believe the best way to learn engineering is by building things together. While we construct robots for competition, our broader goal is to make STEM accessible to everyone in our community through mentoring and hands-on workshops.
+                    {copy.mission.statement}
                   </p>
               </SlideUp>
             </div>
@@ -179,10 +182,10 @@ export default function HomePage() {
               <div className="space-y-16">
                 <SlideUp className="text-center space-y-6">
                   <h2 id="achievements-heading" className="text-4xl lg:text-5xl font-sans font-extrabold text-foreground tracking-tighter uppercase leading-[1.05]">
-                    Recent Achievements
+                    {copy.achievements.title}
                   </h2>
                   <p className="text-xl text-muted-foreground max-w-xl mx-auto font-medium">
-                    What we've been up to recently—from local tournaments to community outreach.
+                    {copy.achievements.subtitle}
                   </p>
                 </SlideUp>
 
@@ -194,25 +197,28 @@ export default function HomePage() {
                            <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
                              <Trophy className="w-6 h-6 text-primary" />
                            </div>
-                           <span>Competition Excellence</span>
+                           <span>{copy.achievements.card1Title}</span>
                          </h3>
                          <div className="grid md:grid-cols-2 gap-6 items-start pt-2">
                            <div className="space-y-2">
-                             <span className="block font-bold text-foreground text-lg">2025-2026 Season</span>
+                             <span className="block font-bold text-foreground text-lg">{copy.achievements.card1Season}</span>
                              <p className="text-sm font-normal text-muted-foreground/80 leading-relaxed">
-                               We built a custom modular intake, designed a custom drivetrain, and programmed an autonomous routine that carried us to the state championship.
+                               {copy.achievements.card1Text}
                              </p>
                            </div>
                            <ul className="space-y-3 text-sm font-semibold text-muted-foreground">
-                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2 shrink-0" /> Think Award - NJ Upper Central Leagues</li>
-                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2 shrink-0" /> Winning Alliance Captain</li>
-                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2 shrink-0" /> Qualified for NJ State Championship</li>
+                             {copy.achievements.card1Points.map((point: string, idx: number) => (
+                               <li key={idx} className="flex items-center">
+                                 <Zap className="w-4 h-4 text-primary mr-2 shrink-0" />
+                                 {point}
+                               </li>
+                             ))}
                            </ul>
                          </div>
                        </div>
                      </TiltCard>
                    </StaggerItem>
- 
+
                    <StaggerItem className="lg:col-span-1">
                      <TiltCard className="h-full border border-primary/15 bg-white/70 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-500 rounded-[2rem] p-8 flex flex-col justify-between">
                        <div className="space-y-6 text-left">
@@ -220,15 +226,15 @@ export default function HomePage() {
                            <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
                              <Users className="w-6 h-6 text-primary" />
                            </div>
-                           <span>Mentorship Program</span>
+                           <span>{copy.achievements.card2Title}</span>
                          </h3>
                          <p className="text-sm leading-relaxed text-muted-foreground/80 font-normal">
-                           We host weekly mentoring sessions for two local middle school FIRST Lego League (FLL) teams, guiding them through building and programming.
+                           {copy.achievements.card2Text}
                          </p>
                        </div>
                      </TiltCard>
                    </StaggerItem>
- 
+
                    <StaggerItem className="lg:col-span-3">
                      <TiltCard className="h-full border border-primary/15 bg-white/70 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-500 rounded-[2rem] p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                        <div className="flex items-center space-x-4 shrink-0">
@@ -236,11 +242,11 @@ export default function HomePage() {
                            <Heart className="w-6 h-6 text-primary" />
                          </div>
                          <h3 className="text-2xl font-extrabold text-foreground tracking-tight">
-                           STEM Camp
+                           {copy.achievements.card3Title}
                          </h3>
                        </div>
                        <p className="text-sm leading-relaxed text-muted-foreground/80 font-normal lg:max-w-2xl">
-                         Every summer, our team runs a week-long camp for 3rd to 8th graders, introducing them to CAD modeling, simple mechanics, and coding.
+                         {copy.achievements.card3Text}
                        </p>
                      </TiltCard>
                    </StaggerItem>

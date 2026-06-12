@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "badgeText": "FTC TEAM 19772",
+    "title1": "We Build",
+    "title2": "Robots.",
+    "subtitle": "We are 18 students from Princeton STEM Academy building, programming, and competing with custom robots in the FIRST Tech Challenge.",
+    "primaryCtaText": "Meet the Core Team",
+    "secondaryCtaText": "View Our Mentors"
+  },
+  "stats": {
+    "title": "Engineering & Community",
+    "description": "We spend our after-school hours and weekends in the lab designing mechanical setups, testing autonomous code, and teaching robotics to local students.",
+    "card1Value": "17",
+    "card1Label": "Team Members",
+    "card2Value": "2",
+    "card2Label": "FLL Teams Mentored",
+    "card3Value": "1",
+    "card3Label": "Annual STEM Camp",
+    "card4Value": "∞",
+    "card4Label": "Creativity"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "statement": "We believe the best way to learn engineering is by building things together. While we construct robots for competition, our broader goal is to make STEM accessible to everyone in our community through mentoring and hands-on workshops."
+  },
+  "achievements": {
+    "title": "Recent Achievements",
+    "subtitle": "What we've been up to recently—from local tournaments to community outreach.",
+    "card1Title": "Competition Excellence",
+    "card1Season": "2025-2026 Season",
+    "card1Text": "We built a custom modular intake, designed a custom drivetrain, and programmed an autonomous routine that carried us to the state championship.",
+    "card1Points": [
+      "Think Award - NJ Upper Central Leagues",
+      "Winning Alliance Captain",
+      "Qualified for NJ State Championship"
+    ],
+    "card2Title": "Mentorship Program",
+    "card2Text": "We host weekly mentoring sessions for two local middle school FIRST Lego League (FLL) teams, guiding them through building and programming.",
+    "card3Title": "STEM Camp",
+    "card3Text": "Every summer, our team runs a week-long camp for 3rd to 8th graders, introducing them to CAD modeling, simple mechanics, and coding."
+  }
+}
