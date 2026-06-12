@@ -1,5 +1,4 @@
 /* Hallmark · macrostructure: Marquee Hero · design-system: DESIGN.md */
-"use client"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -32,7 +31,7 @@ export default function HomePage() {
             {/* Full-bleed background image - optimized with Next.js Image */}
             <div className="absolute inset-0 opacity-90">
               <Image
-                src="/images/design-mode/team-hero.png"
+                src="/images/design-mode/team-hero.webp"
                 alt="FTC Team 19772 members in orange team shirts"
                 fill
                 priority
@@ -76,7 +75,7 @@ export default function HomePage() {
 
                 <SlideUp delay={0.3}>
                   <p className="text-lg md:text-2xl font-sans text-muted-foreground text-balance leading-relaxed max-w-xl mt-8 mb-10 font-medium">
-                    We are FTC Team 19772 from Princeton STEM Academy. We design, build, and program competitive robots.
+                    We are 18 students from Princeton STEM Academy building, programming, and competing with custom robots in the FIRST Tech Challenge.
                   </p>
                 </SlideUp>
 
@@ -120,33 +119,33 @@ export default function HomePage() {
                     Engineering & Community
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed font-medium max-w-xl">
-                    From the classroom to the competition arena, our numbers tell the story of a team dedicated to pushing mechanical boundaries while lifting up the communities around us.
+                    We spend our after-school hours and weekends in the lab designing mechanical setups, testing autonomous code, and teaching robotics to local students.
                   </p>
                 </div>
                 
-                {/* Right Column: Grid of stats */}
+                {/* Right Column: Bento Grid of stats */}
                 <div className="lg:col-span-7">
-                  <StaggerContainer className="grid grid-cols-2 gap-6">
-                     <StaggerItem>
-                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                  <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                     <StaggerItem className="md:col-span-2">
+                       <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
                          <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">17</div>
                          <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Team Members</div>
                        </TiltCard>
                      </StaggerItem>
-                     <StaggerItem>
-                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                     <StaggerItem className="md:col-span-1">
+                       <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
                          <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">2</div>
                          <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">FLL Teams Mentored</div>
                        </TiltCard>
                      </StaggerItem>
-                     <StaggerItem>
-                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                     <StaggerItem className="md:col-span-1">
+                       <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
                          <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">1</div>
                          <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Annual STEM Camp</div>
                        </TiltCard>
                      </StaggerItem>
-                     <StaggerItem>
-                       <TiltCard className="text-left p-8 h-full rounded-[2.5rem] bg-white/80 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+                     <StaggerItem className="md:col-span-2">
+                       <TiltCard className="text-left p-8 h-full rounded-[2rem] bg-white/70 border border-primary/15 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-300">
                          <div className="text-6xl font-extrabold text-primary font-sans tracking-tighter">∞</div>
                          <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mt-4">Creativity</div>
                        </TiltCard>
@@ -165,12 +164,9 @@ export default function HomePage() {
                   Our Mission
                 </h2>
                 <MissionRobot />
-                 <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-xl mx-auto">
-                   We are an FTC robotics team passionate about{" "}
-                   <span className="text-primary font-semibold">STEM education</span>, design, and engineering. We
-                   design, build, and program competitive robots while also mentoring younger students and giving back to
-                   our community through educational outreach and STEM advocacy.
-                 </p>
+                  <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-xl mx-auto">
+                    We believe the best way to learn engineering is by building things together. While we construct robots for competition, our broader goal is to make STEM accessible to everyone in our community through mentoring and hands-on workshops.
+                  </p>
               </SlideUp>
             </div>
           </section>
@@ -186,61 +182,66 @@ export default function HomePage() {
                     Recent Achievements
                   </h2>
                   <p className="text-xl text-muted-foreground max-w-xl mx-auto font-medium">
-                    Our team's dedication to excellence shows in our competitive performance and community impact.
+                    What we've been up to recently—from local tournaments to community outreach.
                   </p>
                 </SlideUp>
 
-                <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                   <StaggerItem>
-                     <TiltCard className="h-full border border-primary/10 bg-white/80 hover:border-primary/35 transition-all duration-500 rounded-[2.5rem] shadow-sm hover:shadow-md p-8 flex flex-col justify-between">
+                <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                   <StaggerItem className="lg:col-span-2">
+                     <TiltCard className="h-full border border-primary/15 bg-white/70 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-500 rounded-[2rem] p-8 flex flex-col justify-between">
                        <div className="space-y-6 text-left">
-                         <h3 className="flex items-center space-x-3 text-xl font-bold text-foreground">
+                         <h3 className="flex items-center space-x-3 text-2xl font-extrabold text-foreground tracking-tight">
                            <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
                              <Trophy className="w-6 h-6 text-primary" />
                            </div>
                            <span>Competition Excellence</span>
                          </h3>
-                         <div className="text-base leading-relaxed space-y-4">
-                           <span className="block font-bold text-foreground">2025-2026 Season</span>
-                           <ul className="space-y-2 text-muted-foreground font-medium">
-                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2" /> Think Award - NJ Upper Central Leagues</li>
-                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2" /> Winning Alliance Captain</li>
-                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2" /> Qualified for NJ State Championship</li>
+                         <div className="grid md:grid-cols-2 gap-6 items-start pt-2">
+                           <div className="space-y-2">
+                             <span className="block font-bold text-foreground text-lg">2025-2026 Season</span>
+                             <p className="text-sm font-normal text-muted-foreground/80 leading-relaxed">
+                               We built a custom modular intake, designed a custom drivetrain, and programmed an autonomous routine that carried us to the state championship.
+                             </p>
+                           </div>
+                           <ul className="space-y-3 text-sm font-semibold text-muted-foreground">
+                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2 shrink-0" /> Think Award - NJ Upper Central Leagues</li>
+                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2 shrink-0" /> Winning Alliance Captain</li>
+                             <li className="flex items-center"><Zap className="w-4 h-4 text-primary mr-2 shrink-0" /> Qualified for NJ State Championship</li>
                            </ul>
                          </div>
                        </div>
                      </TiltCard>
                    </StaggerItem>
  
-                   <StaggerItem>
-                     <TiltCard className="h-full border border-primary/10 bg-white/80 hover:border-primary/35 transition-all duration-500 rounded-[2.5rem] shadow-sm hover:shadow-md p-8 flex flex-col justify-between">
+                   <StaggerItem className="lg:col-span-1">
+                     <TiltCard className="h-full border border-primary/15 bg-white/70 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-500 rounded-[2rem] p-8 flex flex-col justify-between">
                        <div className="space-y-6 text-left">
-                         <h3 className="flex items-center space-x-3 text-xl font-bold text-foreground">
+                         <h3 className="flex items-center space-x-3 text-2xl font-extrabold text-foreground tracking-tight">
                            <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
                              <Users className="w-6 h-6 text-primary" />
                            </div>
                            <span>Mentorship Program</span>
                          </h3>
-                         <p className="text-base leading-relaxed text-muted-foreground font-medium max-w-md">
-                           Successfully mentoring 2 FLL teams, sharing our knowledge and passion for robotics with the next generation of innovators and developers.
+                         <p className="text-sm leading-relaxed text-muted-foreground/80 font-normal">
+                           We host weekly mentoring sessions for two local middle school FIRST Lego League (FLL) teams, guiding them through building and programming.
                          </p>
                        </div>
                      </TiltCard>
                    </StaggerItem>
  
-                   <StaggerItem>
-                     <TiltCard className="h-full border border-primary/10 bg-white/80 hover:border-primary/35 transition-all duration-500 rounded-[2.5rem] shadow-sm hover:shadow-md p-8 flex flex-col justify-between">
-                       <div className="space-y-6 text-left">
-                         <h3 className="flex items-center space-x-3 text-xl font-bold text-foreground">
-                           <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
-                             <Heart className="w-6 h-6 text-primary" />
-                           </div>
-                           <span>STEM Camp</span>
+                   <StaggerItem className="lg:col-span-3">
+                     <TiltCard className="h-full border border-primary/15 bg-white/70 hover:border-primary/30 hover:bg-primary/[0.01] transition-all duration-500 rounded-[2rem] p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                       <div className="flex items-center space-x-4 shrink-0">
+                         <div className="p-3 bg-primary/10 rounded-[1.25rem] transition-colors">
+                           <Heart className="w-6 h-6 text-primary" />
+                         </div>
+                         <h3 className="text-2xl font-extrabold text-foreground tracking-tight">
+                           STEM Camp
                          </h3>
-                         <p className="text-base leading-relaxed text-muted-foreground font-medium max-w-md">
-                           Hosting an annual STEM camp for 3rd–8th graders, inspiring young minds to explore science and technology through hands-on learning and interactive projects.
-                         </p>
                        </div>
+                       <p className="text-sm leading-relaxed text-muted-foreground/80 font-normal lg:max-w-2xl">
+                         Every summer, our team runs a week-long camp for 3rd to 8th graders, introducing them to CAD modeling, simple mechanics, and coding.
+                       </p>
                      </TiltCard>
                    </StaggerItem>
                 </StaggerContainer>
